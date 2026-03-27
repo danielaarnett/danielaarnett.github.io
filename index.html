@@ -30,7 +30,12 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item pe-lg-3">
-                        <a href="#" class="nav-link">Планы</a>
+                        <a href="#"
+                        class="nav-link"
+                        data-bs-toggle="modal"
+                        data-bs-target="#plansModal">
+                        Планы
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">Почитать отрывки</a>
@@ -89,6 +94,48 @@
             </div>
         </div>
     </section>
+
+    <!-- Plans Modal -->
+    <div class="modal fade" id="plansModal" tabindex="-1" aria-labelledby="plansModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content plans-modal-content">
+                <div class="modal-header plans-modal-header">
+                    <h5 class="modal-title plans-modal-title" id="plansModalLabel">Будущие книги</h5>
+                    <button type="button" class="btn-close btn-close-white plans-modal-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+
+                <div class="modal-body plans-modal-body">
+                    <div class="plans-list">
+
+                        <div class="plan-item">
+                            <div class="plan-item-top">
+                                <h6 class="plan-book-title">Вчера здесь был завтрак</h6>
+                                <span class="plan-book-words">50,000 слов</span>
+                            </div>
+                            <div class="plan-book-meta">роман • философия • контркультура</div>
+                        </div>
+
+                        <div class="plan-item">
+                            <div class="plan-item-top">
+                                <h6 class="plan-book-title">Моя слабость, моя боль</h6>
+                                <span class="plan-book-words">80,000 слов</span>
+                            </div>
+                            <div class="plan-book-meta">роман • контркультура • психологическая проза</div>
+                        </div>
+
+                        <div class="plan-item">
+                            <div class="plan-item-top">
+                                <h6 class="plan-book-title">Раскармливание</h6>
+                                <span class="plan-book-words">50,000 слов</span>
+                            </div>
+                            <div class="plan-book-meta">роман • контркультура • ужасы</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--Basic scripts-->
     <script src="./bootstrap.bundle.min.js"></script>
