@@ -41,6 +41,12 @@ body {
     margin-right: auto;
 }
 
+.btn-close:focus,
+.btn-close:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+
 /* --------------------------------------------
    Mobile / Tablet responsive
 ---------------------------------------------- */
@@ -952,17 +958,6 @@ body {
     opacity: 0.82;
 }
 
-.plans-modal-close:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-.plans-modal-close:focus,
-.plans-modal-close:focus-visible {
-    outline: none;
-    box-shadow: none;
-}
-
 /* Mobile */
 @media (max-width: 575.98px) {
     .plans-modal-header {
@@ -987,5 +982,83 @@ body {
 
     .plan-book-words {
         font-size: 0.84rem;
+    }
+}
+
+/* --------------------------------------------
+    Excerpt Modal
+---------------------------------------------- */
+
+.excerpt-modal-content {
+    background:
+        linear-gradient(180deg, rgba(14,10,12,0.98), rgba(10,8,10,0.99));
+    border-radius: 20px;
+    border: 1px solid rgba(213,181,131,0.18);
+}
+
+.excerpt-modal-header {
+    background:
+        linear-gradient(180deg, rgba(58,35,36,0.95), rgba(30,18,20,0.95));
+    border-bottom: 1px solid rgba(213,181,131,0.12);
+}
+
+.excerpt-modal-title {
+    font-family: var(--font-display);
+    color: #f1dfb8;
+    font-size: 1.6rem;
+}
+
+.excerpt-modal-body {
+    padding: 1.2rem;
+}
+
+.excerpt-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+/* Кнопки-отрывки */
+.excerpt-item {
+    display: block;
+    padding: 0.8rem 1rem;
+    border-radius: 14px;
+
+    background:
+        linear-gradient(180deg, rgba(40,26,28,0.9), rgba(22,16,18,0.95));
+
+    border: 1px solid rgba(213,181,131,0.12);
+
+    color: #e6dcc6;
+    text-decoration: none;
+    font-family: var(--font-text);
+
+    transition: all 0.25s ease;
+}
+
+.excerpt-item:hover {
+    transform: translateX(4px);
+    border-color: rgba(213,181,131,0.3);
+    color: #f1dfb8;
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+
+    .excerpt-modal-header {
+        padding: 1rem 1rem 0.9rem;
+    }
+
+    .excerpt-modal-body {
+        padding: 1rem;
+    }
+
+    .excerpt-modal-title {
+        font-size: 1.5rem;
+    }
+
+    .excerpt-item {
+        font-size: 0.95rem;
+        padding: 0.7rem 0.9rem;
     }
 }
