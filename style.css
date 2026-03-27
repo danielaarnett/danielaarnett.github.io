@@ -182,12 +182,27 @@ body {
     .book-image {
         width: 100%;
         max-width: 300px;
-        max-height: none;
         height: auto;
         display: block;
         margin: 0 auto;
     }
 
+    @media (max-width: 430px) {
+        .book-image {
+            width: 78vw;
+            max-width: 340px;
+            min-width: 220px;
+        }
+    }
+
+    @media (max-width: 360px) {
+        .book-image {
+            width: 82vw;
+            max-width: 300px;
+            min-width: 210px;
+        }
+    }
+    
     .form-label.text-d5b583 {
         font-size: 0.92rem;
         line-height: 1.4;
