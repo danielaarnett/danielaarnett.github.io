@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!--Meta-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Style-->
+    <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+   	<link href="./bootstrap.min.css" rel="stylesheet">
+   	<link href="./style.css" rel="stylesheet">
+    <link href="./reading.css" rel="stylesheet">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Viaoda+Libre&display=swap" rel="stylesheet">
+
+    <!-- Title -->
+    <title>Daniel A. Arnett</title>
+</head>
+<body class="reading-page reading-page-order">
+
+    <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand logo gradient">Daniel A. Arnett</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item pe-lg-3">
+                        <a href="index.html" class="nav-link">На главную</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="reading-main">
+        <section class="reading-hero">
+            <div class="container">
+                <div class="reading-meta-wrap">
+                    <div class="reading-book">Дети Крампуса: тени Йоля</div>
+                    <h1 class="reading-title">Пролог</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="reading-section">
+            <div class="container-fluid reading-container">
+                <article class="reading-article">
+                    <p>Ждём...</p>
+                </article>
+
+                <div class="reading-bottom-nav">
+                    <a href="index.html" class="reading-nav-btn reading-nav-prev">← Предыдущий</a>
+                    <a href="page02.html" class="reading-nav-btn reading-nav-next">Следующий →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--Basic scripts-->
+    <script src="./bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/letteranimation.min.js"></script>
+    <script src="https://kit.fontawesome.com/97eb1c096b.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <script>
+        function windowScroll() {
+            const navbar = document.getElementById("navbar");
+            if (
+                document.body.scrollTop >= 50 ||
+                document.documentElement.scrollTop >= 50
+            ) {
+                navbar.classList.add("nav-sticky");
+            } else {
+                navbar.classList.remove("nav-sticky");
+            }
+        }
+            
+        window.addEventListener('scroll', (ev) => {
+            ev.preventDefault();
+            windowScroll();
+        })
+    </script>
+    
+    <!--Script enabling animation-->
+    <script>
+        new WOW().init();   
+    </script>
+</body>
+</html>
