@@ -1,244 +1,193 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Daniel Klyre: Author</title>
+    <!--Meta-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!--Style-->
+    <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+   	<link href="./bootstrap.min.css" rel="stylesheet">
+   	<link href="./style.css" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Marck+Script&display=swap" rel="stylesheet">
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Viaoda+Libre&display=swap" rel="stylesheet">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="static/css/style.css" rel="stylesheet">
+    <!-- Title -->
+    <title>Daniel A. Arnett</title>
 </head>
-<body>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Навигация -->
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+<body data-bs-spy="scroll">
+    <!--Navbar: START-->
+    <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
         <div class="container">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-center" id="mainNav">
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item"><a class="nav-link" href="#">Главная</a></li>
-              <li class="nav-item"><a class="nav-link" href="./books.html">Книги</a></li>
-              <li class="nav-item"><a class="nav-link" href="./authenticity.html">Подлинность</a></li>
-              <li class="nav-item"><a class="nav-link" href="./reading.html">Читаем вместе</a></li>
-              <li class="nav-item"><a class="nav-link" href="./policy.html">Политика</a></li>
-            </ul>
-          </div>
+            <a href="#" class="navbar-brand logo gradient">Daniel A. Arnett</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="48px" height="48px" fill-rule="nonzero"><defs><linearGradient x1="32" y1="5.333" x2="32" y2="59.867" gradientUnits="userSpaceOnUse" id="color-1"><stop offset="0" stop-color="#fd4a81"/><stop offset="1" stop-color="#ff8662"/></linearGradient><linearGradient x1="32" y1="5.333" x2="32" y2="59.867" gradientUnits="userSpaceOnUse" id="color-2"><stop offset="0" stop-color="#fd4a81"/><stop offset="1" stop-color="#ff8662"/></linearGradient><linearGradient x1="32" y1="21.5" x2="32" y2="26.336" gradientUnits="userSpaceOnUse" id="color-3"><stop offset="0" stop-color="#ff5e73"/><stop offset="1" stop-color="#fc9860"/></linearGradient><linearGradient x1="32" y1="29.333" x2="32" y2="34.5" gradientUnits="userSpaceOnUse" id="color-4"><stop offset="0" stop-color="#ff5e73"/><stop offset="1" stop-color="#fc9860"/></linearGradient><linearGradient x1="32" y1="37" x2="32" y2="41.337" gradientUnits="userSpaceOnUse" id="color-5"><stop offset="0" stop-color="#ff5e73"/><stop offset="1" stop-color="#fc9860"/></linearGradient></defs><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(4,4)"><path d="M32,58c-14.337,0 -26,-11.663 -26,-26c0,-14.337 11.663,-26 26,-26c14.337,0 26,11.663 26,26c0,14.337 -11.663,26 -26,26zM32,8c-13.233,0 -24,10.767 -24,24c0,13.233 10.767,24 24,24c13.233,0 24,-10.767 24,-24c0,-13.233 -10.767,-24 -24,-24z" fill="url(#color-1)"/><path d="M32,52c-11.028,0 -20,-8.972 -20,-20c0,-11.028 8.972,-20 20,-20c11.028,0 20,8.972 20,20c0,11.028 -8.972,20 -20,20zM32,14c-9.925,0 -18,8.075 -18,18c0,9.925 8.075,18 18,18c9.925,0 18,-8.075 18,-18c0,-9.925 -8.075,-18 -18,-18z" fill="url(#color-2)"/><path d="M42,25c0,0.552 -0.448,1 -1,1h-18c-0.552,0 -1,-0.448 -1,-1v-2c0,-0.552 0.448,-1 1,-1h18c0.552,0 1,0.448 1,1z" fill="url(#color-3)"/><path d="M42,33c0,0.552 -0.448,1 -1,1h-18c-0.552,0 -1,-0.448 -1,-1v-2c0,-0.552 0.448,-1 1,-1h18c0.552,0 1,0.448 1,1z" fill="url(#color-4)"/><path d="M42,41c0,0.552 -0.448,1 -1,1h-18c-0.552,0 -1,-0.448 -1,-1v-2c0,-0.552 0.448,-1 1,-1h18c0.552,0 1,0.448 1,1z" fill="url(#color-5)"/></g></g></svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item pe-lg-3">
+                        <a href="#" class="nav-link">Планы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Почитать отрывки</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </nav>
-    </header>
+    </nav>
 
-    <!-- Карусель -->
-    <div id="booksCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-      <!-- Слайд -->
-      <div class="book-slide slide-book-1-background carousel-item active">
-        <div class="container py-5">
-          <div class="row align-items-center">
-            <div class="offset-1 col-lg-5 mb-4 mb-lg-0 text-center">
-              <h2 class="title">Дети Крампуса: тени Йоля</h2>
-              <p class="subtitle">роман § массовая проза</p>
-              <p class="description mb-2">В канун Йоля, когда Крампус просыпается, чтобы утолить голод, в мрачный город, пропитанный запахом смерти и шкур, приходит мальчик без имени. Его боятся дети, но, возможно, именно он сможет спасти их от тьмы и вернуть им детство</p>
-              <a href="./book-1.html" rel="noopener" class="btn btn-primary text-center">Подробнее</a>
-            </div>
-            <div class="col-lg-6 text-center">
-              <div style="width: 350px; height: 476px; margin: 0 auto;">
-                <img src="./book-1.png" style="width: 100%; height: 100%;">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Слайд -->
-      <div class="book-slide slide-book-2-background carousel-item">
-        <div class="container py-5">
-          <div class="row align-items-center">
-            <div class="offset-1 col-lg-5 mb-4 mb-lg-0 text-center">
-              <h2 class="title">Санктум: наследие Гнева</h2>
-              <p class="subtitle">роман § контркультура</p>
-              <p class="description mb-2">Когда шесть грехов в человеческой плоти оказались на грани исчезновения, явился тот, кого они когда-то изгнали в проклятый город. Он делает им предложение — пари, которое решит, суждено ли им сохранить свою силу</p>
-              <a href="./book-3.html" rel="noopener" class="btn btn-primary">Подробнее</a>
-            </div>
-            <div class="col-lg-6 text-center">
-              <div style="width: 350px; height: 476px; margin: 0 auto;">
-                <img src="./book-2.png" style="width: 100%; height: 100%;">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Слайд -->
-      <div class="book-slide slide-book-3-background carousel-item">
-        <div class="container py-5">
-          <div class="row align-items-center">
-            <div class="offset-1 col-lg-5 mb-4 mb-lg-0 text-center">
-              <h2 class="title">Расщеплённый</h2>
-              <p class="subtitle">инкунакула § контркультура</p>
-              <p class="description mb-2"><em>“крючок”</em></p>
-              <a href="./book-4.html" rel="noopener" class="btn btn-primary">Подробнее</a>
-            </div>
-            <div class="col-lg-6 text-center">
-              <div style="width: 350px; height: 476px; margin: 0 auto;">
-                <img src="./book-2.png" style="width: 100%; height: 100%;">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Incunabula (лат.) — так в книговедении называют книги, отпечатанные на заре книгопечатания (до 1501 года).
-      «Инкунакула» — моё слово: не исторический термин, а метафора.
-      Это первые отпечатки внутреннего распада — тексты, которые появляются раньше формы и фиксируют распад сознания до всякого утешения.
-      Это не литература. Это след. авторский неологизм: первые отпечатки распада. -->
-      <!-- Слайд -->
-      <div class="book-slide slide-book-5-background carousel-item">
-        <div class="container py-5">
-          <div class="row align-items-center">
-            <div class="offset-1 col-lg-5 mb-4 mb-lg-0 text-center">
-              <h2 class="title">Вчера здесь был завтрак</h2>
-              <p class="subtitle">роман § контркультура</p>
-              <p class="description mb-2">Память рушится. Ритуалы пусты. Сон и смерть больше не различимы. Всё уже было, всё уже сказано, всё уже забыто. Философский сюрреализм, сведённый к абсурду. Книга о том, почему вопрос «Как тебя зовут?» звучит громче, чем любой ответ</p>
-              <a href="./book-5.html" rel="noopener" class="btn btn-primary">Подробнее</a>
-            </div>
-            <div class="col-lg-6 text-center">
-              <div style="width: 350px; height: 476px; margin: 0 auto;">
-                <img src="./book-2.png" style="width: 100%; height: 100%;">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Слайд -->
-      <div class="book-slide slide-book-5-background carousel-item">
-        <div class="container py-5">
-          <div class="row align-items-center">
-            <div class="offset-1 col-lg-5 mb-4 mb-lg-0 text-center">
-              <h2 class="title">Фрагментация Будущего</h2>
-              <p class="subtitle">антология § беллетристика</p>
-              <p class="description mb-2">“крючок”</p>
-              <a href="./book-6.html" rel="noopener" class="btn btn-primary">Подробнее</a>
-            </div>
-            <div class="col-lg-6 text-center">
-              <div style="width: 350px; height: 476px; margin: 0 auto;">
-                <img src="./book-2.png" style="width: 100%; height: 100%;">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Слайд -->
-      <div class="book-slide slide-book-4-background carousel-item">
-        <div class="container py-5">
-          <div class="row align-items-center">
-            <div class="offset-1 col-lg-5 mb-4 mb-lg-0 text-center">
-              <h2 class="title">Орден Света и Бюджетный кризис</h2>
-              <p class="subtitle">роман § сатира</p>
-              <p class="description mb-2">В эпоху, когда священные мечи закладывают в ломбарды, боевые кони разносят бандероли, а рыцарские ордена вынуждены переезжать в подвалы трактиров, последний идеалист Бумажного Королевства — сэр Элмер — пытается отстоять честь Ордена Света, преждче чем бюрократия превратит его в жалкую лавочку</p>
-              <a href="./book-2.html" rel="noopener" class="btn btn-primary">Подробнее</a>
-            </div>
-            <div class="col-lg-6 text-center">
-              <div style="width: 350px; height: 476px; margin: 0 auto;">
-                <img src="./book-2.png" style="width: 100%; height: 100%;">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Кнопки управления -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#booksCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#booksCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+    <section class="book-one-section py-5">
+        <div class="container pt-120 pb-120">
+            <div class="row align-items-center">
 
-  <div class="slice">
-  </div>
-
-  <div class="bg-pred">
-    <!-- New Releases Section -->
-    <section class="new-releases-section py-5">
-        <div class="container">
-          <!-- Заголовок секции -->
-          <div class="text-center mb-4">
-            <h2 class="Crackhouse_Cyr">Предзаказ</h2>
-          </div>
-
-          <div class="py-4 row align-items-center">
-            <!-- Левая колонка: текст -->
-            <div class="pre-order pb-5 bg-black bg-opacity-75 col-lg-6 mb-4 mb-lg-0 d-flex flex-column">
-              <h2 class="pt-5 pb-4 title text-center">Дети Крампуса: тени Йоля</h2>
-              <h3 class="subtitle pb-4 text-center">первая книга в цикле:<br>«Мрачные сказки для взрослых»</h3>
-              <p class="ps-5 pe-5 description">
-                В городе среди болот, где вонь бойни смешивается с паром выделочных цехов, дети растут среди шкур, ножей и молчаливых взрослых, лишённых взгляда и слов.<br>
-                Именно здесь начинается история. Время Крампуса — праздник страха, когда вместо подарков малыши шепчут молитвы, а вместо веселья их переполняет страх расплаты.<br>
-                Никто не ждёт нового гостя, и всё же накануне Йоля на товарном поезде прибывает мальчик без имени. Он не помнит, откуда приехал, но запах крови кажется ему удивительно знакомым.<br>
-                Когда ночь опускается на город, под снегом шевелятся старые сказки, на улицах начинают пропадать дети, легенды оживают, и никто уже не помнит: Йоль — это не просто праздник. Это договор. И если он нарушен — придёт кара.<br>
-                И, возможно, именно мальчик-сирота окажется ключом к событиям, которые изменят город навсегда.
-              </p>
-              <div class="row px-3 ps-5 pt-4 pb-4">
-                <div class="col-6 d-flex align-items-center mb-2 pb-3">
-                  <img src="./static/icons/book.png" class="me-2" alt="">
-                  <span class="text-start white"><span class="gold">Кол-во страниц:</span><br>400–450</span>
+                <div class="col-lg-6 text-content">
+                    <h2 class="title text-center mb-4">Орден на сдачу</h2>
+                    <h4 class="subtitle text-center">роман • сатира • массовая проза</h4>
+                    <p class="paragraph pb-4">В мире, где подвиг подлежит согласованию, Орден Света лишён не только средств, но и будущего: мечи заложены, кони учтены как имущество, а рыцари переселены в подвалы в ожидании проверки. Сэр Элмер пытается сохранить смысл службы в системе, где честь измеряется отчётностью, а главной угрозой становится не враг, а реформы, аудит и порядок, превращающие героизм в нарушение регламента.</p>
+                    <div class="text-center mt-4">
+                        <label for="bookProgress" class="pb-1 form-label text-d5b583">Прогресс написания произведения:</label>
+                        <div class="custom-progress">
+                            <div class="custom-progress-bar" id="bookProgress"></div>
+                            <div class="progress-text" id="progressText">0 / 45k слов</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-6 d-flex align-items-center mb-2 pb-3">
-                  <img src="./static/icons/time.png" class="me-2" alt="">
-                  <span class="text-start white"><span class="gold">Дата выхода:</span><br>2026</span>
+                <div class="col-lg-6 text-center">
+                <img src="./Finalyy.png"
+                    class="img-fluid book-image"
+                    alt="Book cover">
                 </div>
-                <div class="col-6 d-flex align-items-center mb-2">
-                  <img src="./static/icons/star.png" class="me-2" alt="">
-                  <span class="text-start white"><span class="gold">Атмосфера:</span><br>рождественский кошмар, фольклорный хоррор</span>
-                </div>
-                <div class="col-6 d-flex align-items-center mb-2">
-                  <img src="./static/icons/key.png" class="me-2" alt="">
-                  <span class="text-start white"><span class="gold">Тезисы:</span><br>теология, метафизика, лиминальность, сотериология</span>
-                </div>
-              </div>
-              <div class="pt-4 d-flex justify-content-center gap-2">
-                <a href="#" class="btn btn-primary btn-sm">Оставить заявку</a>
-              </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Правая колонка: картинка -->
+    <section class="book-two-section py-5">
+        <div class="container pt-120 pb-120">
+            <div class="row align-items-center">
+
+            <div class="col-lg-6 text-content">
+                <h2 class="title text-center mb-4">Дети Крампуса: Тени Йоля</h2>
+                <h4 class="subtitle text-center">роман • мрачные сказки • контркультура</h4>
+                <p class="paragraph pb-4">В канун Йоля, когда Крампус просыпается, чтобы утолить голод, в мрачный город, пропитанный запахом смерти и шкур, приходит мальчик без имени. Его боятся дети, но, возможно, именно он сможет спасти их от тьмы и вернуть им детство</p>
+                <div class="text-center mt-4">
+                    <label for="bookProgress2" class="pb-1 form-label text-d5b583">Прогресс написания произведения:</label>
+                    <div class="custom-progress-two">
+                        <div class="custom-progress-bar-two" id="bookProgress2"></div>
+                        <div class="progress-text" id="progressText2">0 / 95k слов</div>
+                    </div>
+                </div>
+            </div>
             <div class="col-lg-6 text-center">
-              <a href="#">
-                <img src="./book-1.png" class="img-fluid rounded shadow w-75">
-              </a>
+                <img src="./Finaly.png"
+                    class="img-fluid book-image"
+                    alt="Book cover">
             </div>
-          </div>
+            </div>
         </div>
-      </section>
-  </div>
+    </section>
 
-  <div class="slice">
-  </div>
+    <!--Basic scripts-->
+    <script src="./bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/letteranimation.min.js"></script>
+    <script src="https://kit.fontawesome.com/97eb1c096b.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
-    <!-- Footer -->
-    <footer class="py-5 bg-footer">
-      <div class="container">
-        <div class="row mt-4">
-          <div class="col-12 text-center footer-text">
-            Daniel Klyre. All Rights Reserved.
-          </div>
-        </div>
-      </div>
-    </footer>
+    <!--Script navbar sticky in up-->
+    <script>
+        const wordsWritten1 = 5579;
+        const wordsGoal1 = 45000;
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+        const progressBar1 = document.getElementById('bookProgress');
+        const progressText1 = document.getElementById('progressText');
+
+        const targetPercent1 = (wordsWritten1 / wordsGoal1) * 100;
+
+        let currentPercent1 = 0;
+        let currentWords1 = 0;
+
+        const duration1 = 1200;
+        const intervalTime1 = 15;
+        const steps1 = Math.ceil(duration1 / intervalTime1);
+
+        const percentStep1 = targetPercent1 / steps1;
+        const wordsStep1 = wordsWritten1 / steps1;
+
+        const interval1 = setInterval(() => {
+            currentPercent1 += percentStep1;
+            currentWords1 += wordsStep1;
+
+            if (currentPercent1 >= targetPercent1) {
+                currentPercent1 = targetPercent1;
+                currentWords1 = wordsWritten1;
+                clearInterval(interval1);
+            }
+
+            progressBar1.style.width = currentPercent1 + '%';
+            progressText1.innerText = `${Math.round(currentWords1)} / ${wordsGoal1} слов`;
+        }, intervalTime1);
+    </script>
+
+    <script>
+        const wordsWritten2 = 7991;
+        const wordsGoal2 = 95000;
+
+        const progressBar2 = document.getElementById('bookProgress2');
+        const progressText2 = document.getElementById('progressText2');
+
+        const targetPercent2 = (wordsWritten2 / wordsGoal2) * 100;
+
+        let currentPercent2 = 0;
+        let currentWords2 = 0;
+
+        const duration = 1200; // длительность анимации в мс
+        const intervalTime = 15;
+        const steps = Math.ceil(duration / intervalTime);
+
+        const percentStep = targetPercent2 / steps;
+        const wordsStep = wordsWritten2 / steps;
+
+        const interval2 = setInterval(() => {
+            currentPercent2 += percentStep;
+            currentWords2 += wordsStep;
+
+            if (currentPercent2 >= targetPercent2) {
+                currentPercent2 = targetPercent2;
+                currentWords2 = wordsWritten2;
+                clearInterval(interval2);
+            }
+
+            progressBar2.style.width = currentPercent2 + '%';
+            progressText2.innerText = `${Math.round(currentWords2)} / ${wordsGoal2} слов`;
+        }, intervalTime);
+    </script>
+
+    <script>
+        function windowScroll() {
+            const navbar = document.getElementById("navbar");
+            if (
+                document.body.scrollTop >= 50 ||
+                document.documentElement.scrollTop >= 50
+            ) {
+                navbar.classList.add("nav-sticky");
+            } else {
+                navbar.classList.remove("nav-sticky");
+            }
+        }
+            
+        window.addEventListener('scroll', (ev) => {
+            ev.preventDefault();
+            windowScroll();
+        })
+    </script>
+    
+    <!--Script enabling animation-->
+    <script>
+        new WOW().init();   
+    </script>
+</body>
 </html>
