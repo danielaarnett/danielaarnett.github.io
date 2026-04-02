@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="./bootstrap.min.css" rel="stylesheet">
+    <link href="./css/base.css" rel="stylesheet">
+    <link href="./css/sections.css" rel="stylesheet">
+    <link href="./css/modals.css" rel="stylesheet">
+    <link href="./css/media.css" rel="stylesheet">
+    <link href="./css/plans.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Viaoda+Libre&display=swap" rel="stylesheet">
+
+    <title>Планы — Daniel A. Arnett</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
+        <div class="container">
+            <a href="./index.html" class="navbar-brand logo gradient">Daniel A. Arnett</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0,0,256,256" width="48px" height="48px" fill-rule="nonzero">
+                    <defs>
+                        <linearGradient x1="32" y1="5.333" x2="32" y2="59.867" gradientUnits="userSpaceOnUse" id="color-1"><stop offset="0" stop-color="#fd4a81"/><stop offset="1" stop-color="#ff8662"/></linearGradient>
+                        <linearGradient x1="32" y1="5.333" x2="32" y2="59.867" gradientUnits="userSpaceOnUse" id="color-2"><stop offset="0" stop-color="#fd4a81"/><stop offset="1" stop-color="#ff8662"/></linearGradient>
+                        <linearGradient x1="32" y1="21.5" x2="32" y2="26.336" gradientUnits="userSpaceOnUse" id="color-3"><stop offset="0" stop-color="#ff5e73"/><stop offset="1" stop-color="#fc9860"/></linearGradient>
+                        <linearGradient x1="32" y1="29.333" x2="32" y2="34.5" gradientUnits="userSpaceOnUse" id="color-4"><stop offset="0" stop-color="#ff5e73"/><stop offset="1" stop-color="#fc9860"/></linearGradient>
+                        <linearGradient x1="32" y1="37" x2="32" y2="41.337" gradientUnits="userSpaceOnUse" id="color-5"><stop offset="0" stop-color="#ff5e73"/><stop offset="1" stop-color="#fc9860"/></linearGradient>
+                    </defs>
+                    <g fill="none" stroke="none">
+                        <g transform="scale(4,4)">
+                            <path d="M32,58c-14.337,0 -26,-11.663 -26,-26c0,-14.337 11.663,-26 26,-26c14.337,0 26,11.663 26,26c0,14.337 -11.663,26 -26,26zM32,8c-13.233,0 -24,10.767 -24,24c0,13.233 10.767,24 24,24c13.233,0 24,-10.767 24,-24c0,-13.233 -10.767 -24 -24 -24z" fill="url(#color-1)"/>
+                            <path d="M32,52c-11.028,0 -20,-8.972 -20,-20c0,-11.028 8.972,-20 20,-20c11.028,0 20,8.972 20,20c0,11.028 -8.972,20 -20,20zM32,14c-9.925,0 -18,8.075 -18,18c0,9.925 8.075,18 18,18c9.925,0 18,-8.075 18,-18c0,-9.925 -8.075 -18 -18 -18z" fill="url(#color-2)"/>
+                            <path d="M42,25c0,0.552 -0.448,1 -1,1h-18c-0.552,0 -1,-0.448 -1,-1v-2c0,-0.552 0.448,-1 1,-1h18c0.552,0 1,0.448 1,1z" fill="url(#color-3)"/>
+                            <path d="M42,33c0,0.552 -0.448,1 -1,1h-18c-0.552,0 -1,-0.448 -1,-1v-2c0,-0.552 0.448,-1 1,-1h18c0.552,0 1,0.448 1,1z" fill="url(#color-4)"/>
+                            <path d="M42,41c0,0.552 -0.448,1 -1,1h-18c-0.552,0 -1,-0.448 -1,-1v-2c0,-0.552 0.448,-1 1,-1h18c0.552,0 1,0.448 1,1z" fill="url(#color-5)"/>
+                        </g>
+                    </g>
+                </svg>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item pe-lg-3">
+                        <a href="#" class="nav-link">Предзаказ</a>
+                    </li>
+                    <li class="nav-item pe-lg-3">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#plansSteps">Этапы</a>
+                    </li>
+                    <li class="nav-item pe-lg-3">
+                        <a href="./plans.html" class="nav-link active">Книги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#excerptModal">Читать</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="plans-page">
+        <section class="plans-page-section">
+            <div class="container">
+                <div class="plans-grid">
+
+                    <article class="plan-row">
+                        <div class="plan-row-text">
+                            <h2 class="plan-row-title pb-1">Дети Крампуса: Тени Йоля</h2>
+                            <p class="plan-row-genre pb-2">роман • мрачные сказки • контркультура</p>
+                            <span class="plan-status plan-status--in-progress">В работе</span>
+                        </div>
+                        <div class="plan-row-cover">
+                            <img src="./images/Book01.png" alt="Дети Крампуса: Тени Йоля">
+                        </div>
+                    </article>
+
+                    <article class="plan-row">
+                        <div class="plan-row-text">
+                            <h2 class="plan-row-title pb-1">Дождливый вторник</h2> <!-- Готово -->
+                            <p class="plan-row-genre pb-2">роман • диалогический • псевдополифония</p>
+                            <span class="plan-status plan-status--planned">Запланирован</span>
+                        </div>
+                        <div class="plan-row-cover">
+                            <img src="./images/Book04.png" alt="Дождливый вторник">
+                        </div>
+                    </article>
+
+                    <article class="plan-row">
+                        <div class="plan-row-text">
+                            <h2 class="plan-row-title pb-1">Потухшее солнце</h2>
+                            <p class="plan-row-genre pb-2">повесть • фантастика • массовая проза</p>
+                            <span class="plan-status plan-status--planned">Запланирован</span>
+                        </div>
+                        <div class="plan-row-cover">
+                            <img src="./images/Book03.png" alt="Потухшее солнце">
+                        </div>
+                    </article>
+
+                    <article class="plan-row">
+                        <div class="plan-row-text">
+                            <h2 class="plan-row-title pb-1">Орден на сдачу</h2>
+                            <p class="plan-row-genre pb-2">роман • сатира • массовая проза</p>
+                            <span class="plan-status plan-status--in-progress">В работе</span>
+                        </div>
+                        <div class="plan-row-cover">
+                            <img src="./images/Book02.png" alt="Орден на сдачу">
+                        </div>
+                    </article>
+
+                    <article class="plan-row">
+                        <div class="plan-row-text">
+                            <h2 class="plan-row-title pb-1">Вчера здесь был завтрак</h2> <!-- Готово -->
+                            <p class="plan-row-genre pb-2">роман • сюрреалистический хоррор • философия</p>
+                            <span class="plan-status plan-status--planned">Запланирован</span>
+                        </div>
+                        <div class="plan-row-cover">
+                            <img src="./images/" alt="Ожидаем обложку">
+                        </div>
+                    </article>
+
+                    <article class="plan-row">
+                        <div class="plan-row-text">
+                            <h2 class="plan-row-title pb-1">Моя слабость, моя боль</h2>
+                            <p class="plan-row-genre pb-2">роман • контркультура • психологическая проза</p>
+                            <span class="plan-status plan-status--queued">На очереди</span>
+                        </div>
+                        <div class="plan-row-cover">
+                            <img src="./images/" alt="Ожидаем обложку">
+                        </div>
+                    </article>
+
+                    <article class="plan-row">
+                        <div class="plan-row-text">
+                            <h2 class="plan-row-title pb-1">Раскармливание</h2> <!-- Готово -->
+                            <p class="plan-row-genre pb-2">роман • трансгрессивная проза • телесный хоррор</p>
+                            <span class="plan-status plan-status--planned">Запланирован</span>
+                        </div>
+                        <div class="plan-row-cover">
+                            <img src="./images/" alt="Ожидаем обложку">
+                        </div>
+                    </article>
+                    
+                    <article class="plan-row">
+                        <div class="plan-row-text">
+                            <h2 class="plan-row-title pb-1">Божественное казино</h2>
+                            <p class="plan-row-genre pb-2">роман • сатира • массовая проза</p>
+                            <span class="plan-status plan-status--planned">Запланирован</span>
+                        </div>
+                        <div class="plan-row-cover">
+                            <img src="./images/" alt="Ожидаем обложку">
+                        </div>
+                    </article>
+
+                    <article class="plan-row">
+                        <div class="plan-row-text">
+                            <h2 class="plan-row-title pb-1">Уже поздно</h2>
+                            <p class="plan-row-genre pb-2">инкунакула • трансгрессивная проза • контркультура</p>
+                            <span class="plan-status plan-status--queued">На очереди</span>
+                        </div>
+                        <div class="plan-row-cover">
+                            <img src="./images/" alt="Ожидаем обложку">
+                        </div>
+                    </article>
+                    
+                    <article class="plan-row">
+                        <div class="plan-row-text">
+                            <h2 class="plan-row-title pb-1">Расщеплённый</h2>
+                            <p class="plan-row-genre pb-2">инкунакула • трансгрессивная проза • контркультура</p>
+                            <span class="plan-status plan-status--planned">Запланирован</span>
+                        </div>
+                        <div class="plan-row-cover">
+                            <img src="./images/" alt="Ожидаем обложку">
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Excerpt Modal -->
+    <div class="modal fade" id="excerptModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content excerpt-modal-content">
+
+                <div class="modal-header excerpt-modal-header">
+                    <h5 class="modal-title excerpt-modal-title">Чтение романов</h5>
+                    <button type="button"
+                            class="btn-close btn-close-white excerpt-modal-close"
+                            data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body excerpt-modal-body">
+
+                    <div class="excerpt-groups">
+
+                        <div class="excerpt-group">
+                            <div class="excerpt-group-title">Орден на сдачу</div>
+                            <div class="excerpt-list">
+                                <a href="#" class="excerpt-item">Будет доступно на Этапе 3</a>
+                            </div>
+                        </div>
+
+                        <div class="excerpt-group">
+                            <div class="excerpt-group-title">Дети Крампуса: тени Йоля</div>
+                            <div class="excerpt-list">
+                                <a href="#" class="excerpt-item">Будет доступно на Этапе 3</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Steps Modal -->
+    <div class="modal fade" id="plansSteps" tabindex="-1" aria-labelledby="plansStepsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <div class="modal-content steps-modal-content">
+                <div class="modal-header steps-modal-header">
+                    <h5 class="modal-title steps-modal-title" id="plansStepsLabel">Список этапов работы</h5>
+                    <button type="button"
+                            class="btn-close btn-close-white steps-modal-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Закрыть"></button>
+                </div>
+
+                <div class="modal-body steps-modal-body">
+
+                    <div class="steps-list">
+
+                        <div class="step-item step-item-accent">
+                            <div class="step-item-top">
+                                <div>
+                                    <h6 class="step-title">Этап 0. Черновик</h6>
+                                </div>
+                                <span class="step-time">60–90 дней</span>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Цель:</div>
+                                <p class="step-text">Сделать полный текст от начала до конца.</p>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Что входит:</div>
+                                <p class="step-text">Все возможные сцены; движок сюжета; герои.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-item-top">
+                                <div>
+                                    <h6 class="step-title">Этап 1. Пауза</h6>
+                                </div>
+                                <span class="step-time">10–14 дней</span>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Цель:</div>
+                                <p class="step-text">Убрать «эффект автора».</p>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Что входит:</div>
+                                <p class="step-text">Забывание деталей; текст превращается в чужой.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-item-top">
+                                <div>
+                                    <h6 class="step-title">Этап 2. Структурная редактура</h6>
+                                </div>
+                                <span class="step-time">10–20 дней</span>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Цель:</div>
+                                <p class="step-text">Сделать роман работающей системой.</p>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Что входит:</div>
+                                <p class="step-text">
+                                    Чтение всего романа; создание карты романа; удаление сцен;
+                                    объединение сцен; изменение мотиваций; усиление конфликтов;
+                                    правка арок героев.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-item-top">
+                                <div>
+                                    <h6 class="step-title">Этап 3. Перепись</h6>
+                                </div>
+                                <span class="step-time">30–60 дней</span>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Цель:</div>
+                                <p class="step-text">Привести текст в соответствие структуре.</p>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Что входит:</div>
+                                <p class="step-text">
+                                    Переписывание сцен; резка 20–40% текста; выравнивание персонажей;
+                                    устранение лишнего; усиление слабых мест.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-item-top">
+                                <div>
+                                    <h6 class="step-title">Этап 4. Линейная чистка</h6>
+                                </div>
+                                <span class="step-time">10–20 дней</span>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Цель:</div>
+                                <p class="step-text">Сделать текст читаемым и плотным.</p>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Что входит:</div>
+                                <p class="step-text">
+                                    Удаление повторов; упрощение перегруженных фраз; выравнивание стиля;
+                                    чистка диалогов; проверка ритма.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-item-top">
+                                <div>
+                                    <h6 class="step-title">Этап 5. Финальный проход</h6>
+                                </div>
+                                <span class="step-time">3–7 дней</span>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Цель:</div>
+                                <p class="step-text">Проверить текст как читатель.</p>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Что входит:</div>
+                                <p class="step-text">
+                                    Чтение всего романа и поиск провалов, сбоев, слабых мест.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="site-footer-text">Daniel A. Arnett. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./bootstrap.bundle.min.js"></script>
+</body>
+</html>
