@@ -165,7 +165,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url('./static-texture.webp');
+    background-image: url('../static-texture.webp');
     opacity: 0.08;
     pointer-events: none;
 }
@@ -284,7 +284,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url('./static-texture.webp');
+    background-image: url('../static-texture.webp');
     opacity: 0.18;
 }
 
