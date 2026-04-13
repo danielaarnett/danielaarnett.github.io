@@ -17,7 +17,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url('./static-texture.webp');
+    background-image: url('../static-texture.webp');
     opacity: 0.2;
     z-index: 0;
 }
@@ -75,7 +75,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url('./static-texture.webp');
+    background-image: url('../static-texture.webp');
     opacity: 0.4;
     z-index: 0;
 }
