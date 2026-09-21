@@ -1,512 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <!--Meta-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--Style-->
-    <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-   	<link href="./bootstrap.min.css" rel="stylesheet">
-   	<link href="./css/base.css" rel="stylesheet">
-    <link href="./css/sections.css" rel="stylesheet">
-    <link href="./css/modals.css" rel="stylesheet">
-    <link href="./css/media.css" rel="stylesheet">
-
-    <!--Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Viaoda+Libre&display=swap" rel="stylesheet">
-
-    <!-- Title -->
-    <title>Daniel A. Arnett</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Авторский архив Daniel A. Arnett. Тёмное фэнтези, сатира и психологическая проза. Знакомство с произведениями и мастерская автора.">
+  <meta name="theme-color" content="#202522">
+  <title>Daniel A. Arnett — истории по ту сторону привычного</title>
+  <link rel="icon" href="./images/arnett-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Viaoda+Libre&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/home.css">
+  <script src="./js/home.js" defer></script>
 </head>
-<body data-bs-spy="scroll">
-    <!--Navbar: START-->
-    <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
-        <div class="container">
-            <a href="#" class="navbar-brand logo gradient">Daniel A. Arnett</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="48px" height="48px" fill-rule="nonzero"><defs><linearGradient x1="32" y1="5.333" x2="32" y2="59.867" gradientUnits="userSpaceOnUse" id="color-1"><stop offset="0" stop-color="#fd4a81"/><stop offset="1" stop-color="#ff8662"/></linearGradient><linearGradient x1="32" y1="5.333" x2="32" y2="59.867" gradientUnits="userSpaceOnUse" id="color-2"><stop offset="0" stop-color="#fd4a81"/><stop offset="1" stop-color="#ff8662"/></linearGradient><linearGradient x1="32" y1="21.5" x2="32" y2="26.336" gradientUnits="userSpaceOnUse" id="color-3"><stop offset="0" stop-color="#ff5e73"/><stop offset="1" stop-color="#fc9860"/></linearGradient><linearGradient x1="32" y1="29.333" x2="32" y2="34.5" gradientUnits="userSpaceOnUse" id="color-4"><stop offset="0" stop-color="#ff5e73"/><stop offset="1" stop-color="#fc9860"/></linearGradient><linearGradient x1="32" y1="37" x2="32" y2="41.337" gradientUnits="userSpaceOnUse" id="color-5"><stop offset="0" stop-color="#ff5e73"/><stop offset="1" stop-color="#fc9860"/></linearGradient></defs><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(4,4)"><path d="M32,58c-14.337,0 -26,-11.663 -26,-26c0,-14.337 11.663,-26 26,-26c14.337,0 26,11.663 26,26c0,14.337 -11.663,26 -26,26zM32,8c-13.233,0 -24,10.767 -24,24c0,13.233 10.767,24 24,24c13.233,0 24,-10.767 24,-24c0,-13.233 -10.767,-24 -24,-24z" fill="url(#color-1)"/><path d="M32,52c-11.028,0 -20,-8.972 -20,-20c0,-11.028 8.972,-20 20,-20c11.028,0 20,8.972 20,20c0,11.028 -8.972,20 -20,20zM32,14c-9.925,0 -18,8.075 -18,18c0,9.925 8.075,18 18,18c9.925,0 18,-8.075 18,-18c0,-9.925 -8.075,-18 -18,-18z" fill="url(#color-2)"/><path d="M42,25c0,0.552 -0.448,1 -1,1h-18c-0.552,0 -1,-0.448 -1,-1v-2c0,-0.552 0.448,-1 1,-1h18c0.552,0 1,0.448 1,1z" fill="url(#color-3)"/><path d="M42,33c0,0.552 -0.448,1 -1,1h-18c-0.552,0 -1,-0.448 -1,-1v-2c0,-0.552 0.448,-1 1,-1h18c0.552,0 1,0.448 1,1z" fill="url(#color-4)"/><path d="M42,41c0,0.552 -0.448,1 -1,1h-18c-0.552,0 -1,-0.448 -1,-1v-2c0,-0.552 0.448,-1 1,-1h18c0.552,0 1,0.448 1,1z" fill="url(#color-5)"/></g></g></svg>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item pe-lg-3">
-                        <a href="#"
-                        class="nav-link">
-                        Предзаказ
-                        </a>
-                    </li>
-                    <li class="nav-item pe-lg-3">
-                        <a href="#"
-                        class="nav-link"
-                        data-bs-toggle="modal"
-                        data-bs-target="#plansSteps">
-                        Этапы
-                        </a>
-                    </li>
-                    <li class="nav-item pe-lg-3">
-                        <a href="./plans.html" class="nav-link">Книги</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#"
-                        class="nav-link"
-                        data-bs-toggle="modal"
-                        data-bs-target="#excerptModal">
-                        Читать
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <section class="book-one-section py-5">
-        <div class="container pt-120 pb-120">
-            <div class="row align-items-center">
-
-                <div class="col-lg-6 text-content">
-                    <h2 class="title text-center mb-4">Орден на сдачу</h2>
-                    <h4 class="subtitle text-center">роман • сатира • антиутопия</h4>
-                    <p class="paragraph pb-4">Орден Света сокращён, выселен и оставлен существовать формально — без средств, без статуса и без ясной причины, по которой он вообще ещё должен существовать.<br>Сэр Элмер пытается сохранить служение, а его правая рука — Тант всё чаще говорит о необходимости подчиниться системе. Но чем сильнее порядок заменяет смысл, тем яснее: опасность не снаружи. И когда над королевством нависает настоящая угроза, выясняется — защищать его больше некому.</p>
-                    <div class="text-center mt-4">
-                        <label for="bookProgress" class="pb-1 form-label text-d5b583">Прогресс Этапа 0: Черновик</label>
-                        <div class="custom-progress">
-                            <div class="custom-progress-bar" id="bookProgress"></div>
-                            <div class="progress-text" id="progressText">0 / 60 000 слов</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <div class="book-image-wrapper">
-                        <img src="./images/Book2.png" class="img-fluid book-image" alt="Book cover">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="book-two-section py-5">
-        <div class="container pt-120 pb-120">
-            <div class="row align-items-center g-lg-5">
-
-            <div class="col-lg-6 text-content order-1 order-lg-2">
-                <h2 class="title text-center mb-4">Дети Крампуса: Тени Йоля</h2>
-                <h4 class="subtitle text-center">роман • тёмное фэнтези • фолк-хоррор</h4>
-                <p class="paragraph pb-4">В городе посреди болот, где бойни и выделочные цеха кормят всех, дети рано узнают, что страх — часть порядка вещей. Йоль здесь не про подарки: в это время дети стараются не попадаться на глаза и не задавать лишних вопросов. Когда накануне праздника на товарном поезде появляется мальчик без имени, в городе начинают пропадать дети, а старые истории перестают казаться выдумкой. Никто не говорит об этом вслух, но все помнят: Йоль — это договор, и если его нарушить, за долгом приходит тот, кого здесь не называют по имени.</p>
-                <div class="text-center mt-4 krampus-progress">
-                    <div class="pb-1 form-label text-d5b583">Прогресс Этапа 0: Черновик</div>
-
-                    <div class="krampus-progress-item">
-                        <label for="bookProgress2Part1" class="krampus-part-title">Часть первая. Мальчик</label>
-                        <div class="custom-progress-two">
-                            <div class="custom-progress-bar-two" id="bookProgress2Part1"></div>
-                            <div class="progress-text" id="progressText2Part1">0 / 20 000 слов</div>
-                        </div>
-                    </div>
-
-                    <div class="krampus-progress-item">
-                        <label for="bookProgress2Part2" class="krampus-part-title">Часть вторая. Йоль</label>
-                        <div class="custom-progress-two">
-                            <div class="custom-progress-bar-two" id="bookProgress2Part2"></div>
-                            <div class="progress-text" id="progressText2Part2">0 / 35 000 слов</div>
-                        </div>
-                    </div>
-
-                    <div class="krampus-progress-item">
-                        <label for="bookProgress2Part3" class="krampus-part-title">Часть третья. Чужой среди своих</label>
-                        <div class="custom-progress-two">
-                            <div class="custom-progress-bar-two" id="bookProgress2Part3"></div>
-                            <div class="progress-text" id="progressText2Part3">0 / 35 000 слов</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 text-center order-2 order-lg-1">
-                <div class="book-image-wrapper">
-                    <img src="./images/Book1.png"
-                        class="img-fluid book-image"
-                        alt="Book cover">
-                </div>
-            </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="book-three-section py-5">
-        <div class="container pt-120 pb-120">
-            <div class="row align-items-center g-lg-5">
-
-                <div class="col-lg-6 text-content">
-                    <h2 class="title text-center mb-4">Iam sero est</h2>
-                    <h4 class="subtitle text-center">инкунакула • трансгрессивная проза • психологическая проза</h4>
-                    <p class="paragraph pb-4">Эти новеллы сосредоточены на состояниях, в которых человек перестаёт быть надёжным свидетелем собственной жизни. Насилие, вина, зависимость и искажённая память медленно размывают границы между реальным и воображаемым, оставляя героев наедине с тем, что невозможно ни оправдать, ни забыть. Сюжеты разворачиваются в пространстве психологического надлома, где близость оборачивается угрозой, а попытка спастись — новой формой самообмана. Это проза на границе внутреннего опыта и разрушения, рассчитанная на читателя, готового к прямому, лишённому утешения взгляду на человеческую уязвимость и опыту без дистанции и без обещания облегчения.</p>
-                    <div class="text-center mt-4">
-                        <label for="bookProgress3" class="pb-1 form-label text-d5b583">Прогресс: На очереди (не пишется)</label>
-                        <div class="custom-progress-three">
-                            <div class="custom-progress-bar-three" id="bookProgress3"></div>
-                            <div class="progress-text" id="progressText3">0 / 65 000 слов</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <div class="book-image-wrapper">
-                        <img src="./images/Book3.png" class="img-fluid book-image" alt="Обложка книги Iam sero est">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Excerpt Modal -->
-    <div class="modal fade" id="excerptModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content excerpt-modal-content">
-
-                <div class="modal-header excerpt-modal-header">
-                    <h5 class="modal-title excerpt-modal-title">Чтение романов</h5>
-                    <button type="button"
-                            class="btn-close btn-close-white excerpt-modal-close"
-                            data-bs-dismiss="modal"></button>
-                </div>
-
-                <div class="modal-body excerpt-modal-body">
-
-                    <div class="excerpt-groups">
-
-                        <div class="excerpt-group">
-                            <div class="excerpt-group-title">Орден на сдачу</div>
-                            <div class="excerpt-list">
-                                <a href="#" class="excerpt-item">Будет доступно на Этапе 3</a>
-                            </div>
-                        </div>
-
-                        <div class="excerpt-group">
-                            <div class="excerpt-group-title">Дети Крампуса: тени Йоля</div>
-                            <div class="excerpt-list">
-                                <a href="#" class="excerpt-item">Будет доступно на Этапе 3</a>
-                            </div>
-                        </div>
-
-                        <div class="excerpt-group">
-                            <div class="excerpt-group-title">Потухшее солнце</div>
-                            <div class="excerpt-list">
-                                <a href="#" class="excerpt-item">Будет доступно на Этапе 3</a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="./index.html" aria-label="Daniel A. Arnett — главная"><span class="brand-mark" aria-hidden="true">A<span>·</span></span><span class="brand-name">Daniel A. Arnett<small>АВТОРСКИЙ АРХИВ</small></span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Открыть меню"><span></span><span></span></button>
+      <nav class="main-nav" id="main-nav" aria-label="Основная навигация"><a href="#library">Знакомство</a><a href="#workshop">Мастерская</a><a href="#prose">Готовая проза</a><a href="#author">Об авторе</a><a class="nav-support" href="#prose">Читательский круг <span aria-hidden="true">↗</span></a></nav>
     </div>
-
-        <!-- Steps Modal -->
-    <div class="modal fade" id="plansSteps" tabindex="-1" aria-labelledby="plansStepsLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
-            <div class="modal-content steps-modal-content">
-                <div class="modal-header steps-modal-header">
-                    <h5 class="modal-title steps-modal-title" id="plansStepsLabel">Список этапов работы</h5>
-                    <button type="button"
-                            class="btn-close btn-close-white steps-modal-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Закрыть"></button>
-                </div>
-
-                <div class="modal-body steps-modal-body">
-
-                    <div class="steps-list">
-
-                        <div class="step-item step-item-accent">
-                            <div class="step-item-top">
-                                <div>
-                                    <h6 class="step-title">Этап 0. Черновик</h6>
-                                </div>
-                                <span class="step-time">60–90 дней</span>
-                            </div>
-
-                            <div class="step-block">
-                                <div class="step-label">Цель:</div>
-                                <p class="step-text">Сделать полный текст от начала до конца.</p>
-                            </div>
-
-                            <div class="step-block">
-                                <div class="step-label">Что входит:</div>
-                                <p class="step-text">Все возможные сцены; движок сюжета; герои.</p>
-                            </div>
-                        </div>
-
-                        <div class="step-item">
-                            <div class="step-item-top">
-                                <div>
-                                    <h6 class="step-title">Этап 1. Пауза</h6>
-                                </div>
-                                <span class="step-time">10–14 дней</span>
-                            </div>
-
-                            <div class="step-block">
-                                <div class="step-label">Цель:</div>
-                                <p class="step-text">Убрать «эффект автора».</p>
-                            </div>
-
-                            <div class="step-block">
-                                <div class="step-label">Что входит:</div>
-                                <p class="step-text">Забывание деталей; текст превращается в чужой.</p>
-                            </div>
-                        </div>
-
-                        <div class="step-item">
-                            <div class="step-item-top">
-                                <div>
-                                    <h6 class="step-title">Этап 2. Структурная редактура</h6>
-                                </div>
-                                <span class="step-time">10–20 дней</span>
-                            </div>
-
-                            <div class="step-block">
-                                <div class="step-label">Цель:</div>
-                                <p class="step-text">Сделать роман работающей системой.</p>
-                            </div>
-
-                            <div class="step-block">
-                                <div class="step-label">Что входит:</div>
-                                <p class="step-text">
-                                    Чтение всего романа; создание карты романа; удаление сцен;
-                                    объединение сцен; изменение мотиваций; усиление конфликтов;
-                                    правка арок героев.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="step-item">
-                            <div class="step-item-top">
-                                <div>
-                                    <h6 class="step-title">Этап 3. Перепись</h6>
-                                </div>
-                                <span class="step-time">30–60 дней</span>
-                            </div>
-
-                            <div class="step-block">
-                                <div class="step-label">Цель:</div>
-                                <p class="step-text">Привести текст в соответствие структуре.</p>
-                            </div>
-
-                            <div class="step-block">
-                                <div class="step-label">Что входит:</div>
-                                <p class="step-text">
-                                    Переписывание сцен; резка 20–40% текста; выравнивание персонажей;
-                                    устранение лишнего; усиление слабых мест.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="step-item">
-                            <div class="step-item-top">
-                                <div>
-                                    <h6 class="step-title">Этап 4. Линейная чистка</h6>
-                                </div>
-                                <span class="step-time">10–20 дней</span>
-                            </div>
-
-                            <div class="step-block">
-                                <div class="step-label">Цель:</div>
-                                <p class="step-text">Сделать текст читаемым и плотным.</p>
-                            </div>
-
-                            <div class="step-block">
-                                <div class="step-label">Что входит:</div>
-                                <p class="step-text">
-                                    Удаление повторов; упрощение перегруженных фраз; выравнивание стиля;
-                                    чистка диалогов; проверка ритма.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="step-item">
-                            <div class="step-item-top">
-                                <div>
-                                    <h6 class="step-title">Этап 5. Финальный проход</h6>
-                                </div>
-                                <span class="step-time">3–7 дней</span>
-                            </div>
-
-                            <div class="step-block">
-                                <div class="step-label">Цель:</div>
-                                <p class="step-text">Проверить текст как читатель.</p>
-                            </div>
-
-                            <div class="step-block">
-                                <div class="step-label">Что входит:</div>
-                                <p class="step-text">
-                                    Чтение всего романа и поиск провалов, сбоев, слабых мест.
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-art" aria-hidden="true"></div>
+      <div class="shell hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="little-line"></span> ИСТОРИИ ПО ТУ СТОРОНУ ПРИВЫЧНОГО</p>
+          <h1 id="hero-title">У каждой тени<br>есть своя <em>история.</em></h1>
+          <p class="hero-description">Миры, в которых привычное даёт трещину.<br class="desktop-break"> Люди, которым приходится заглянуть внутрь.<br class="desktop-break"> И истории, которые остаются с вами.</p>
+          <div class="hero-actions"><a class="button button-copper" href="#library">Выбрать историю <span aria-hidden="true">→</span></a><a class="quiet-link" href="#workshop">В мастерскую <span aria-hidden="true">↗</span></a></div>
         </div>
+        <div class="hero-baseline"><p>ТЁМНОЕ ФЭНТЕЗИ <span>·</span> САТИРА <span>·</span> ПСИХОЛОГИЧЕСКАЯ ПРОЗА</p><a href="#paths" aria-label="Ниже — разделы архива"><span>ЛИСТАЙТЕ ДАЛЬШЕ</span> ↓</a></div>
+      </div>
+    </section>
+    <div class="paper">
+      <nav class="shell paths" id="paths" aria-label="Разделы авторского архива">
+        <a class="path" href="#library"><span class="path-kicker">01 <span>ЗНАКОМСТВО</span></span><span class="path-title">С первой страницы <span aria-hidden="true">↗</span></span><span class="path-description">Найти свою историю.<br> Открытые фрагменты — без подписки.</span></a>
+        <a class="path" href="#workshop"><span class="path-kicker">02 <span>МАСТЕРСКАЯ</span></span><span class="path-title">До последней точки <span aria-hidden="true">↗</span></span><span class="path-description">Увидеть, как рождается книга.<br> Рукописи и работа над текстом.</span></a>
+        <a class="path" href="#prose"><span class="path-kicker">03 <span>ГОТОВАЯ ПРОЗА</span></span><span class="path-title">По ту сторону обложки <span aria-hidden="true">↗</span></span><span class="path-description">Остаться с историей до конца.<br> Полные тексты для читательского круга.</span></a>
+      </nav>
+      <section class="shell library section-space" id="library" aria-labelledby="library-title">
+        <div class="section-heading"><div><p class="eyebrow copper">ПЕРВОЕ ЗНАКОМСТВО</p><h2 id="library-title">Какая история — ваша?</h2></div><a class="text-link" href="./plans.html">Все произведения <span aria-hidden="true">↗</span></a></div>
+        <div class="library-toolbar"><p>Выберите мир, в который хочется войти.</p><div class="filters" role="group" aria-label="Фильтр произведений по жанру"><button class="filter active" data-filter="all" aria-pressed="true">Все истории</button><button class="filter" data-filter="fantasy" aria-pressed="false">Тёмное фэнтези</button><button class="filter" data-filter="satire" aria-pressed="false">Сатира</button><button class="filter" data-filter="prose" aria-pressed="false">Психологическая проза</button></div></div>
+        <p class="sr-only" id="filter-status" role="status" aria-live="polite">Показано произведений: 3</p>
+        <div class="book-grid">
+          <article class="book-card" data-genre="fantasy"><button class="cover-stage cover-forest" data-book="krampus" aria-label="О произведении Дети Крампуса: Тени Йоля"><span class="cover-index" aria-hidden="true">I</span><img src="./images/Book01.png" alt="Обложка Дети Крампуса: Тени Йоля" width="1500" height="1383" loading="lazy"><span class="cover-caption">ТЁМНОЕ ФЭНТЕЗИ / ФОЛК-ХОРРОР</span></button><div class="book-meta"><span>Роман</span><span class="status-dot">В работе</span></div><h3><button data-book="krampus">Дети Крампуса: Тени Йоля</button></h3><p>В городе посреди болот Йоль — это договор. И кто-то приходит за долгом.</p><button class="text-link" data-book="krampus">Познакомиться с историей <span aria-hidden="true">→</span></button></article>
+          <article class="book-card" data-genre="satire"><button class="cover-stage cover-rust" data-book="order" aria-label="О произведении Орден на сдачу"><span class="cover-index" aria-hidden="true">II</span><img src="./images/Book02.png" alt="Обложка Орден на сдачу" width="1500" height="1383" loading="lazy"><span class="cover-caption">САТИРА / АНТИУТОПИЯ</span></button><div class="book-meta"><span>Роман</span><span class="status-dot">В работе</span></div><h3><button data-book="order">Орден на сдачу</button></h3><p>Королевству всё ещё нужны герои. В бюджете просто не осталось такой статьи.</p><button class="text-link" data-book="order">Познакомиться с историей <span aria-hidden="true">→</span></button></article>
+          <article class="book-card" data-genre="prose"><button class="cover-stage cover-ash" data-book="sero" aria-label="О произведении Iam sero est"><span class="cover-index" aria-hidden="true">III</span><img src="./images/Book06.png" alt="Обложка Iam sero est" width="1500" height="1383" loading="lazy"><span class="cover-caption">ПСИХОЛОГИЧЕСКАЯ ПРОЗА</span></button><div class="book-meta"><span>Цикл новелл</span><span class="status-dot status-queued">На очереди</span></div><h3><button data-book="sero">Iam sero est</button></h3><p>Когда память перестаёт быть свидетелем, а близость оборачивается угрозой.</p><button class="text-link" data-book="sero">Познакомиться с историей <span aria-hidden="true">→</span></button></article>
+        </div>
+        <div class="library-note"><span class="note-star" aria-hidden="true">✳</span><p>Сначала — знакомство. Здесь появятся бесплатные фрагменты произведений.<br> Пока можно прочитать аннотации и заглянуть в работу над рукописями.</p><span class="small-label">БЕЗ РЕГИСТРАЦИИ</span></div>
+      </section>
     </div>
-
-    <footer class="site-footer">
-        <div class="container">
-            <p class="site-footer-text">Daniel A. Arnett. All Rights Reserved.</p>
+    <section class="workshop section-space" id="workshop" aria-labelledby="workshop-title">
+      <div class="shell workshop-grid">
+        <div class="workshop-intro"><p class="eyebrow">ЗАПИСКИ НА ПОЛЯХ</p><h2 id="workshop-title">Прежде чем<br>стать книгой.</h2><p>Здесь текст ещё меняется. Герои спорят с замыслом, сцены находят своё место, а у истории появляется голос.</p><p class="workshop-note">Мастерская черновиков и будущих книг.</p><a class="quiet-link" href="./plans.html">Весь творческий план <span aria-hidden="true">↗</span></a><span class="manuscript-mark" aria-hidden="true">Aa</span></div>
+        <div class="manuscripts">
+          <div class="manuscripts-heading"><span>НА ПИСЬМЕННОМ СТОЛЕ</span><span>СОСТОЯНИЕ РУКОПИСЕЙ</span></div>
+          <article class="manuscript"><div class="manuscript-top"><span class="manuscript-number">01</span><div><span class="small-label">ЧЕРНОВИК · ЧАСТЬ ПЕРВАЯ «МАЛЬЧИК»</span><h3>Дети Крампуса: Тени Йоля</h3></div><button class="round-link" data-book="krampus" aria-label="Подробнее о рукописи Дети Крампуса">↗</button></div><progress value="13328" max="20000" aria-label="Черновик части Мальчик: 13 328 из 20 000 слов">67%</progress><div class="progress-caption"><span>13 328 <span class="muted">/ 20 000 слов</span></span><span>67%</span></div><details><summary>Остальные части <span aria-hidden="true">+</span></summary><div class="parts"><p><span>II. Йоль</span><span>0 / 35 000 слов</span></p><p><span>III. Чужой среди своих</span><span>0 / 35 000 слов</span></p></div></details></article>
+          <article class="manuscript"><div class="manuscript-top"><span class="manuscript-number">02</span><div><span class="small-label">ЧЕРНОВИК · РОМАН</span><h3>Орден на сдачу</h3></div><button class="round-link" data-book="order" aria-label="Подробнее о рукописи Орден на сдачу">↗</button></div><progress value="13448" max="60000" aria-label="Черновик Орден на сдачу: 13 448 из 60 000 слов">22%</progress><div class="progress-caption"><span>13 448 <span class="muted">/ 60 000 слов</span></span><span>22%</span></div></article>
+          <article class="manuscript queued-manuscript"><div class="manuscript-top"><span class="manuscript-number">03</span><div><span class="small-label">НА ОЧЕРЕДИ · ЦИКЛ НОВЕЛЛ</span><h3>Iam sero est</h3></div><button class="round-link" data-book="sero" aria-label="Подробнее о рукописи Iam sero est">↗</button></div><div class="progress-caption"><span>19 145 <span class="muted">/ 65 000 слов</span></span><span class="muted">Работа приостановлена</span></div></article>
         </div>
-    </footer>
-    
-    <!--Basic scripts-->
-    <script src="./bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/letteranimation.min.js"></script>
-    <script src="https://kit.fontawesome.com/97eb1c096b.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
-    <!--Script navbar sticky in up-->
-    <script>
-        const wordsWritten1 = 13448;
-        const wordsGoal1 = 60000;
-
-        const progressBar1 = document.getElementById('bookProgress');
-        const progressText1 = document.getElementById('progressText');
-
-        const targetPercent1 = (wordsWritten1 / wordsGoal1) * 100;
-
-        let currentPercent1 = 0;
-        let currentWords1 = 0;
-
-        const duration1 = 1200;
-        const intervalTime1 = 15;
-        const steps1 = Math.ceil(duration1 / intervalTime1);
-
-        const percentStep1 = targetPercent1 / steps1;
-        const wordsStep1 = wordsWritten1 / steps1;
-
-        const interval1 = setInterval(() => {
-            currentPercent1 += percentStep1;
-            currentWords1 += wordsStep1;
-
-            if (currentPercent1 >= targetPercent1) {
-                currentPercent1 = targetPercent1;
-                currentWords1 = wordsWritten1;
-                clearInterval(interval1);
-            }
-
-            progressBar1.style.width = currentPercent1 + '%';
-            progressText1.innerText = `${Math.round(currentWords1)} / ${wordsGoal1} слов`;
-        }, intervalTime1);
-    </script>
-
-    <script>
-        const krampusParts = [
-            {
-                progressBarId: 'bookProgress2Part1',
-                progressTextId: 'progressText2Part1',
-                wordsWritten: 13328,
-                wordsGoal: 20000
-            },
-            {
-                progressBarId: 'bookProgress2Part2',
-                progressTextId: 'progressText2Part2',
-                wordsWritten: 0,
-                wordsGoal: 35000
-            },
-            {
-                progressBarId: 'bookProgress2Part3',
-                progressTextId: 'progressText2Part3',
-                wordsWritten: 0,
-                wordsGoal: 35000
-            }
-        ];
-
-        krampusParts.forEach(({ progressBarId, progressTextId, wordsWritten, wordsGoal }) => {
-            const progressBar = document.getElementById(progressBarId);
-            const progressText = document.getElementById(progressTextId);
-            const targetPercent = (wordsWritten / wordsGoal) * 100;
-            const duration = 1200;
-            const intervalTime = 15;
-            const steps = Math.ceil(duration / intervalTime);
-            const percentStep = targetPercent / steps;
-            const wordsStep = wordsWritten / steps;
-            let currentPercent = 0;
-            let currentWords = 0;
-
-            const interval = setInterval(() => {
-                currentPercent += percentStep;
-                currentWords += wordsStep;
-
-                if (currentPercent >= targetPercent) {
-                    currentPercent = targetPercent;
-                    currentWords = wordsWritten;
-                    clearInterval(interval);
-                }
-
-                progressBar.style.width = currentPercent + '%';
-                progressText.innerText =
-                    `${Math.round(currentWords).toLocaleString('ru-RU')} / ${wordsGoal.toLocaleString('ru-RU')} слов`;
-            }, intervalTime);
-        });
-    </script>
-
-    <script>
-        const wordsWritten3 = 19145;
-        const wordsGoal3 = 65000;
-
-        const progressBar3 = document.getElementById('bookProgress3');
-        const progressText3 = document.getElementById('progressText3');
-
-        const targetPercent3 = (wordsWritten3 / wordsGoal3) * 100;
-
-        let currentPercent3 = 0;
-        let currentWords3 = 0;
-
-        const duration3 = 1200;
-        const intervalTime3 = 15;
-        const steps3 = Math.ceil(duration3 / intervalTime3);
-
-        const percentStep3 = targetPercent3 / steps3;
-        const wordsStep3 = wordsWritten3 / steps3;
-
-        const interval3 = setInterval(() => {
-            currentPercent3 += percentStep3;
-            currentWords3 += wordsStep3;
-
-            if (currentPercent3 >= targetPercent3) {
-                currentPercent3 = targetPercent3;
-                currentWords3 = wordsWritten3;
-                clearInterval(interval3);
-            }
-
-            progressBar3.style.width = currentPercent3 + '%';
-            progressText3.innerText = `${Math.round(currentWords3)} / ${wordsGoal3} слов`;
-        }, intervalTime3);
-    </script>
-
-    <script>
-        function windowScroll() {
-            const navbar = document.getElementById("navbar");
-            if (
-                document.body.scrollTop >= 50 ||
-                document.documentElement.scrollTop >= 50
-            ) {
-                navbar.classList.add("nav-sticky");
-            } else {
-                navbar.classList.remove("nav-sticky");
-            }
-        }
-            
-        window.addEventListener('scroll', (ev) => {
-            ev.preventDefault();
-            windowScroll();
-        })
-    </script>
-    
-    <!--Script enabling animation-->
-    <script>
-        new WOW().init();   
-    </script>
+      </div>
+    </section>
+    <section class="paper prose-section section-space" id="prose" aria-labelledby="prose-title">
+      <div class="shell prose-grid"><div class="prose-art" aria-hidden="true"><span class="prose-art-label">EX LIBRIS</span><span class="prose-monogram">A.</span><span class="prose-art-bottom">DANIEL A. ARNETT<br>ЧИТАТЕЛЬСКИЙ КРУГ</span><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="orbit-star">✦</span></div><div class="prose-copy"><p class="eyebrow copper">ГОТОВАЯ ПРОЗА · ЧИТАТЕЛЬСКИЙ КРУГ</p><h2 id="prose-title">Истории, в которых<br>можно остаться.</h2><p>Место для завершённых произведений. От первой страницы до последней — в привычном, спокойном пространстве для чтения.</p><div class="prose-features"><span>Полные тексты</span><span>Книжное оформление</span><span>Поддержка автора</span></div><div class="coming-soon"><span class="small-label">РАЗДЕЛ ГОТОВИТСЯ</span><p>Полные произведения появятся здесь после завершения работы. Доступ планируется по подписке через Boosty.</p></div><button class="button button-dark" data-open-support>О читательском круге <span aria-hidden="true">↗</span></button><p class="access-note">Ознакомительные фрагменты останутся бесплатными.</p></div></div>
+    </section>
+    <section class="author-section" id="author" aria-labelledby="author-title"><div class="shell author-grid"><div><p class="eyebrow copper">ПО ДРУГУЮ СТОРОНУ ТЕКСТА</p><h2 id="author-title">Daniel A. Arnett</h2><span class="author-signature" aria-hidden="true">D. A. Arnett</span></div><div class="author-copy"><p>Тёмное фэнтези, сатира, психологическая проза. Разные способы говорить о человеке, когда привычный порядок перестаёт работать.</p><p>Этот архив собирает истории на разных этапах жизни: от первого черновика до готовой книги. Можно начать с аннотации, наблюдать за работой или вернуться за продолжением.</p><a class="text-link" href="#library">Найдём вашу первую историю <span aria-hidden="true">→</span></a></div></div></section>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-top">
+      <div class="footer-farewell"><p class="eyebrow">КОНЕЦ СТРАНИЦЫ — НЕ КОНЕЦ ИСТОРИИ</p><p class="footer-title">До следующей<br><em>истории.</em></p></div>
+      <nav class="footer-nav" aria-label="Навигация в подвале"><a href="#library"><span>01</span> Познакомиться с прозой <span aria-hidden="true">↗</span></a><a href="#workshop"><span>02</span> Заглянуть в мастерскую <span aria-hidden="true">↗</span></a><a href="#prose"><span>03</span> Читательский круг <span aria-hidden="true">↗</span></a><a href="#author"><span>04</span> Об авторе <span aria-hidden="true">↗</span></a></nav>
+    </div>
+    <div class="shell footer-inner"><a class="footer-brand" href="#main">Daniel A. Arnett<span>АВТОРСКИЙ АРХИВ</span></a><p>© <span id="year">2026</span> Daniel A. Arnett</p><a href="#main">К началу <span aria-hidden="true">↑</span></a></div>
+  </footer>
+  <dialog class="book-dialog" id="book-dialog" aria-labelledby="dialog-title"><button class="dialog-close" data-close-dialog aria-label="Закрыть окно">×</button><div class="dialog-book-layout"><div class="dialog-cover"><img id="dialog-cover" src="./images/Book01.png" alt="" width="1500" height="1383"></div><div class="dialog-copy"><p class="eyebrow copper" id="dialog-genre"></p><h2 id="dialog-title"></h2><p class="dialog-status" id="dialog-status"></p><p class="dialog-synopsis" id="dialog-synopsis"></p><div class="excerpt-notice"><strong>Ознакомительный фрагмент готовится</strong><p>Пока здесь представлена аннотация. Отрывок появится после подготовки текста к публикации.</p></div><a class="text-link" href="#workshop" data-dialog-workshop>К работе над рукописью <span aria-hidden="true">→</span></a></div></div></dialog>
+  <dialog class="support-dialog" id="support-dialog" aria-labelledby="support-title"><button class="dialog-close" data-close-dialog aria-label="Закрыть окно">×</button><p class="eyebrow copper">ЧИТАТЕЛЬСКИЙ КРУГ</p><h2 id="support-title">Ближе к историям.</h2><p>Здесь будет библиотека готовой прозы с доступом по подписке через Boosty. Ознакомительные части можно будет читать бесплатно.</p><div class="excerpt-notice"><strong>Открытие впереди</strong><p>Подписка пока не подключена. Условия и ссылка на страницу автора появятся к открытию библиотеки.</p></div><a class="button button-dark" href="#library" data-dialog-library>Посмотреть произведения <span aria-hidden="true">→</span></a></dialog>
+  <noscript><p class="noscript-note">Для фильтров и аннотаций включите JavaScript. <a href="./plans.html">Открыть список произведений</a>.</p></noscript>
 </body>
 </html>

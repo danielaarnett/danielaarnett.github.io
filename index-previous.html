@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!--Meta-->
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Style-->
+    <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+   	<link href="./bootstrap.min.css" rel="stylesheet">
+   	<link href="./css/base.css" rel="stylesheet">
+    <link href="./css/sections.css" rel="stylesheet">
+    <link href="./css/modals.css" rel="stylesheet">
+    <link href="./css/media.css" rel="stylesheet">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Viaoda+Libre&display=swap" rel="stylesheet">
+
+    <!-- Title -->
+    <title>Daniel A. Arnett</title>
+</head>
+<body data-bs-spy="scroll">
+    <!--Navbar: START-->
+    <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand logo gradient">Daniel A. Arnett</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="48px" height="48px" fill-rule="nonzero"><defs><linearGradient x1="32" y1="5.333" x2="32" y2="59.867" gradientUnits="userSpaceOnUse" id="color-1"><stop offset="0" stop-color="#fd4a81"/><stop offset="1" stop-color="#ff8662"/></linearGradient><linearGradient x1="32" y1="5.333" x2="32" y2="59.867" gradientUnits="userSpaceOnUse" id="color-2"><stop offset="0" stop-color="#fd4a81"/><stop offset="1" stop-color="#ff8662"/></linearGradient><linearGradient x1="32" y1="21.5" x2="32" y2="26.336" gradientUnits="userSpaceOnUse" id="color-3"><stop offset="0" stop-color="#ff5e73"/><stop offset="1" stop-color="#fc9860"/></linearGradient><linearGradient x1="32" y1="29.333" x2="32" y2="34.5" gradientUnits="userSpaceOnUse" id="color-4"><stop offset="0" stop-color="#ff5e73"/><stop offset="1" stop-color="#fc9860"/></linearGradient><linearGradient x1="32" y1="37" x2="32" y2="41.337" gradientUnits="userSpaceOnUse" id="color-5"><stop offset="0" stop-color="#ff5e73"/><stop offset="1" stop-color="#fc9860"/></linearGradient></defs><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(4,4)"><path d="M32,58c-14.337,0 -26,-11.663 -26,-26c0,-14.337 11.663,-26 26,-26c14.337,0 26,11.663 26,26c0,14.337 -11.663,26 -26,26zM32,8c-13.233,0 -24,10.767 -24,24c0,13.233 10.767,24 24,24c13.233,0 24,-10.767 24,-24c0,-13.233 -10.767,-24 -24,-24z" fill="url(#color-1)"/><path d="M32,52c-11.028,0 -20,-8.972 -20,-20c0,-11.028 8.972,-20 20,-20c11.028,0 20,8.972 20,20c0,11.028 -8.972,20 -20,20zM32,14c-9.925,0 -18,8.075 -18,18c0,9.925 8.075,18 18,18c9.925,0 18,-8.075 18,-18c0,-9.925 -8.075,-18 -18,-18z" fill="url(#color-2)"/><path d="M42,25c0,0.552 -0.448,1 -1,1h-18c-0.552,0 -1,-0.448 -1,-1v-2c0,-0.552 0.448,-1 1,-1h18c0.552,0 1,0.448 1,1z" fill="url(#color-3)"/><path d="M42,33c0,0.552 -0.448,1 -1,1h-18c-0.552,0 -1,-0.448 -1,-1v-2c0,-0.552 0.448,-1 1,-1h18c0.552,0 1,0.448 1,1z" fill="url(#color-4)"/><path d="M42,41c0,0.552 -0.448,1 -1,1h-18c-0.552,0 -1,-0.448 -1,-1v-2c0,-0.552 0.448,-1 1,-1h18c0.552,0 1,0.448 1,1z" fill="url(#color-5)"/></g></g></svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item pe-lg-3">
+                        <a href="#"
+                        class="nav-link">
+                        Предзаказ
+                        </a>
+                    </li>
+                    <li class="nav-item pe-lg-3">
+                        <a href="#"
+                        class="nav-link"
+                        data-bs-toggle="modal"
+                        data-bs-target="#plansSteps">
+                        Этапы
+                        </a>
+                    </li>
+                    <li class="nav-item pe-lg-3">
+                        <a href="./plans.html" class="nav-link">Книги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"
+                        class="nav-link"
+                        data-bs-toggle="modal"
+                        data-bs-target="#excerptModal">
+                        Читать
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="book-one-section py-5">
+        <div class="container pt-120 pb-120">
+            <div class="row align-items-center">
+
+                <div class="col-lg-6 text-content">
+                    <h2 class="title text-center mb-4">Орден на сдачу</h2>
+                    <h4 class="subtitle text-center">роман • сатира • антиутопия</h4>
+                    <p class="paragraph pb-4">Орден Света сокращён, выселен и оставлен существовать формально — без средств, без статуса и без ясной причины, по которой он вообще ещё должен существовать.<br>Сэр Элмер пытается сохранить служение, а его правая рука — Тант всё чаще говорит о необходимости подчиниться системе. Но чем сильнее порядок заменяет смысл, тем яснее: опасность не снаружи. И когда над королевством нависает настоящая угроза, выясняется — защищать его больше некому.</p>
+                    <div class="text-center mt-4">
+                        <label for="bookProgress" class="pb-1 form-label text-d5b583">Прогресс Этапа 0: Черновик</label>
+                        <div class="custom-progress">
+                            <div class="custom-progress-bar" id="bookProgress"></div>
+                            <div class="progress-text" id="progressText">0 / 60 000 слов</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="book-image-wrapper">
+                        <img src="./images/Book2.png" class="img-fluid book-image" alt="Book cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="book-two-section py-5">
+        <div class="container pt-120 pb-120">
+            <div class="row align-items-center g-lg-5">
+
+            <div class="col-lg-6 text-content order-1 order-lg-2">
+                <h2 class="title text-center mb-4">Дети Крампуса: Тени Йоля</h2>
+                <h4 class="subtitle text-center">роман • тёмное фэнтези • фолк-хоррор</h4>
+                <p class="paragraph pb-4">В городе посреди болот, где бойни и выделочные цеха кормят всех, дети рано узнают, что страх — часть порядка вещей. Йоль здесь не про подарки: в это время дети стараются не попадаться на глаза и не задавать лишних вопросов. Когда накануне праздника на товарном поезде появляется мальчик без имени, в городе начинают пропадать дети, а старые истории перестают казаться выдумкой. Никто не говорит об этом вслух, но все помнят: Йоль — это договор, и если его нарушить, за долгом приходит тот, кого здесь не называют по имени.</p>
+                <div class="text-center mt-4 krampus-progress">
+                    <div class="pb-1 form-label text-d5b583">Прогресс Этапа 0: Черновик</div>
+
+                    <div class="krampus-progress-item">
+                        <label for="bookProgress2Part1" class="krampus-part-title">Часть первая. Мальчик</label>
+                        <div class="custom-progress-two">
+                            <div class="custom-progress-bar-two" id="bookProgress2Part1"></div>
+                            <div class="progress-text" id="progressText2Part1">0 / 20 000 слов</div>
+                        </div>
+                    </div>
+
+                    <div class="krampus-progress-item">
+                        <label for="bookProgress2Part2" class="krampus-part-title">Часть вторая. Йоль</label>
+                        <div class="custom-progress-two">
+                            <div class="custom-progress-bar-two" id="bookProgress2Part2"></div>
+                            <div class="progress-text" id="progressText2Part2">0 / 35 000 слов</div>
+                        </div>
+                    </div>
+
+                    <div class="krampus-progress-item">
+                        <label for="bookProgress2Part3" class="krampus-part-title">Часть третья. Чужой среди своих</label>
+                        <div class="custom-progress-two">
+                            <div class="custom-progress-bar-two" id="bookProgress2Part3"></div>
+                            <div class="progress-text" id="progressText2Part3">0 / 35 000 слов</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center order-2 order-lg-1">
+                <div class="book-image-wrapper">
+                    <img src="./images/Book1.png"
+                        class="img-fluid book-image"
+                        alt="Book cover">
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="book-three-section py-5">
+        <div class="container pt-120 pb-120">
+            <div class="row align-items-center g-lg-5">
+
+                <div class="col-lg-6 text-content">
+                    <h2 class="title text-center mb-4">Iam sero est</h2>
+                    <h4 class="subtitle text-center">инкунакула • трансгрессивная проза • психологическая проза</h4>
+                    <p class="paragraph pb-4">Эти новеллы сосредоточены на состояниях, в которых человек перестаёт быть надёжным свидетелем собственной жизни. Насилие, вина, зависимость и искажённая память медленно размывают границы между реальным и воображаемым, оставляя героев наедине с тем, что невозможно ни оправдать, ни забыть. Сюжеты разворачиваются в пространстве психологического надлома, где близость оборачивается угрозой, а попытка спастись — новой формой самообмана. Это проза на границе внутреннего опыта и разрушения, рассчитанная на читателя, готового к прямому, лишённому утешения взгляду на человеческую уязвимость и опыту без дистанции и без обещания облегчения.</p>
+                    <div class="text-center mt-4">
+                        <label for="bookProgress3" class="pb-1 form-label text-d5b583">Прогресс: На очереди (не пишется)</label>
+                        <div class="custom-progress-three">
+                            <div class="custom-progress-bar-three" id="bookProgress3"></div>
+                            <div class="progress-text" id="progressText3">0 / 65 000 слов</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="book-image-wrapper">
+                        <img src="./images/Book3.png" class="img-fluid book-image" alt="Обложка книги Iam sero est">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Excerpt Modal -->
+    <div class="modal fade" id="excerptModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content excerpt-modal-content">
+
+                <div class="modal-header excerpt-modal-header">
+                    <h5 class="modal-title excerpt-modal-title">Чтение романов</h5>
+                    <button type="button"
+                            class="btn-close btn-close-white excerpt-modal-close"
+                            data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body excerpt-modal-body">
+
+                    <div class="excerpt-groups">
+
+                        <div class="excerpt-group">
+                            <div class="excerpt-group-title">Орден на сдачу</div>
+                            <div class="excerpt-list">
+                                <a href="#" class="excerpt-item">Будет доступно на Этапе 3</a>
+                            </div>
+                        </div>
+
+                        <div class="excerpt-group">
+                            <div class="excerpt-group-title">Дети Крампуса: тени Йоля</div>
+                            <div class="excerpt-list">
+                                <a href="#" class="excerpt-item">Будет доступно на Этапе 3</a>
+                            </div>
+                        </div>
+
+                        <div class="excerpt-group">
+                            <div class="excerpt-group-title">Потухшее солнце</div>
+                            <div class="excerpt-list">
+                                <a href="#" class="excerpt-item">Будет доступно на Этапе 3</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Steps Modal -->
+    <div class="modal fade" id="plansSteps" tabindex="-1" aria-labelledby="plansStepsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <div class="modal-content steps-modal-content">
+                <div class="modal-header steps-modal-header">
+                    <h5 class="modal-title steps-modal-title" id="plansStepsLabel">Список этапов работы</h5>
+                    <button type="button"
+                            class="btn-close btn-close-white steps-modal-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Закрыть"></button>
+                </div>
+
+                <div class="modal-body steps-modal-body">
+
+                    <div class="steps-list">
+
+                        <div class="step-item step-item-accent">
+                            <div class="step-item-top">
+                                <div>
+                                    <h6 class="step-title">Этап 0. Черновик</h6>
+                                </div>
+                                <span class="step-time">60–90 дней</span>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Цель:</div>
+                                <p class="step-text">Сделать полный текст от начала до конца.</p>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Что входит:</div>
+                                <p class="step-text">Все возможные сцены; движок сюжета; герои.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-item-top">
+                                <div>
+                                    <h6 class="step-title">Этап 1. Пауза</h6>
+                                </div>
+                                <span class="step-time">10–14 дней</span>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Цель:</div>
+                                <p class="step-text">Убрать «эффект автора».</p>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Что входит:</div>
+                                <p class="step-text">Забывание деталей; текст превращается в чужой.</p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-item-top">
+                                <div>
+                                    <h6 class="step-title">Этап 2. Структурная редактура</h6>
+                                </div>
+                                <span class="step-time">10–20 дней</span>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Цель:</div>
+                                <p class="step-text">Сделать роман работающей системой.</p>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Что входит:</div>
+                                <p class="step-text">
+                                    Чтение всего романа; создание карты романа; удаление сцен;
+                                    объединение сцен; изменение мотиваций; усиление конфликтов;
+                                    правка арок героев.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-item-top">
+                                <div>
+                                    <h6 class="step-title">Этап 3. Перепись</h6>
+                                </div>
+                                <span class="step-time">30–60 дней</span>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Цель:</div>
+                                <p class="step-text">Привести текст в соответствие структуре.</p>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Что входит:</div>
+                                <p class="step-text">
+                                    Переписывание сцен; резка 20–40% текста; выравнивание персонажей;
+                                    устранение лишнего; усиление слабых мест.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-item-top">
+                                <div>
+                                    <h6 class="step-title">Этап 4. Линейная чистка</h6>
+                                </div>
+                                <span class="step-time">10–20 дней</span>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Цель:</div>
+                                <p class="step-text">Сделать текст читаемым и плотным.</p>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Что входит:</div>
+                                <p class="step-text">
+                                    Удаление повторов; упрощение перегруженных фраз; выравнивание стиля;
+                                    чистка диалогов; проверка ритма.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="step-item">
+                            <div class="step-item-top">
+                                <div>
+                                    <h6 class="step-title">Этап 5. Финальный проход</h6>
+                                </div>
+                                <span class="step-time">3–7 дней</span>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Цель:</div>
+                                <p class="step-text">Проверить текст как читатель.</p>
+                            </div>
+
+                            <div class="step-block">
+                                <div class="step-label">Что входит:</div>
+                                <p class="step-text">
+                                    Чтение всего романа и поиск провалов, сбоев, слабых мест.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="site-footer-text">Daniel A. Arnett. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!--Basic scripts-->
+    <script src="./bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/letteranimation.min.js"></script>
+    <script src="https://kit.fontawesome.com/97eb1c096b.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <!--Script navbar sticky in up-->
+    <script>
+        const wordsWritten1 = 13448;
+        const wordsGoal1 = 60000;
+
+        const progressBar1 = document.getElementById('bookProgress');
+        const progressText1 = document.getElementById('progressText');
+
+        const targetPercent1 = (wordsWritten1 / wordsGoal1) * 100;
+
+        let currentPercent1 = 0;
+        let currentWords1 = 0;
+
+        const duration1 = 1200;
+        const intervalTime1 = 15;
+        const steps1 = Math.ceil(duration1 / intervalTime1);
+
+        const percentStep1 = targetPercent1 / steps1;
+        const wordsStep1 = wordsWritten1 / steps1;
+
+        const interval1 = setInterval(() => {
+            currentPercent1 += percentStep1;
+            currentWords1 += wordsStep1;
+
+            if (currentPercent1 >= targetPercent1) {
+                currentPercent1 = targetPercent1;
+                currentWords1 = wordsWritten1;
+                clearInterval(interval1);
+            }
+
+            progressBar1.style.width = currentPercent1 + '%';
+            progressText1.innerText = `${Math.round(currentWords1)} / ${wordsGoal1} слов`;
+        }, intervalTime1);
+    </script>
+
+    <script>
+        const krampusParts = [
+            {
+                progressBarId: 'bookProgress2Part1',
+                progressTextId: 'progressText2Part1',
+                wordsWritten: 13328,
+                wordsGoal: 20000
+            },
+            {
+                progressBarId: 'bookProgress2Part2',
+                progressTextId: 'progressText2Part2',
+                wordsWritten: 0,
+                wordsGoal: 35000
+            },
+            {
+                progressBarId: 'bookProgress2Part3',
+                progressTextId: 'progressText2Part3',
+                wordsWritten: 0,
+                wordsGoal: 35000
+            }
+        ];
+
+        krampusParts.forEach(({ progressBarId, progressTextId, wordsWritten, wordsGoal }) => {
+            const progressBar = document.getElementById(progressBarId);
+            const progressText = document.getElementById(progressTextId);
+            const targetPercent = (wordsWritten / wordsGoal) * 100;
+            const duration = 1200;
+            const intervalTime = 15;
+            const steps = Math.ceil(duration / intervalTime);
+            const percentStep = targetPercent / steps;
+            const wordsStep = wordsWritten / steps;
+            let currentPercent = 0;
+            let currentWords = 0;
+
+            const interval = setInterval(() => {
+                currentPercent += percentStep;
+                currentWords += wordsStep;
+
+                if (currentPercent >= targetPercent) {
+                    currentPercent = targetPercent;
+                    currentWords = wordsWritten;
+                    clearInterval(interval);
+                }
+
+                progressBar.style.width = currentPercent + '%';
+                progressText.innerText =
+                    `${Math.round(currentWords).toLocaleString('ru-RU')} / ${wordsGoal.toLocaleString('ru-RU')} слов`;
+            }, intervalTime);
+        });
+    </script>
+
+    <script>
+        const wordsWritten3 = 19145;
+        const wordsGoal3 = 65000;
+
+        const progressBar3 = document.getElementById('bookProgress3');
+        const progressText3 = document.getElementById('progressText3');
+
+        const targetPercent3 = (wordsWritten3 / wordsGoal3) * 100;
+
+        let currentPercent3 = 0;
+        let currentWords3 = 0;
+
+        const duration3 = 1200;
+        const intervalTime3 = 15;
+        const steps3 = Math.ceil(duration3 / intervalTime3);
+
+        const percentStep3 = targetPercent3 / steps3;
+        const wordsStep3 = wordsWritten3 / steps3;
+
+        const interval3 = setInterval(() => {
+            currentPercent3 += percentStep3;
+            currentWords3 += wordsStep3;
+
+            if (currentPercent3 >= targetPercent3) {
+                currentPercent3 = targetPercent3;
+                currentWords3 = wordsWritten3;
+                clearInterval(interval3);
+            }
+
+            progressBar3.style.width = currentPercent3 + '%';
+            progressText3.innerText = `${Math.round(currentWords3)} / ${wordsGoal3} слов`;
+        }, intervalTime3);
+    </script>
+
+    <script>
+        function windowScroll() {
+            const navbar = document.getElementById("navbar");
+            if (
+                document.body.scrollTop >= 50 ||
+                document.documentElement.scrollTop >= 50
+            ) {
+                navbar.classList.add("nav-sticky");
+            } else {
+                navbar.classList.remove("nav-sticky");
+            }
+        }
+            
+        window.addEventListener('scroll', (ev) => {
+            ev.preventDefault();
+            windowScroll();
+        })
+    </script>
+    
+    <!--Script enabling animation-->
+    <script>
+        new WOW().init();   
+    </script>
+</body>
+</html>
