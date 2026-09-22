@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Библиотека — Daniel A. Arnett{% endblock %}
+{% block content %}
+<p class="eyebrow copper">ПРОИЗВЕДЕНИЯ</p><h1>Библиотека</h1>
+<p class="page-intro">Опубликованные истории и главы. Выберите, с чего начать чтение.</p>
+<div class="catalog-grid">{% for work in page.items %}
+  <article class="catalog-card">
+    <a class="catalog-cover" href="{{ url_for('library.work', slug=work.slug) }}" aria-label="{{ work.title }}">
+    {% if work.cover_path %}<img src="{{ work.cover_path }}" alt="" loading="lazy">{% else %}<span aria-hidden="true">A.</span>{% endif %}</a>
+    <p class="small-label copper">{{ status_labels[work.status] }}</p>
+    <h2><a href="{{ url_for('library.work', slug=work.slug) }}">{{ work.title }}</a></h2>
+    {% if work.description %}<p class="catalog-description">{{ work.description }}</p>{% endif %}
+    <p>{{ access_labels[work.access_type] }}</p><a class="text-link" href="{{ url_for('library.work', slug=work.slug) }}">Оглавление <img class="arrow-icon" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></a>
+  </article>
+{% else %}<p class="empty-state">Первые главы готовятся к публикации.</p>{% endfor %}</div>
+{% if page.pages > 1 %}<nav class="pager" aria-label="Страницы библиотеки">{% if page.has_prev %}<a href="{{ url_for('library.catalog', page=page.prev_num) }}"><img class="arrow-icon arrow-back" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"> Назад</a>{% endif %}<span>{{ page.page }} / {{ page.pages }}</span>{% if page.has_next %}<a href="{{ url_for('library.catalog', page=page.next_num) }}">Далее <img class="arrow-icon" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></a>{% endif %}</nav>{% endif %}
+{% endblock %}

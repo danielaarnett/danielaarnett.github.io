@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block title %}Вход — Daniel A. Arnett{% endblock %}
+{% block content %}<div class="narrow-panel"><p class="eyebrow copper">ЧИТАТЕЛЬСКИЙ КРУГ</p><h1>Вернуться к историям</h1>
+{% if telegram_enabled %}<p class="page-intro">Вход через Telegram сохраняет место чтения и позволяет проверить доступ к закрытым главам.</p><form action="{{ url_for('auth.telegram') }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="next" value="{{ next_url }}"><button class="button button-dark" type="submit">Войти через Telegram</button></form>
+{% else %}<p class="page-intro">Вход в читательский круг пока готовится. Бесплатные главы можно читать без регистрации.</p><a class="button button-dark" href="/library">К библиотеке <img class="arrow-icon" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></a>{% endif %}</div>{% endblock %}

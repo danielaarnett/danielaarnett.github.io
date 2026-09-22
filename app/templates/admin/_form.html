@@ -1,0 +1,7 @@
+{{ form.hidden_tag() }}
+{% for field in form if field.type not in ['CSRFTokenField', 'HiddenField'] %}
+<div class="form-field{% if field.type == 'BooleanField' %} checkbox-field{% endif %}">
+  {% if field.type == 'BooleanField' %}{{ field() }} {{ field.label }}{% else %}{{ field.label }}{{ field() }}{% endif %}
+  {% for error in field.errors %}<p class="form-error" role="alert">{{ error }}</p>{% endfor %}
+</div>{% endfor %}
+<button class="button button-dark" type="submit">Сохранить</button>

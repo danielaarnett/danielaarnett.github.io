@@ -1,0 +1,16 @@
+.venv/
+.env
+.env.*
+!.env.example
+instance/
+private_content/*
+!private_content/.gitkeep
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+*.sqlite*
+*.db
+*.log
+local-qa/

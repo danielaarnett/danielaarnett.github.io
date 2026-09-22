@@ -1,0 +1,3 @@
+{% extends 'base.html' %}
+{% block title %}Глава — авторская панель{% endblock %}
+{% block content %}<a class="text-link" href="{{ url_for('admin.edit_work', work_id=work.id) }}"><img class="arrow-icon arrow-back" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"> {{ work.title }}</a><h1 class="space-above">{{ chapter.title or 'Новая глава' }}</h1><p class="page-intro">Полный текст и бесплатный фрагмент хранятся отдельно. Для фрагмента можно указать собственный текст или число начальных блоков. HTML очищается перед показом читателю.</p><form method="post" class="editor-form chapter-editor">{% include 'admin/_form.html' %}</form>{% endblock %}

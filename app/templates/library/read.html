@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}{{ chapter.title }} — {{ work.title }}{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/reading.css">{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='reader.js') }}" defer></script>{% endblock %}
+{% block body_class %}reading-page{% if protected %} protected-reading{% endif %}{% endblock %}
+{% block main_class %}reading-main{% endblock %}
+{% block content %}
+<header class="reading-hero"><div class="reading-meta-wrap"><a class="reading-book" href="{{ url_for('library.work', slug=work.slug) }}">{{ work.title }}</a><h1 class="reading-title">{{ chapter.title }}</h1><p class="reader-status">{{ status_labels[work.status] }} · {{ chapter_index + 1 }} из {{ chapter_count }}</p><a class="text-link" href="{{ url_for('library.work', slug=work.slug) }}"><img class="arrow-icon arrow-back" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"> Оглавление</a></div></header>
+<section class="reading-section"><div class="reading-container">
+  <div class="reader-tools"><span id="reading-progress" aria-live="off">Чтение: {{ (chapter_index / chapter_count * 100)|round|int }}%</span><button class="text-link" id="resume-reading" hidden>Продолжить с сохранённого места <img class="arrow-icon arrow-down" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></button></div>
+  <article class="reading-article" id="reader" aria-label="{{ chapter.title }}" data-chapter="{{ chapter.id }}" data-work="{{ work.slug }}" data-index="{{ chapter_index }}" data-total="{{ chapter_count }}" data-protected="{{ 'true' if protected else 'false' }}" data-save-url="{{ url_for('library.save_progress') if current_user.is_authenticated else '' }}" data-saved-paragraph="{{ progress.paragraph_id if progress else '' }}" data-saved-at="{{ progress.updated_at.isoformat() ~ 'Z' if progress else '' }}">{{ content|safe }}</article>
+  {% if access.mode == 'fragment' %}<div class="reading-article">{% include 'library/access_notice.html' %}</div>{% endif %}
+  <nav class="reading-bottom-nav" aria-label="Переход между главами">
+  {% if previous %}<a class="reading-nav-btn reading-nav-prev" href="{{ url_for('library.read', work_slug=work.slug, chapter_slug=previous.slug) }}"><img class="arrow-icon arrow-back" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"> {{ previous.title }}</a>{% endif %}
+  <a class="reading-nav-btn" href="{{ url_for('library.work', slug=work.slug) }}">Оглавление</a>
+  {% if following %}<a class="reading-nav-btn reading-nav-next" href="{{ url_for('library.read', work_slug=work.slug, chapter_slug=following.slug) }}">{{ following.title }} <img class="arrow-icon" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></a>{% endif %}
+  </nav>
+</div></section>
+{% endblock %}

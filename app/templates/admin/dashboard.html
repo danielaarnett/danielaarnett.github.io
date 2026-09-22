@@ -1,0 +1,4 @@
+{% extends 'base.html' %}
+{% block title %}Авторская панель — Daniel A. Arnett{% endblock %}
+{% block content %}<p class="eyebrow copper">АВТОРСКАЯ ПАНЕЛЬ</p><h1>Истории и главы</h1><div class="admin-actions"><a class="button button-dark" href="{{ url_for('admin.edit_work') }}">Добавить произведение</a><a class="text-link" href="{{ url_for('admin.users') }}">Читатели <img class="arrow-icon" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></a></div>
+<div class="contents">{% for work in works %}<a class="chapter-link" href="{{ url_for('admin.edit_work', work_id=work.id) }}"><span>{{ work.title }}</span><small>{{ 'Опубликовано' if work.is_visible else 'Скрыто' }} · {{ status_labels[work.status] }} <img class="arrow-icon" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></small></a>{% else %}<p>Добавьте первое произведение.</p>{% endfor %}</div>{% endblock %}

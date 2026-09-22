@@ -1,0 +1,17 @@
+# GitHub Pages remains a static design preview. Flask runs on a separate host.
+exclude:
+  - app
+  - config.py
+  - run.py
+  - requirements.txt
+  - tests
+  - pytest.ini
+  - migrations
+  - instance
+  - private_content
+  - .venv
+  - .env
+  - .env.example
+  - local-qa
+  - README.md
+  - DESIGN.md

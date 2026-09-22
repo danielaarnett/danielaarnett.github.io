@@ -1,0 +1,3 @@
+{% extends 'base.html' %}
+{% block title %}{{ chapter.title }} — {{ work.title }}{% endblock %}
+{% block content %}<a class="text-link" href="{{ url_for('library.work', slug=work.slug) }}"><img class="arrow-icon arrow-back" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"> Оглавление</a><p class="eyebrow copper space-above">{{ work.title }}</p><h1>{{ chapter.title }}</h1>{% include 'library/access_notice.html' %}{% endblock %}

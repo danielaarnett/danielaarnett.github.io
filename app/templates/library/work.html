@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}{{ work.title }} — Daniel A. Arnett{% endblock %}
+{% block content %}
+<a class="text-link" href="/library"><img class="arrow-icon arrow-back" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"> Библиотека</a>
+<div class="work-overview">
+  {% if work.cover_path %}<div class="work-cover"><img src="{{ work.cover_path }}" alt="Иллюстрация к произведению {{ work.title }}"></div>{% endif %}
+  <div><p class="eyebrow copper">{{ work.subtitle }} · {{ status_labels[work.status] }}</p><h1>{{ work.title }}</h1>
+  {% if work.description %}<p class="page-intro">{{ work.description }}</p>{% endif %}<p class="access-label">{{ access_labels[work.access_type] }}</p>
+  {% if chapters %}<a class="button button-dark" href="{{ url_for('library.read', work_slug=work.slug, chapter_slug=chapters[0].slug) }}">Начать читать <img class="arrow-icon" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></a>{% endif %}</div>
+</div>
+<section class="contents"><h2>Оглавление</h2>
+{% for chapter in chapters %}<a class="chapter-link" href="{{ url_for('library.read', work_slug=work.slug, chapter_slug=chapter.slug) }}"><span>{{ chapter.title }}</span><small>{{ access_labels['subscriber' if work.access_type == 'subscriber' else chapter.access_type] }} <img class="arrow-icon" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></small></a>
+{% else %}<p class="page-intro">Текст готовится к публикации. Здесь появятся главы этой истории.</p>{% endfor %}</section>
+{% endblock %}
