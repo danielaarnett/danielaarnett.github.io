@@ -44,25 +44,9 @@
   document.addEventListener('click', event => {
     if (!event.target.closest('.site-header')) setMenu(false);
   });
-  window.matchMedia('(min-width: 901px)').addEventListener('change', event => {
+  window.matchMedia('(min-width: 1101px)').addEventListener('change', event => {
     if (event.matches) setMenu(false);
   });
-
-  const filters = [...document.querySelectorAll('[data-filter]')];
-  const cards = [...document.querySelectorAll('[data-genre]')];
-  filters.forEach(button => button.addEventListener('click', () => {
-    filters.forEach(filter => {
-      const active = filter === button;
-      filter.classList.toggle('active', active);
-      filter.setAttribute('aria-pressed', String(active));
-    });
-    let count = 0;
-    cards.forEach(card => {
-      card.hidden = button.dataset.filter !== 'all' && card.dataset.genre !== button.dataset.filter;
-      if (!card.hidden) count++;
-    });
-    document.querySelector('#filter-status').textContent = `Показано произведений: ${count}`;
-  }));
 
   const bookDialog = document.querySelector('#book-dialog');
   document.querySelectorAll('[data-book]').forEach(button => button.addEventListener('click', () => {
@@ -76,6 +60,15 @@
     cover.src = book.cover;
     cover.alt = `Обложка ${book.title}`;
     bookDialog.showModal();
+  }));
+
+  const drafts = { weakness: 'Моя слабость, моя боль', sun: 'Горячее солнце', chalk: 'Мелки' };
+  const draftDialog = document.querySelector('#draft-dialog');
+  document.querySelectorAll('[data-draft]').forEach(button => button.addEventListener('click', () => {
+    const title = drafts[button.dataset.draft];
+    if (!title) return;
+    document.querySelector('#draft-dialog-title').textContent = title;
+    draftDialog.showModal();
   }));
 
   document.querySelector('[data-open-support]').addEventListener('click', () => document.querySelector('#support-dialog').showModal());
