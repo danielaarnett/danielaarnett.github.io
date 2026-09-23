@@ -59,7 +59,7 @@
 .reading-article .access-notice p { font: 1rem/1.8 var(--sans); text-indent: 0; }
 .reading-article .access-notice p:first-of-type::first-letter { font: inherit; color: inherit; }
 .reading-bottom-nav { max-width: 980px; flex-wrap: wrap; }
-.protected-reading #reader { user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+.reading-page #reader { user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
 .receipt { font-size: 0; line-height: 0; }
 @media (max-width: 800px) { .catalog-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .work-overview { gap: 30px; } .work-cover { flex-basis: 180px; } }
 @media (max-width: 650px) {

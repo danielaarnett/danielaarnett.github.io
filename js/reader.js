@@ -49,8 +49,23 @@
   addEventListener('scroll', () => { touched = true; if (!scheduled) { scheduled = true; requestAnimationFrame(measure); } }, { passive: true });
   addEventListener('pagehide', () => save(true));
   document.addEventListener('visibilitychange', () => { if (document.hidden) save(true); });
-  if (reader.dataset.protected === 'true') {
-    ['copy', 'cut', 'contextmenu'].forEach(name => reader.addEventListener(name, event => event.preventDefault()));
-  }
+  // Discourage casual copying on every reader page, including free chapters.
+  // This is a UI restriction; server-side access and fingerprints are separate.
+  const isEditing = target => target instanceof Element && target.closest(
+    'input, textarea, [contenteditable]:not([contenteditable="false"]), [role="textbox"]'
+  );
+  const blockCopy = event => { if (!isEditing(event.target)) event.preventDefault(); };
+  ['copy', 'cut'].forEach(name => document.addEventListener(name, blockCopy, true));
+  ['contextmenu', 'selectstart', 'dragstart'].forEach(name => reader.addEventListener(name, blockCopy));
+  document.addEventListener('keydown', event => {
+    if (isEditing(event.target)) return;
+    // Physical key codes also cover the Russian keyboard layout.
+    const copyKeys = ['KeyA', 'KeyC', 'KeyX'].includes(event.code)
+      || ['a', 'c', 'x'].includes(event.key.toLowerCase());
+    const insert = event.code === 'Insert' || event.key === 'Insert';
+    const remove = event.code === 'Delete' || event.key === 'Delete';
+    if (((event.ctrlKey || event.metaKey) && copyKeys)
+        || (event.ctrlKey && insert) || (event.shiftKey && remove)) event.preventDefault();
+  }, true);
   measure();
 })();
