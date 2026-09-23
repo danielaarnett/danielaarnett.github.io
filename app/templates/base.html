@@ -6,10 +6,10 @@
   <meta name="theme-color" content="#202522">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="icon" href="/images/arnett-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/fonts.css"><link rel="stylesheet" href="/css/home.css?v=5">
+  <link rel="stylesheet" href="/css/fonts.css"><link rel="stylesheet" href="/css/home.css?v=6">
   {% block styles %}{% endblock %}
-  <link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
-  <script src="{{ url_for('static', filename='site.js') }}" defer></script>
+  <link rel="stylesheet" href="/css/site.css">
+  <script src="/js/site.js" defer></script>
   {% block scripts %}{% endblock %}
 </head>
 <body class="{% block body_class %}{% endblock %}">

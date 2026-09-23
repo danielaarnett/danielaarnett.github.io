@@ -91,7 +91,7 @@ def create_app(test_config=None):
         response.headers['Permissions-Policy'] = 'camera=(), microphone=(), geolocation=()'
         if app.config['PRODUCTION']:
             response.headers['Strict-Transport-Security'] = 'max-age=31536000'
-        if request.endpoint != 'static' and not request.path.startswith(('/css/', '/fonts/', '/images/')):
+        if request.endpoint != 'static' and not request.path.startswith(('/css/', '/fonts/', '/images/', '/js/')):
             response.headers['Cache-Control'] = 'private, no-store'
             response.vary.add('Cookie')
         if request.path.startswith('/read/'):
@@ -118,11 +118,12 @@ def create_app(test_config=None):
 
     # Only these public asset directories are mounted. Never expose the repo,
     # instance/, private_content/, templates/, a database or arbitrary files.
-    @app.get('/<any(css,fonts,images):folder>/<path:filename>')
+    @app.get('/<any(css,fonts,images,js):folder>/<path:filename>')
     @limiter.exempt
     def legacy_assets(folder, filename):
-        allowed = {'.css', '.woff2', '.png', '.jpg', '.jpeg', '.svg', '.webp'}
-        if Path(filename).suffix.lower() not in allowed:
+        allowed = {'css': {'.css'}, 'fonts': {'.woff2'}, 'js': {'.js'},
+                   'images': {'.png', '.jpg', '.jpeg', '.svg', '.webp'}}
+        if Path(filename).suffix.lower() not in allowed[folder]:
             abort(404)
         return send_from_directory(ROOT / folder, filename)
 

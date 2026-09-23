@@ -1,4 +1,5 @@
-# GitHub Pages remains a static design preview. Flask runs on a separate host.
+# GitHub Pages serves the homepage and explicitly published free chapters.
+# The private Flask application runs on a separate host.
 exclude:
   - app
   - config.py

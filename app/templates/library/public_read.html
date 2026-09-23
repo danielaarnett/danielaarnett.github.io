@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ chapter.title }} — {{ work.title }}. Читать бесплатно на сайте Daniel A. Arnett.">
+  <meta name="theme-color" content="#202522">
+  <title>{{ chapter.title }} — {{ work.title }}</title>
+  <link rel="icon" href="/images/arnett-mark.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/literata-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/home.css?v=6">
+  <link rel="stylesheet" href="/reading.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <script src="/js/site.js" defer></script>
+  <script src="/js/reader.js" defer></script>
+</head>
+<body class="reading-page">
+  <a class="skip-link" href="#reader">Перейти к тексту</a>
+  <header class="site-header"><div class="shell header-inner">
+    <a class="brand" href="/" aria-label="Daniel A. Arnett — главная"><span class="brand-mark" aria-hidden="true">A<span>·</span></span><span class="brand-name">Daniel A. Arnett<small>АВТОРСКАЯ СТРАНИЦА</small></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Открыть меню"><span></span><span></span></button>
+    <nav class="main-nav" id="main-nav" aria-label="Основная навигация"><a href="/#drafts">Черновики</a><a href="/#library">Ознакомление</a><a href="/#author">Об авторе</a></nav>
+  </div></header>
+  <main id="main" class="reading-main">
+    <header class="reading-hero"><div class="reading-meta-wrap">
+      <p class="reading-book">{{ work.title }}</p>
+      <h1 class="reading-title">{{ chapter.title }}</h1>
+      <p class="reader-status">{{ status_labels[work.status] }} · Бесплатное чтение</p>
+      <a class="text-link" href="/#drafts"><img class="arrow-icon arrow-back" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"> К черновикам</a>
+    </div></header>
+    <section class="reading-section"><div class="reading-container">
+      <div class="reader-tools"><span id="reading-progress" aria-live="off">Чтение: 0%</span><button class="text-link" id="resume-reading" hidden>Продолжить с сохранённого места <img class="arrow-icon arrow-down" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></button></div>
+      <article class="reading-article" id="reader" aria-label="{{ chapter.title }}" data-chapter="{{ chapter.id }}" data-work="{{ work.slug }}" data-index="0" data-total="1" data-protected="false" data-save-url="">{{ content|safe }}</article>
+      <nav class="reading-bottom-nav" aria-label="Навигация после главы"><a class="reading-nav-btn" href="/#drafts"><img class="arrow-icon arrow-back" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"> К черновикам</a><a class="reading-nav-btn" href="#main">К началу главы <img class="arrow-icon arrow-up" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></a></nav>
+    </div></section>
+  </main>
+  <footer class="core-footer shell"><a href="/">Daniel A. Arnett</a><a href="/#drafts">Другие истории <img class="arrow-icon" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></a></footer>
+</body>
+</html>

@@ -61,7 +61,7 @@ def reader_key():
     return f'user:{current_user.id}' if current_user.is_authenticated else f'ip:{request.remote_addr}'
 
 
-@bp.get('/read/<work_slug>/<chapter_slug>')
+@bp.get('/read/<work_slug>/<chapter_slug>', strict_slashes=False)
 @limiter.limit(lambda: current_app.config['READ_RATE_LIMIT'], key_func=reader_key)
 @limiter.limit('120 per minute')
 def read(work_slug, chapter_slug):

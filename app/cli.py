@@ -4,17 +4,43 @@ from datetime import timedelta
 from pathlib import Path
 
 import click
-from flask import current_app
+from flask import current_app, render_template
+from flask_login import AnonymousUserMixin
 from sqlalchemy import delete, select
 
 from .extensions import db
 from .models import Chapter, LocalLoginTicket, ReadAudit, User, Work, utcnow
 from .services.docx_import import import_prologue
-from .services.content import count_words
+from .services.content import count_words, render_content, valid_slug
+from .services.access import can_read
 from .services import fingerprint
 
 
 def register_commands(app):
+    @app.cli.command('export-free-chapter')
+    @click.argument('work_slug')
+    @click.argument('chapter_slug')
+    @click.option('--output-root', type=click.Path(file_okay=False, path_type=Path), default=Path('read'))
+    def export_free_chapter(work_slug, chapter_slug, output_root):
+        """Explicitly publish ONE already public/free chapter on GitHub Pages."""
+        if not valid_slug(work_slug) or not valid_slug(chapter_slug):
+            raise click.ClickException('Некорректный адрес произведения или главы.')
+        work = db.session.scalar(select(Work).where(Work.slug == work_slug))
+        chapter = db.session.scalar(select(Chapter).where(Chapter.work_id == work.id,
+                                    Chapter.slug == chapter_slug)) if work else None
+        if not chapter:
+            raise click.ClickException('Произведение или глава не найдены.')
+        access = can_read(AnonymousUserMixin(), work, chapter)
+        if access.mode != 'full' or access.reason != 'free':
+            raise click.ClickException('Экспорт разрешён только для опубликованной бесплатной главы.')
+        body = db.session.scalar(select(Chapter.body).where(Chapter.id == chapter.id))
+        page = render_template('library/public_read.html', work=work, chapter=chapter,
+                               content=render_content(body, chapter.body_format))
+        destination = output_root / work_slug / chapter_slug / 'index.html'
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_text(page, encoding='utf-8')
+        click.echo(f'Открытая читательская страница: {destination}')
+
     @app.cli.command('seed-catalog')
     def seed_catalog():
         """Add metadata only; never ship manuscript bodies in Git."""

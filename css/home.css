@@ -340,9 +340,14 @@ dialog::backdrop { background: #131b16cc; backdrop-filter: blur(5px); }
 .round-link { display: grid; place-items: center; }
 .round-link .arrow-icon { width: 14px; height: 14px; }
 html { scrollbar-color: #9c8164 #202522; scrollbar-width: thin; }
+/* Chromium/Safari need the native styling reset for square custom thumbs. */
+@supports selector(::-webkit-scrollbar) {
+  html { scrollbar-color: auto; scrollbar-width: auto; }
+}
 ::-webkit-scrollbar { width: 11px; height: 11px; }
-::-webkit-scrollbar-track { background: #202522; }
-::-webkit-scrollbar-thumb { background: #9c8164; border: 3px solid #202522; border-radius: 8px; }
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner { background: #202522; border-radius: 0; }
+::-webkit-scrollbar-button { display: none; }
+::-webkit-scrollbar-thumb { background: #9c8164; border: 3px solid #202522; border-radius: 0; }
 ::-webkit-scrollbar-thumb:hover { background: #c5a17d; }
 @media (max-width: 650px) {
   .draft-grid { width: 100%; grid-template-columns: 1fr; border-inline: 0; }

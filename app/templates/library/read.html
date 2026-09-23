@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}{{ chapter.title }} — {{ work.title }}{% endblock %}
 {% block styles %}<link rel="stylesheet" href="/reading.css">{% endblock %}
-{% block scripts %}<script src="{{ url_for('static', filename='reader.js') }}" defer></script>{% endblock %}
+{% block scripts %}<script src="/js/reader.js" defer></script>{% endblock %}
 {% block body_class %}reading-page{% if protected %} protected-reading{% endif %}{% endblock %}
 {% block main_class %}reading-main{% endblock %}
 {% block content %}
