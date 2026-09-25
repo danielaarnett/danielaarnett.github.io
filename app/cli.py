@@ -45,8 +45,8 @@ def register_commands(app):
     def seed_catalog():
         """Add metadata only; never ship manuscript bodies in Git."""
         entries = [
-            ('moya-slabost-moya-bol', 'Моя слабость, моя боль', 'Роман', '/images/fin1.png'),
-            ('goryachee-solntse', 'Горячее солнце', 'Черновик', '/images/art1.png'),
+            ('moya-slabost-moya-bol', 'Моя слабость, моя боль', 'Роман', '/images/art1.png'),
+            ('goryachee-solntse', 'Горячее солнце', 'Черновик', '/images/art2.png'),
             ('melki', 'Мелки', 'Черновик', ''),
             ('deti-krampusa', 'Дети Крампуса: Тени Йоля', 'Роман', '/images/Book01.png'),
             ('orden-na-sdachu', 'Орден на сдачу', 'Роман', '/images/Book02.png'),
@@ -57,7 +57,7 @@ def register_commands(app):
                 db.session.add(Work(slug=slug, title=title, subtitle=subtitle, cover_path=cover,
                                     status='draft', access_type='free', is_visible=True, published_at=utcnow(), sort_order=order,
                                     completion_percent=50 if order < 3 else None,
-                                    cover_hover_path='/images/art2.png' if slug == 'goryachee-solntse' else ''))
+                                    cover_hover_path=''))
         db.session.commit()
         click.echo('Каталог подготовлен. Существующие записи не изменены.')
 

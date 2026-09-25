@@ -289,19 +289,12 @@ dialog::backdrop { background: #131b16cc; backdrop-filter: blur(5px); }
 .draft-entry { display: block; height: 100%; background: transparent; }
 .draft-entry:focus-visible { outline-offset: -4px; outline-color: #b28154; }
 .draft-art { position: relative; aspect-ratio: 1 / 1.05; overflow: hidden; background: #d5cab8; display: grid; place-items: center; }
-.draft-art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .45s ease; }
-.draft-art-figure { background: linear-gradient(135deg, #d5c5b2, #e9e0d3 65%, #baa992); }
-.draft-art-figure img { object-fit: contain; transform: scale(1.08); transform-origin: center bottom; }
-.draft-art-hover { opacity: 0; }
+.draft-art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .draft-art-placeholder { font: 500 clamp(4rem, 7vw, 6rem)/1 var(--serif); color: #9c876a; }
 .draft-entry h3 { min-height: 87px; padding: 24px 16px; border-top: 1px solid #bfb5a3; font-size: clamp(1rem, 1.45vw, 1.25rem); line-height: 1.5; text-align: center; transition: background .25s, color .25s; }
 .draft-entry:focus-visible h3 { background: #dfd4c3; color: var(--copper); }
-.has-hover-art:focus-visible .draft-art-hover { opacity: 1; }
-.has-hover-art:focus-visible .draft-art-primary { opacity: 0; }
 @media (hover: hover) {
   .draft-entry:hover h3 { background: #dfd4c3; color: var(--copper); }
-  .has-hover-art:hover .draft-art-hover { opacity: 1; }
-  .has-hover-art:hover .draft-art-primary { opacity: 0; }
 }
 .author-portrait { margin: 0; border: 1px solid #b8ab94; padding: 10px; background: #e5dccd; }
 .author-portrait img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
