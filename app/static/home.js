@@ -26,6 +26,28 @@
     }
   };
 
+  // Word targets stay in the markup as data, never in the reader-facing labels.
+  const wordCount = new Intl.NumberFormat('ru-RU');
+  document.querySelectorAll('[data-progress-part]').forEach(part => {
+    const written = Number(part.dataset.writtenWords);
+    const target = Number(part.dataset.targetWords);
+    if (!Number.isFinite(written) || written < 0 || !Number.isFinite(target) || target <= 0) return;
+    const percent = Math.min(100, Math.round(written / target * 100));
+    const words = wordCount.format(written);
+    part.querySelector('[data-progress-words]').textContent = words;
+    part.querySelector('[data-progress-percent]').textContent = percent;
+    part.querySelector('.progress-value').setAttribute('stroke-dasharray', `${percent} 100`);
+    part.querySelector('.progress-ring').setAttribute('aria-label', `Написано ${words} слов — ${percent}%`);
+  });
+
+  // Keep the accordion exclusive in browsers without native details grouping.
+  if (!('name' in document.createElement('details'))) {
+    const manuscripts = [...document.querySelectorAll('.manuscript')];
+    manuscripts.forEach(current => current.addEventListener('toggle', () => {
+      if (current.open) manuscripts.forEach(other => { if (other !== current) other.open = false; });
+    }));
+  }
+
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('#main-nav');
   const setMenu = (open) => {

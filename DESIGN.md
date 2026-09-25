@@ -1,6 +1,6 @@
 # Главная: «Авторский архив»
 
-Первый макет общего направления сайта Daniel A. Arnett. Светлая книжная бумага, чернильно-зелёные поверхности, медные акценты, оригинальная гравюра с вороном и монограмма A. Две основные гарнитуры — Literata для заголовков и литературных абзацев, Golos Text для навигации и подписей. Кириллица хранится локально в WOFF2; лицензии и источники описаны в `fonts/README.md`. На компьютере основной текст — 18 px, интерфейс — 15 px, небольшие подписи — 14 px. На телефоне сохранена отдельная адаптивная раскладка.
+Первый макет общего направления сайта Daniel A. Arnett. Светлая книжная бумага, чернильно-зелёные поверхности, медные акценты, полигональная иллюстрация с вороном и монограмма A. Две основные гарнитуры — Literata для заголовков и литературных абзацев, Golos Text для навигации и подписей. Кириллица хранится локально в WOFF2; лицензии и источники описаны в `fonts/README.md`. На компьютере основной текст — 18 px, интерфейс — 15 px, небольшие подписи — 14 px. На телефоне сохранена отдельная адаптивная раскладка.
 
 ## Что можно посмотреть
 
@@ -10,6 +10,8 @@
 - В первой карточке `images/fin1.png`, во второй `images/art1.png` и `images/art2.png` с плавной сменой при наведении или фокусе с клавиатуры. Для «Мелков» пока номер; второй арт первой истории тоже ещё не предоставлен. На сервере оба изображения задаются в авторской панели.
 - Под галереей — «Об авторе»: слева квадратный авторский арт `images/author.png` в тонкой рамке, справа текст. Полоса прокрутки в чернильно-медных цветах. Направляющие стрелки главной и новых страниц заменены на `images/arrow.png`.
 - В «Первом знакомстве» название книги — кнопка в рамке; рядом бирки вида произведения и временный объём 400 страниц. Обложки стоят прямо и слегка поднимаются при наведении или фокусе с клавиатуры.
+- «Прежде чем стать книгой»: крупный `images/progress.png` обрезается нижней границей раздела. Заголовок расположен лесенкой под подписью «Заметки на полях», арт сдвинут к левому краю. Книги в отдельных тонких прямоугольных рамках закрыты по умолчанию; нажатие на строку раскрывает медные круговые диаграммы и закрывает предыдущую книгу. Векторный плюс превращается в минус. Нативная группа details работает без JS в современных браузерах, для старых предусмотрен обработчик. У «Детей Крампуса» показаны три части, у остальных рукописей пока одна диаграмма: разбивка не предоставлена. Читатель видит написанные слова и процент, без планового объёма или суммарной диаграммы книги. Для обновления чисел менять `data-written-words` и `data-target-words` у соответствующих `data-progress-part` в обеих версиях главной; JavaScript пересчитывает подписи и дуги. `data-target-words` у книги хранит общий плановый объём. Начальная HTML-разметка сохраняет диаграммы и раскрытие при отключённом JavaScript.
+- Прямоугольный ползунок прокрутки занимает всю ширину полосы без рамки и боковых зазоров; фон полосы остаётся тёмным.
 - Окна аннотаций, раскрытие частей рукописи и мобильное меню работают без сборки и сторонних JS-библиотек. Стили и обработчики удалённого фильтра убраны.
 - `reading.css`, `reading.html`, `plans.html` и общие стили прежних страниц сохранены. Новая читательская страница использует `reading.css`, общие локальные шрифты и небольшие дополнительные стили навигации и посвящения.
 
@@ -36,3 +38,7 @@
 Промпт:
 
 Use case: illustration-story. Asset type: original wide hero background for the literary website of dark fantasy and psychological prose author Daniel A. Arnett. Create a sophisticated atmospheric antique copperplate etching / charcoal illustration of a large black raven perched on a bare twisted branch in the RIGHT foreground, beyond it a haunting old northern European town with steep roofs, a distant narrow clock tower, industrial chimneys disappearing into mist. Wide landscape 3:2 composition. The LEFT 40 percent is quiet near-black charcoal fog with only faint silhouettes so cream website typography can overlay it. Most visible detailed art is on the RIGHT two thirds. Restrained palette, soot black, warm smoke gray, faded parchment highlights, very subtle weathered copper. Fine hatching and natural paper grain, strong raven silhouette with beautiful feather detail, subtle layered depth, editorial book frontispiece quality, not a video game illustration, not glossy 3D, no bright colors. Low key twilight but midtones on the right must remain legible. No text, no lettering, no logo, no borders, no UI. Original imaginary town, contemplative mysterious mood.
+
+## Полигональная шапка
+
+Главная использует `images/archive-raven-poly.png`: композиция с вороном и городом сохранена, графика переработана в полигональном стиле по образцу `images/progress.png`. Создано встроенным imagegen; точный промпт — `images/archive-raven-poly.prompt.md`. Предыдущая иллюстрация сохранена для истории.

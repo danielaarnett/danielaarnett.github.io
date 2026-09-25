@@ -10,8 +10,8 @@
   <link rel="preload" href="./fonts/literata-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./fonts/golos-text-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./css/fonts.css">
-  <link rel="stylesheet" href="./css/home.css?v=6">
-  <script src="./js/home.js?v=5" defer></script>
+  <link rel="stylesheet" href="./css/home.css?v=7">
+  <script src="./js/home.js?v=6" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержанию</a>
@@ -93,14 +93,77 @@
         <div class="library-note"><span class="note-star" aria-hidden="true">✳</span><p>Сначала — знакомство. Здесь появятся бесплатные фрагменты произведений.<br> Пока можно прочитать аннотации и заглянуть в работу над рукописями.</p><span class="small-label">БЕЗ РЕГИСТРАЦИИ</span></div>
       </div>
     </section>
-    <section class="workshop section-space" id="workshop" aria-labelledby="workshop-title">
+    <section class="workshop" id="workshop" aria-labelledby="workshop-title">
       <div class="shell workshop-grid">
-        <div class="workshop-intro"><p class="eyebrow">ЗАПИСКИ НА ПОЛЯХ</p><h2 id="workshop-title">Прежде чем<br>стать книгой.</h2><p>Здесь текст ещё меняется. Герои спорят с замыслом, сцены находят своё место, а у истории появляется голос.</p><p class="workshop-note">Мастерская черновиков и будущих книг.</p><a class="quiet-link" href="./plans.html">Весь творческий план <span aria-hidden="true"><img class="arrow-icon arrow-diagonal" src="./images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></span></a><span class="manuscript-mark" aria-hidden="true">Aa</span></div>
+        <div class="workshop-intro">
+          <p class="eyebrow workshop-eyebrow">ЗАМЕТКИ НА ПОЛЯХ</p>
+          <h2 id="workshop-title"><span>Прежде чем</span><span>стать книгой.</span></h2>
+          <img class="workshop-art" src="./images/progress.png" alt="" aria-hidden="true" width="1194" height="1175" loading="lazy">
+        </div>
         <div class="manuscripts">
-          <div class="manuscripts-heading"><span>НА ПИСЬМЕННОМ СТОЛЕ</span><span>СОСТОЯНИЕ РУКОПИСЕЙ</span></div>
-          <article class="manuscript"><div class="manuscript-top"><span class="manuscript-number">01</span><div><span class="small-label">ЧЕРНОВИК · ЧАСТЬ ПЕРВАЯ «МАЛЬЧИК»</span><h3>Дети Крампуса: Тени Йоля</h3></div><button class="round-link" data-book="krampus" aria-label="Подробнее о рукописи Дети Крампуса"><img class="arrow-icon arrow-diagonal" src="./images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></button></div><progress value="13328" max="20000" aria-label="Черновик части Мальчик: 13 328 из 20 000 слов">67%</progress><div class="progress-caption"><span>13 328 <span class="muted">/ 20 000 слов</span></span><span>67%</span></div><details><summary>Остальные части <span aria-hidden="true">+</span></summary><div class="parts"><p><span>II. Йоль</span><span>0 / 35 000 слов</span></p><p><span>III. Чужой среди своих</span><span>0 / 35 000 слов</span></p></div></details></article>
-          <article class="manuscript"><div class="manuscript-top"><span class="manuscript-number">02</span><div><span class="small-label">ЧЕРНОВИК · РОМАН</span><h3>Орден на сдачу</h3></div><button class="round-link" data-book="order" aria-label="Подробнее о рукописи Орден на сдачу"><img class="arrow-icon arrow-diagonal" src="./images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></button></div><progress value="13448" max="60000" aria-label="Черновик Орден на сдачу: 13 448 из 60 000 слов">22%</progress><div class="progress-caption"><span>13 448 <span class="muted">/ 60 000 слов</span></span><span>22%</span></div></article>
-          <article class="manuscript queued-manuscript"><div class="manuscript-top"><span class="manuscript-number">03</span><div><span class="small-label">НА ОЧЕРЕДИ · ЦИКЛ НОВЕЛЛ</span><h3>Iam sero est</h3></div><button class="round-link" data-book="sero" aria-label="Подробнее о рукописи Iam sero est"><img class="arrow-icon arrow-diagonal" src="./images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></button></div><div class="progress-caption"><span>19 145 <span class="muted">/ 65 000 слов</span></span><span class="muted">Работа приостановлена</span></div></article>
+          <!-- Плановые объёмы хранятся в data-target-words; общий прогресс книги не выводится. -->
+          <details class="manuscript" name="workshop-books" data-manuscript="krampus" data-target-words="90000">
+            <summary><h3>Дети Крампуса: Тени Йоля</h3><svg class="manuscript-toggle" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M4 12h16"/><path class="toggle-vertical" d="M12 4v16"/></svg></summary>
+            <div class="manuscript-content">
+              <div class="part-grid">
+                <figure class="part-progress" data-progress-part data-written-words="13328" data-target-words="20000" aria-labelledby="krampus-part-1">
+                  <figcaption id="krampus-part-1"><span class="part-number">Часть I</span><span class="part-name">Мальчик</span></figcaption>
+                  <div class="progress-ring" role="img" aria-label="Написано 13 328 слов — 67%">
+                    <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><circle class="progress-track" cx="60" cy="60" r="52"/><circle class="progress-value" cx="60" cy="60" r="52" pathLength="100" stroke-dasharray="67 100"/></svg>
+                    <p class="progress-words" aria-hidden="true"><strong data-progress-words>13 328</strong><span>слов</span></p>
+                  </div>
+                  <p class="progress-percent" aria-hidden="true"><span data-progress-percent>67</span>%</p>
+                </figure>
+                <figure class="part-progress" data-progress-part data-written-words="0" data-target-words="35000" aria-labelledby="krampus-part-2">
+                  <figcaption id="krampus-part-2"><span class="part-number">Часть II</span><span class="part-name">Йоль</span></figcaption>
+                  <div class="progress-ring" role="img" aria-label="Написано 0 слов — 0%">
+                    <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><circle class="progress-track" cx="60" cy="60" r="52"/><circle class="progress-value" cx="60" cy="60" r="52" pathLength="100" stroke-dasharray="0 100"/></svg>
+                    <p class="progress-words" aria-hidden="true"><strong data-progress-words>0</strong><span>слов</span></p>
+                  </div>
+                  <p class="progress-percent" aria-hidden="true"><span data-progress-percent>0</span>%</p>
+                </figure>
+                <figure class="part-progress" data-progress-part data-written-words="0" data-target-words="35000" aria-labelledby="krampus-part-3">
+                  <figcaption id="krampus-part-3"><span class="part-number">Часть III</span><span class="part-name">Чужой среди своих</span></figcaption>
+                  <div class="progress-ring" role="img" aria-label="Написано 0 слов — 0%">
+                    <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><circle class="progress-track" cx="60" cy="60" r="52"/><circle class="progress-value" cx="60" cy="60" r="52" pathLength="100" stroke-dasharray="0 100"/></svg>
+                    <p class="progress-words" aria-hidden="true"><strong data-progress-words>0</strong><span>слов</span></p>
+                  </div>
+                  <p class="progress-percent" aria-hidden="true"><span data-progress-percent>0</span>%</p>
+                </figure>
+              </div>
+            </div>
+          </details>
+          <details class="manuscript" name="workshop-books" data-manuscript="order" data-target-words="60000">
+            <summary><h3>Орден на сдачу</h3><svg class="manuscript-toggle" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M4 12h16"/><path class="toggle-vertical" d="M12 4v16"/></svg></summary>
+            <div class="manuscript-content">
+              <div class="part-grid">
+                <figure class="part-progress" data-progress-part data-written-words="13448" data-target-words="60000" aria-labelledby="order-part-1">
+                  <figcaption id="order-part-1"><span class="part-number">Роман</span></figcaption>
+                  <div class="progress-ring" role="img" aria-label="Написано 13 448 слов — 22%">
+                    <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><circle class="progress-track" cx="60" cy="60" r="52"/><circle class="progress-value" cx="60" cy="60" r="52" pathLength="100" stroke-dasharray="22 100"/></svg>
+                    <p class="progress-words" aria-hidden="true"><strong data-progress-words>13 448</strong><span>слов</span></p>
+                  </div>
+                  <p class="progress-percent" aria-hidden="true"><span data-progress-percent>22</span>%</p>
+                </figure>
+              </div>
+            </div>
+          </details>
+          <details class="manuscript" name="workshop-books" data-manuscript="sero" data-target-words="65000">
+            <summary><h3>Iam sero est</h3><svg class="manuscript-toggle" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M4 12h16"/><path class="toggle-vertical" d="M12 4v16"/></svg></summary>
+            <div class="manuscript-content">
+              <div class="part-grid">
+                <figure class="part-progress" data-progress-part data-written-words="19145" data-target-words="65000" aria-labelledby="sero-part-1">
+                  <figcaption id="sero-part-1"><span class="part-number">Цикл новелл</span></figcaption>
+                  <div class="progress-ring" role="img" aria-label="Написано 19 145 слов — 29%">
+                    <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><circle class="progress-track" cx="60" cy="60" r="52"/><circle class="progress-value" cx="60" cy="60" r="52" pathLength="100" stroke-dasharray="29 100"/></svg>
+                    <p class="progress-words" aria-hidden="true"><strong data-progress-words>19 145</strong><span>слов</span></p>
+                  </div>
+                  <p class="progress-percent" aria-hidden="true"><span data-progress-percent>29</span>%</p>
+                </figure>
+              </div>
+              <p class="manuscript-status">Работа приостановлена</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
