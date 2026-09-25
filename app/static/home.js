@@ -66,7 +66,7 @@
   document.addEventListener('click', event => {
     if (!event.target.closest('.site-header')) setMenu(false);
   });
-  window.matchMedia('(min-width: 1101px)').addEventListener('change', event => {
+  window.matchMedia('(min-width: 1241px)').addEventListener('change', event => {
     if (event.matches) setMenu(false);
   });
 
@@ -94,7 +94,7 @@
     draftDialog.showModal();
   }));
 
-  document.querySelector('[data-open-support]').addEventListener('click', () => document.querySelector('#support-dialog').showModal());
+  document.querySelector('[data-open-paper]').addEventListener('click', () => document.querySelector('#paper-dialog').showModal());
   document.querySelectorAll('dialog').forEach(dialog => {
     dialog.querySelector('[data-close-dialog]').addEventListener('click', () => dialog.close());
     dialog.addEventListener('click', event => {

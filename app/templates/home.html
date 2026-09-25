@@ -10,8 +10,8 @@
   <link rel="preload" href="/fonts/literata-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/golos-text-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/fonts.css">
-  <link rel="stylesheet" href="/css/home.css?v=7">
-  <script src="/static/home.js?v=6" defer></script>
+  <link rel="stylesheet" href="/css/home.css?v=8">
+  <script src="/static/home.js?v=7" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержанию</a>
@@ -19,7 +19,7 @@
     <div class="shell header-inner">
       <a class="brand" href="/index.html" aria-label="Daniel A. Arnett — главная"><span class="brand-mark" aria-hidden="true">A<span>·</span></span><span class="brand-name">Daniel A. Arnett<small>АВТОРСКАЯ СТРАНИЦА</small></span></a>
       <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Открыть меню"><span></span><span></span></button>
-      <nav class="main-nav" id="main-nav" aria-label="Основная навигация"><a href="#library">Ознакомление</a><a href="#drafts">Мастерская</a><a href="#workshop">Этапы работы</a><a href="#author">Об авторе</a><a class="nav-support" href="#prose">Читательский круг <span aria-hidden="true"><img class="arrow-icon arrow-diagonal" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></span></a></nav>
+      <nav class="main-nav" id="main-nav" aria-label="Основная навигация"><a href="#library">Ознакомление</a><a href="#drafts">Мастерская</a><a href="#workshop">Этапы работы</a><a href="#youtube">Аудиокниги</a><a href="#author">Об авторе</a><a class="nav-support" href="#prose">Читательский круг <span aria-hidden="true"><img class="arrow-icon arrow-diagonal" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></span></a></nav>
     </div>
   </header>
   <main id="main">
@@ -30,9 +30,9 @@
           <p class="eyebrow"><span class="little-line"></span> ПО ТУ СТОРОНУ ПРИВЫЧНОГО</p>
           <h1 id="hero-title">У каждой истории<br>— твой <em>финал.</em></h1>
           <p class="hero-description">Миры, в которых привычное даёт трещину.<br class="desktop-break"> Люди, которым приходится заглянуть внутрь.<br class="desktop-break"> И истории, которые остаются с вами.</p>
-          <div class="hero-actions"><a class="button button-copper" href="#library">Выбери свою историю <span aria-hidden="true"><img class="arrow-icon" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></span></a><a class="quiet-link" href="#drafts">В мастерскую <span aria-hidden="true"><img class="arrow-icon arrow-diagonal" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></span></a></div>
+          <div class="hero-actions"><a class="button button-copper" href="#library">Выбери свою историю <span aria-hidden="true"><img class="arrow-icon" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></span></a></div>
         </div>
-        <div class="hero-baseline"><p>трансгрессивная проза <span>·</span> сатира <span>·</span> хоррор <span>·</span> антиутопия <span>·</span> философия <span>·</span> фантастика <span>·</span> контркультура <span>·</span> </p></div>
+        <div class="hero-baseline"><p>трансгрессивная проза <span>·</span> сатира <span>·</span> хоррор <span>·</span> антиутопия <span>·</span> философия <span>·</span> фантастика <span>·</span> контркультура</p></div>
       </div>
     </section>
     <section class="drafts" id="drafts" aria-labelledby="drafts-title">
@@ -101,12 +101,9 @@
     </section>
     <section class="workshop" id="workshop" aria-labelledby="workshop-title">
       <div class="shell workshop-grid">
-        <div class="workshop-intro">
-          <p class="eyebrow workshop-eyebrow">ЗАМЕТКИ НА ПОЛЯХ</p>
-          <h2 id="workshop-title"><span>Прежде чем</span><span>стать книгой.</span></h2>
-          <img class="workshop-art" src="/images/progress.png" alt="" aria-hidden="true" width="1194" height="1175" loading="lazy">
-        </div>
+        <div class="workshop-illustration"><img class="workshop-art" src="/images/progress.png" alt="" aria-hidden="true" width="1194" height="1175" loading="lazy"></div>
         <div class="manuscripts">
+          <header class="workshop-heading"><p class="eyebrow workshop-eyebrow">ЭТАПЫ РАБОТЫ</p><h2 id="workshop-title">Прежде чем стать книгой</h2></header>
           <!-- Плановые объёмы хранятся в data-target-words; общий прогресс книги не выводится. -->
           <details class="manuscript" name="workshop-books" data-manuscript="krampus" data-target-words="90000">
             <summary><h3>Дети Крампуса: Тени Йоля</h3><svg class="manuscript-toggle" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M4 12h16"/><path class="toggle-vertical" d="M12 4v16"/></svg></summary>
@@ -174,7 +171,34 @@
       </div>
     </section>
     <section class="paper prose-section section-space" id="prose" aria-labelledby="prose-title">
-      <div class="shell prose-grid"><div class="prose-art" aria-hidden="true"><span class="prose-art-label">EX LIBRIS</span><span class="prose-monogram">A.</span><span class="prose-art-bottom">DANIEL A. ARNETT<br>ЧИТАТЕЛЬСКИЙ КРУГ</span><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="orbit-star">✦</span></div><div class="prose-copy"><p class="eyebrow copper">ГОТОВАЯ ПРОЗА · ЧИТАТЕЛЬСКИЙ КРУГ</p><h2 id="prose-title">Истории, в которых<br>можно остаться.</h2><p>Место для завершённых произведений. От первой страницы до последней — в привычном, спокойном пространстве для чтения.</p><div class="prose-features"><span>Полные тексты</span><span>Книжное оформление</span><span>Поддержка автора</span></div><div class="coming-soon"><span class="small-label">РАЗДЕЛ ГОТОВИТСЯ</span><p>Полные произведения появятся здесь после завершения работы. Доступ планируется по подписке через Boosty.</p></div><button class="button button-dark" data-open-support>О читательском круге <span aria-hidden="true"><img class="arrow-icon arrow-diagonal" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></span></button><p class="access-note">Ознакомительные фрагменты останутся бесплатными.</p></div></div>
+      <div class="shell prose-grid">
+        <div class="prose-art"><img src="/images/cabinet.png" alt="Кресло среди стопок книг" width="1254" height="844" loading="lazy"></div>
+        <div class="prose-copy">
+          <h2 id="prose-title">Читательский круг</h2>
+          <p class="prose-description">Читайте ознакомительные фрагменты бесплатно. Для полного погружения в творчество автора — подписка на Boosty или книга в бумажном формате.</p>
+          <div class="subscription-grid">
+            <section class="subscription-card" aria-labelledby="subscription-pro">
+              <h3 id="subscription-pro">Pro</h3>
+              <ul>
+                  <li><img src="/images/plus.png" alt="" aria-hidden="true" width="20" height="20"><span>Полные тексты</span></li>
+                  <li><img src="/images/plus.png" alt="" aria-hidden="true" width="20" height="20"><span>Отсутствие цензуры</span></li>
+                  <li><img src="/images/plus.png" alt="" aria-hidden="true" width="20" height="20"><span>Контркультурная проза</span></li>
+              </ul>
+            </section>
+            <section class="subscription-card" aria-labelledby="subscription-expert">
+              <h3 id="subscription-expert">Expert</h3>
+              <ul>
+                  <li><img src="/images/plus.png" alt="" aria-hidden="true" width="20" height="20"><span>Доступ ко всему архиву</span></li>
+                  <li><img src="/images/plus.png" alt="" aria-hidden="true" width="20" height="20"><span>Ранние публикации</span></li>
+                  <li><img src="/images/plus.png" alt="" aria-hidden="true" width="20" height="20"><span>Незаконченная проза</span></li>
+                  <li><img src="/images/plus.png" alt="" aria-hidden="true" width="20" height="20"><span>Стихотворения</span></li>
+              </ul>
+            </section>
+          </div>
+          <p class="subscription-note">Подписки на Boosty готовятся к открытию.</p>
+          <div class="paper-book-action"><button class="button button-outline" data-open-paper>Бумажная книга</button></div>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -186,7 +210,7 @@
     <div class="shell footer-inner"><a class="footer-brand" href="#main">Daniel A. Arnett<span>АВТОРСКИЙ АРХИВ</span></a><p>© <span id="year">2026</span> Daniel A. Arnett</p><a href="#main">К началу <span aria-hidden="true"><img class="arrow-icon arrow-up" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></span></a></div>
   </footer>
   <dialog class="book-dialog" id="book-dialog" aria-labelledby="dialog-title"><button class="dialog-close" data-close-dialog aria-label="Закрыть окно">×</button><div class="dialog-book-layout"><div class="dialog-cover"><img id="dialog-cover" src="/images/Book01.png" alt="" width="1500" height="1383"></div><div class="dialog-copy"><p class="eyebrow copper" id="dialog-genre"></p><h2 id="dialog-title"></h2><p class="dialog-status" id="dialog-status"></p><p class="dialog-synopsis" id="dialog-synopsis"></p><div class="excerpt-notice"><strong id="dialog-notice-title">Ознакомительный фрагмент готовится</strong><p id="dialog-notice-text">Пока здесь представлена аннотация. Отрывок появится после подготовки текста к публикации.</p></div><a class="text-link" href="#workshop" data-dialog-workshop>К работе над рукописью <span aria-hidden="true"><img class="arrow-icon" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></span></a></div></div></dialog>
-  <dialog class="support-dialog" id="support-dialog" aria-labelledby="support-title"><button class="dialog-close" data-close-dialog aria-label="Закрыть окно">×</button><p class="eyebrow copper">ЧИТАТЕЛЬСКИЙ КРУГ</p><h2 id="support-title">Ближе к историям.</h2><p>Здесь будет библиотека готовой прозы с доступом по подписке через Boosty. Ознакомительные части можно будет читать бесплатно.</p><div class="excerpt-notice"><strong>Открытие впереди</strong><p>Подписка пока не подключена. Условия и ссылка на страницу автора появятся к открытию библиотеки.</p></div><a class="button button-dark" href="#library" data-dialog-library>Посмотреть произведения <span aria-hidden="true"><img class="arrow-icon" src="/images/arrow.png" alt="" aria-hidden="true" width="18" height="18"></span></a></dialog>
+  <dialog class="paper-dialog" id="paper-dialog" aria-labelledby="paper-title"><button class="dialog-close" data-close-dialog aria-label="Закрыть окно">×</button><h2 id="paper-title">Бумажная книга</h2><p>Информация о бумажных изданиях и ссылки на покупку появятся здесь.</p><a class="text-link" href="#library">Посмотреть произведения</a></dialog>
   <dialog class="draft-dialog" id="draft-dialog" aria-labelledby="draft-dialog-title"><button class="dialog-close" data-close-dialog aria-label="Закрыть окно">×</button><p class="eyebrow copper">ЧЕРНОВИК</p><h2 id="draft-dialog-title"></h2><p>Текст готовится к публикации. Здесь можно будет читать историю и следить за её продолжением.</p></dialog>
   <noscript><p class="noscript-note">Для открытия аннотаций включите JavaScript. <a href="/library">Открыть список произведений</a>.</p></noscript>
 </body>
