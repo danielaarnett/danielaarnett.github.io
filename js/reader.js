@@ -3,21 +3,7 @@
   const reader = document.querySelector('#reader');
   if (!reader) return;
   const blocks = [...reader.querySelectorAll('[id^="p-"]')];
-  const indicator = document.querySelector('#reading-progress');
-  const resume = document.querySelector('#resume-reading');
   const key = `arnett-reading:${reader.dataset.work}:${reader.dataset.chapter}`;
-  let saved = null;
-  try { saved = JSON.parse(localStorage.getItem(key)); } catch (_) { /* Private storage may be unavailable. */ }
-  if (reader.dataset.savedParagraph && (!saved || Date.parse(reader.dataset.savedAt) > saved.updated)) {
-    saved = { paragraph: reader.dataset.savedParagraph };
-  }
-  if (saved && /^p-\d+$/.test(saved.paragraph) && document.getElementById(saved.paragraph)) {
-    resume.hidden = false;
-    resume.addEventListener('click', () => {
-      document.getElementById(saved.paragraph).scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-      resume.hidden = true;
-    });
-  }
   let lastSave = 0;
   let touched = false;
   let scheduled = false;
@@ -29,8 +15,6 @@
     position = Math.max(0, Math.min(1, (innerHeight - rect.top) / Math.max(1, rect.height)));
     const current = [...blocks].reverse().find(block => block.getBoundingClientRect().top <= 150) || blocks[0];
     paragraph = current?.id || '';
-    const total = Math.round((Number(reader.dataset.index) + position) / Number(reader.dataset.total) * 100);
-    indicator.textContent = `Чтение: ${total}%`;
     if (touched) save(false);
   }
   function save(force) {

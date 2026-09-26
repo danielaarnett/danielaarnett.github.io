@@ -103,7 +103,7 @@
     const originals = [...group.children];
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let loopWidth = 0, observedWidth = 0, previousFrame = 0, scrollRemainder = 0;
-    let paused = reducedMotion.matches, hovered = false, focused = false, touching = false, visible = false;
+    let paused = reducedMotion.matches, focused = false, touching = false, visible = false;
     let drag = null, holdUntil = 0, ignoreClickUntil = 0;
 
     const copyForLoop = element => {
@@ -136,8 +136,6 @@
       viewport.scrollLeft = loopWidth * (1 + relativePosition);
     };
     reducedMotion.addEventListener('change', event => { paused = event.matches; });
-    viewport.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') hovered = true; });
-    viewport.addEventListener('pointerleave', () => { hovered = false; });
     viewport.addEventListener('focusin', () => { focused = true; });
     viewport.addEventListener('focusout', event => {
       focused = viewport.contains(event.relatedTarget);
@@ -176,7 +174,7 @@
     };
     window.addEventListener('pointerup', release);
     window.addEventListener('pointercancel', release);
-    window.addEventListener('blur', () => { drag = null; touching = false; hovered = false; viewport.classList.remove('is-dragging'); });
+    window.addEventListener('blur', () => { drag = null; touching = false; viewport.classList.remove('is-dragging'); });
     viewport.addEventListener('click', event => {
       if (performance.now() < ignoreClickUntil) { event.preventDefault(); event.stopPropagation(); }
     }, true);
@@ -198,7 +196,7 @@
     const animate = timestamp => {
       const elapsed = previousFrame ? Math.min(timestamp - previousFrame, 64) : 0;
       previousFrame = timestamp;
-      if (visible && !document.hidden && !paused && !hovered && !focused && !touching && timestamp > holdUntil && !document.querySelector('dialog[open]')) {
+      if (visible && !document.hidden && !paused && !focused && !touching && timestamp > holdUntil && !document.querySelector('dialog[open]')) {
         // Retain fractional movement on browsers that round scrollLeft to pixels.
         scrollRemainder += elapsed * .038;
         const pixels = Math.floor(scrollRemainder);

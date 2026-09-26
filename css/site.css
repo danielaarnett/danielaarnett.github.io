@@ -48,8 +48,6 @@
 .reading-page .reading-main { padding-top: 34px; }
 .reading-page .reading-container { margin-inline: auto; }
 .reading-page .reading-title { margin-top: 18px; line-height: 1.25; }
-.reader-status { color: var(--muted); font-size: 14px; margin-block: 17px 4px; }
-.reader-tools { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px; max-width: 980px; margin: 10px auto 30px; color: var(--muted); font-size: 14px; }
 .reading-article blockquote { max-width: 520px; margin: 35px 0 50px auto; }
 .reading-article blockquote p { text-align: right; text-indent: 0; font-style: italic; }
 .reading-article blockquote p:first-of-type::first-letter { font: inherit; color: inherit; }
