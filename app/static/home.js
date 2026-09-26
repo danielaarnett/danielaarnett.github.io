@@ -103,7 +103,7 @@
     const originals = [...group.children];
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let loopWidth = 0, observedWidth = 0, previousFrame = 0, scrollRemainder = 0;
-    let paused = reducedMotion.matches, focused = false, touching = false, visible = false;
+    let paused = reducedMotion.matches, touching = false, visible = false;
     let drag = null, holdUntil = 0, ignoreClickUntil = 0;
 
     const copyForLoop = element => {
@@ -113,8 +113,8 @@
       copy.querySelectorAll('a, button, [tabindex]').forEach(link => link.tabIndex = -1);
       return copy;
     };
-    const wrap = (force = false) => {
-      if (!loopWidth || (focused && !touching && !force)) return;
+    const wrap = () => {
+      if (!loopWidth) return;
       const position = viewport.scrollLeft;
       if (position < loopWidth || position >= loopWidth * 2) {
         viewport.scrollLeft = loopWidth + ((position - loopWidth) % loopWidth + loopWidth) % loopWidth;
@@ -136,11 +136,6 @@
       viewport.scrollLeft = loopWidth * (1 + relativePosition);
     };
     reducedMotion.addEventListener('change', event => { paused = event.matches; });
-    viewport.addEventListener('focusin', () => { focused = true; });
-    viewport.addEventListener('focusout', event => {
-      focused = viewport.contains(event.relatedTarget);
-      if (!focused) wrap();
-    });
     viewport.addEventListener('scroll', () => wrap(), { passive: true });
     viewport.addEventListener('dragstart', event => event.preventDefault());
     viewport.addEventListener('pointerdown', event => {
@@ -169,7 +164,7 @@
       if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
       drag = null;
       touching = false;
-      holdUntil = performance.now() + 2500;
+      holdUntil = event.pointerType === 'touch' ? performance.now() + 1000 : 0;
       viewport.classList.remove('is-dragging');
     };
     window.addEventListener('pointerup', release);
@@ -179,16 +174,17 @@
       if (performance.now() < ignoreClickUntil) { event.preventDefault(); event.stopPropagation(); }
     }, true);
     viewport.addEventListener('wheel', event => {
-      holdUntil = performance.now() + 2500;
+      // Page scrolling over the ribbon must not suspend its animation.
+      if (!event.deltaX && !event.shiftKey) return;
+      holdUntil = performance.now() + 500;
       if (event.shiftKey && !event.deltaX) { event.preventDefault(); viewport.scrollLeft += event.deltaY; }
-      requestAnimationFrame(() => wrap(true));
+      requestAnimationFrame(wrap);
     }, { passive: false });
     viewport.addEventListener('keydown', event => {
       if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
       event.preventDefault();
       viewport.scrollLeft += (event.key === 'ArrowRight' ? 1 : -1) * originals[0].getBoundingClientRect().width;
-      wrap(true);
-      holdUntil = performance.now() + 2500;
+      wrap();
     });
     new ResizeObserver(rebuild).observe(viewport);
     new IntersectionObserver(entries => { visible = entries[0].isIntersecting; }).observe(viewport);
@@ -196,7 +192,7 @@
     const animate = timestamp => {
       const elapsed = previousFrame ? Math.min(timestamp - previousFrame, 64) : 0;
       previousFrame = timestamp;
-      if (visible && !document.hidden && !paused && !focused && !touching && timestamp > holdUntil && !document.querySelector('dialog[open]')) {
+      if (visible && !document.hidden && !paused && !touching && timestamp > holdUntil && !document.querySelector('dialog[open]')) {
         // Retain fractional movement on browsers that round scrollLeft to pixels.
         scrollRemainder += elapsed * .038;
         const pixels = Math.floor(scrollRemainder);
