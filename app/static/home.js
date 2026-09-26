@@ -84,15 +84,138 @@
     bookDialog.showModal();
   }));
 
-  const drafts = { weakness: 'Моя слабость, моя боль', sun: 'Горячее солнце', chalk: 'Мелки' };
+  const drafts = { weakness: 'Моя слабость, моя боль', sun: 'Горячее солнце', chalk: 'Мелки', upcoming: 'Новый отрывок' };
   const draftDialog = document.querySelector('#draft-dialog');
-  document.querySelectorAll('[data-draft]').forEach(button => button.addEventListener('click', event => {
-    event.preventDefault();
+  document.addEventListener('click', event => {
+    const button = event.target.closest('[data-draft]');
+    if (!button || event.defaultPrevented) return;
     const title = drafts[button.dataset.draft];
     if (!title) return;
+    event.preventDefault();
     document.querySelector('#draft-dialog-title').textContent = title;
     draftDialog.showModal();
-  }));
+  });
+
+  const viewport = document.querySelector('.excerpt-viewport');
+  if (viewport) {
+    const track = viewport.querySelector('.excerpt-track');
+    const group = track.querySelector('.excerpt-group');
+    const originals = [...group.children];
+    const pauseButton = document.querySelector('.carousel-pause');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let loopWidth = 0, observedWidth = 0, previousFrame = 0, scrollRemainder = 0;
+    let paused = reducedMotion.matches, hovered = false, focused = false, touching = false, visible = false;
+    let drag = null, holdUntil = 0, ignoreClickUntil = 0;
+
+    const copyForLoop = element => {
+      const copy = element.cloneNode(true);
+      copy.dataset.carouselCopy = '';
+      copy.setAttribute('aria-hidden', 'true');
+      copy.querySelectorAll('a, button, [tabindex]').forEach(link => link.tabIndex = -1);
+      return copy;
+    };
+    const wrap = (force = false) => {
+      if (!loopWidth || (focused && !touching && !force)) return;
+      const position = viewport.scrollLeft;
+      if (position < loopWidth || position >= loopWidth * 2) {
+        viewport.scrollLeft = loopWidth + ((position - loopWidth) % loopWidth + loopWidth) % loopWidth;
+      }
+    };
+    const rebuild = () => {
+      const width = viewport.clientWidth;
+      if (!width || width === observedWidth || !originals.length) return;
+      observedWidth = width;
+      const relativePosition = loopWidth ? (viewport.scrollLeft % loopWidth) / loopWidth : 0;
+      track.querySelectorAll('[data-carousel-copy]').forEach(copy => copy.remove());
+      const originalWidth = group.getBoundingClientRect().width;
+      if (!originalWidth) return;
+      const repeats = Math.ceil((width + originals[0].getBoundingClientRect().width) / originalWidth);
+      for (let i = 1; i < repeats; i++) originals.forEach(card => group.append(copyForLoop(card)));
+      loopWidth = group.getBoundingClientRect().width;
+      track.prepend(copyForLoop(group));
+      track.append(copyForLoop(group));
+      viewport.scrollLeft = loopWidth * (1 + relativePosition);
+    };
+    const updatePauseButton = () => {
+      pauseButton.hidden = false;
+      pauseButton.setAttribute('aria-pressed', String(paused));
+      pauseButton.textContent = paused ? 'Продолжить ленту' : 'Приостановить ленту';
+    };
+    pauseButton.addEventListener('click', () => { paused = !paused; updatePauseButton(); });
+    reducedMotion.addEventListener('change', event => { paused = event.matches; updatePauseButton(); });
+    viewport.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') hovered = true; });
+    viewport.addEventListener('pointerleave', () => { hovered = false; });
+    viewport.addEventListener('focusin', () => { focused = true; });
+    viewport.addEventListener('focusout', event => {
+      focused = viewport.contains(event.relatedTarget);
+      if (!focused) wrap();
+    });
+    viewport.addEventListener('scroll', () => wrap(), { passive: true });
+    viewport.addEventListener('dragstart', event => event.preventDefault());
+    viewport.addEventListener('pointerdown', event => {
+      if (event.pointerType === 'mouse' && event.button !== 0) return;
+      touching = true;
+      if (event.pointerType === 'mouse') drag = { id: event.pointerId, startX: event.clientX, lastX: event.clientX, moved: false };
+    });
+    viewport.addEventListener('pointermove', event => {
+      if (!drag || event.pointerId !== drag.id) return;
+      if (!drag.moved && Math.abs(event.clientX - drag.startX) > 6) {
+        drag.moved = true;
+        viewport.setPointerCapture(event.pointerId);
+        viewport.classList.add('is-dragging');
+      }
+      if (drag.moved) {
+        event.preventDefault();
+        viewport.scrollLeft -= event.clientX - drag.lastX;
+        wrap();
+        drag.lastX = event.clientX;
+      }
+    });
+    const release = event => {
+      if (!touching) return;
+      if (drag && event.pointerId !== drag.id) return;
+      if (drag?.moved) ignoreClickUntil = performance.now() + 350;
+      if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
+      drag = null;
+      touching = false;
+      holdUntil = performance.now() + 2500;
+      viewport.classList.remove('is-dragging');
+    };
+    window.addEventListener('pointerup', release);
+    window.addEventListener('pointercancel', release);
+    window.addEventListener('blur', () => { drag = null; touching = false; hovered = false; viewport.classList.remove('is-dragging'); });
+    viewport.addEventListener('click', event => {
+      if (performance.now() < ignoreClickUntil) { event.preventDefault(); event.stopPropagation(); }
+    }, true);
+    viewport.addEventListener('wheel', event => {
+      holdUntil = performance.now() + 2500;
+      if (event.shiftKey && !event.deltaX) { event.preventDefault(); viewport.scrollLeft += event.deltaY; }
+      requestAnimationFrame(() => wrap(true));
+    }, { passive: false });
+    viewport.addEventListener('keydown', event => {
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      event.preventDefault();
+      viewport.scrollLeft += (event.key === 'ArrowRight' ? 1 : -1) * originals[0].getBoundingClientRect().width;
+      wrap(true);
+      holdUntil = performance.now() + 2500;
+    });
+    new ResizeObserver(rebuild).observe(viewport);
+    new IntersectionObserver(entries => { visible = entries[0].isIntersecting; }).observe(viewport);
+    updatePauseButton();
+    rebuild();
+    const animate = timestamp => {
+      const elapsed = previousFrame ? Math.min(timestamp - previousFrame, 64) : 0;
+      previousFrame = timestamp;
+      if (visible && !document.hidden && !paused && !hovered && !focused && !touching && timestamp > holdUntil && !document.querySelector('dialog[open]')) {
+        // Retain fractional movement on browsers that round scrollLeft to pixels.
+        scrollRemainder += elapsed * .025;
+        const pixels = Math.floor(scrollRemainder);
+        if (pixels) { viewport.scrollLeft += pixels; scrollRemainder -= pixels; wrap(); }
+      }
+      requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
+  }
 
   document.querySelector('[data-open-paper]').addEventListener('click', () => document.querySelector('#paper-dialog').showModal());
   document.querySelectorAll('dialog').forEach(dialog => {
