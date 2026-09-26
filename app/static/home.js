@@ -101,7 +101,6 @@
     const track = viewport.querySelector('.excerpt-track');
     const group = track.querySelector('.excerpt-group');
     const originals = [...group.children];
-    const pauseButton = document.querySelector('.carousel-pause');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let loopWidth = 0, observedWidth = 0, previousFrame = 0, scrollRemainder = 0;
     let paused = reducedMotion.matches, hovered = false, focused = false, touching = false, visible = false;
@@ -136,13 +135,7 @@
       track.append(copyForLoop(group));
       viewport.scrollLeft = loopWidth * (1 + relativePosition);
     };
-    const updatePauseButton = () => {
-      pauseButton.hidden = false;
-      pauseButton.setAttribute('aria-pressed', String(paused));
-      pauseButton.textContent = paused ? 'Продолжить ленту' : 'Приостановить ленту';
-    };
-    pauseButton.addEventListener('click', () => { paused = !paused; updatePauseButton(); });
-    reducedMotion.addEventListener('change', event => { paused = event.matches; updatePauseButton(); });
+    reducedMotion.addEventListener('change', event => { paused = event.matches; });
     viewport.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') hovered = true; });
     viewport.addEventListener('pointerleave', () => { hovered = false; });
     viewport.addEventListener('focusin', () => { focused = true; });
@@ -201,14 +194,13 @@
     });
     new ResizeObserver(rebuild).observe(viewport);
     new IntersectionObserver(entries => { visible = entries[0].isIntersecting; }).observe(viewport);
-    updatePauseButton();
     rebuild();
     const animate = timestamp => {
       const elapsed = previousFrame ? Math.min(timestamp - previousFrame, 64) : 0;
       previousFrame = timestamp;
       if (visible && !document.hidden && !paused && !hovered && !focused && !touching && timestamp > holdUntil && !document.querySelector('dialog[open]')) {
         // Retain fractional movement on browsers that round scrollLeft to pixels.
-        scrollRemainder += elapsed * .025;
+        scrollRemainder += elapsed * .038;
         const pixels = Math.floor(scrollRemainder);
         if (pixels) { viewport.scrollLeft += pixels; scrollRemainder -= pixels; wrap(); }
       }
