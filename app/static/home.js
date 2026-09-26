@@ -84,7 +84,7 @@
     bookDialog.showModal();
   }));
 
-  const drafts = { weakness: 'Моя слабость, моя боль', sun: 'Горячее солнце', chalk: 'Мелки', upcoming: 'Новый отрывок' };
+  const drafts = { weakness: 'Моя слабость, моя боль', sun: 'Горячее солнце', chalk: 'Мелки', near: 'Рядом', ticket: 'Золотой билет', inside: 'Там, внутри', redemption: 'Искупление', canvases: 'Смятые холсты' };
   const draftDialog = document.querySelector('#draft-dialog');
   document.addEventListener('click', event => {
     const button = event.target.closest('[data-draft]');
