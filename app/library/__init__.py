@@ -8,7 +8,7 @@ from sqlalchemy import select
 from ..extensions import db, limiter
 from ..models import Chapter, ReadingProgress, Work, utcnow
 from ..services import fingerprint
-from ..services.access import can_read
+from ..services.access import can_read, reader_tier, required_tier, TIERS, TIER_LABELS, SHELVES
 from ..services.content import render_content, valid_slug
 
 bp = Blueprint('library', __name__)
@@ -41,18 +41,32 @@ def home():
     return render_template('home.html', works=works, first_chapters=first_chapters)
 
 
-@bp.get('/library')
+@bp.get('/library', strict_slashes=False)
 def catalog():
+    tier = reader_tier(current_user)
     statement = visible_works().where(Work.id.in_(
         select(Chapter.work_id).where(Chapter.is_published.is_(True), Chapter.published_at <= utcnow())
     )).order_by(Work.sort_order, Work.title)
-    page = db.paginate(statement, per_page=12, max_per_page=12, error_out=False)
-    return render_template('library/catalog.html', page=page)
+    shelves = {key: [] for key in SHELVES}
+    for item in db.session.scalars(statement):
+        if TIERS[required_tier(item)] > TIERS[tier]:
+            continue
+        # A free profile gets a book only when at least one published chapter is open.
+        if tier == 'free' and not db.session.scalar(published_chapters(item.id).where(
+                Chapter.access_type.in_(['free', 'fragment'])).limit(1)):
+            continue
+        shelves[item.shelf].append(dict(title=item.title, cover=item.cover_path,
+            href=url_for('library.work', slug=item.slug), subtitle=item.subtitle))
+    return render_template('library/catalog.html', library_shelves=[
+        dict(key=key, title=title, books=shelves[key]) for key, title in SHELVES.items()],
+        tier_label=TIER_LABELS[tier])
 
 
 @bp.get('/works/<slug>')
 def work(slug):
     item = get_work(slug)
+    if TIERS[reader_tier(current_user)] < TIERS[required_tier(item)]:
+        abort(403)
     chapters = list(db.session.scalars(published_chapters(item.id)))
     return render_template('library/work.html', work=item, chapters=chapters)
 

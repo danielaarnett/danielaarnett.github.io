@@ -143,6 +143,5 @@
     window.scrollTo({ top: 0, behavior: motion.matches ? 'instant' : 'smooth' });
     document.querySelector('.brand').focus({ preventScroll: true });
   });
-  document.querySelector('#year').textContent = new Date().getFullYear();
 
 })();

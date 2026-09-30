@@ -113,10 +113,10 @@ h3 { font-family: var(--serif); font-weight: 500; font-variation-settings: "opsz
 /* New reading section: three updates connected by two hand-drawn SVG curves. */
 .brand-logo { width: 58px; height: auto; flex: 0 0 58px; object-fit: contain; }
 .center-title { text-align: center; }
-.reading-updates { overflow: hidden; background: linear-gradient(180deg, #202522 0%, #343631 20%, #3a3933 68%, #343630 100%); color: var(--paper); padding-block: 64px 72px; border-bottom: 1px solid #a28e7055; }
+.reading-updates { overflow: hidden; background: linear-gradient(180deg, #30332d 0, #aaa28f 90px, #c9c0af 38%, #ded5c5 100%); color: var(--ink); padding-block: 64px 72px; border-bottom: 0; }
 .updates-list { position: relative; isolation: isolate; }
 .story-threads { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; overflow: visible; pointer-events: none; }
-.story-threads path { fill: none; stroke: #c2a17b; stroke-width: 5; stroke-linecap: round; opacity: .75; vector-effect: non-scaling-stroke; }
+.story-threads path { fill: none; stroke: #967657; stroke-width: 5; stroke-linecap: round; opacity: .75; vector-effect: non-scaling-stroke; }
 .update-card { display: grid; grid-template-columns: 44% 56%; align-items: center; min-height: 420px; position: relative; }
 .update-visual { display: grid; place-items: center; padding: 32px; }
 .update-art-frame { width: min(100%, 300px); transform: rotate(-9deg); padding: 12px 12px 32px; background: #e8decd; border: 1px solid #c4b59b; box-shadow: 12px 18px 28px #10171140; }
@@ -124,22 +124,18 @@ h3 { font-family: var(--serif); font-weight: 500; font-variation-settings: "opsz
 .update-art-frame:empty::before { content: ""; display: block; aspect-ratio: 1; background: #353832; }
 .update-copy { padding: 28px; max-width: 620px; }
 .update-copy h3 { font-style: italic; font-size: clamp(1.125rem, 1.5vw, 1.375rem); line-height: 1.5; }
-.update-copy h3 > span { display: inline; font: inherit; color: #d1af8c; }
-.update-copy p { margin-top: 20px; font-size: 1rem; line-height: 1.9; color: #e0dccf; }
+.update-copy h3 > span { display: inline; font: inherit; color: #654730; }
+.update-copy p { margin-top: 20px; font-size: 1rem; line-height: 1.9; color: #363b32; }
 .update-action { display: flex; justify-content: center; margin-top: 26px; }
-.button-reading { min-width: 170px; justify-content: center; background: rgb(211 175 139 / 12%); border: 1px solid #d3af8b; color: #f1dfc9; }
-.button-reading:hover { background: rgb(211 175 139 / 24%); color: #fff0dc; }
+.button-reading { min-width: 170px; justify-content: center; background: rgb(88 70 46 / 8%); border: 1px solid #826449; color: #292d29; }
+.button-reading:hover { background: rgb(88 70 46 / 17%); color: #202522; }
 .update-card:nth-of-type(even) { grid-template-columns: 56% 44%; }
 .update-card:nth-of-type(even) .update-visual { grid-column: 2; grid-row: 1; }
 .update-card:nth-of-type(even) .update-copy { grid-column: 1; grid-row: 1; }
 .update-card:nth-of-type(even) .update-art-frame { transform: rotate(9deg); }
-.collection-grid { margin-top: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-.collection-card { border: 1px solid #b8ab94; padding: 28px 24px; display: flex; flex-direction: column; align-items: center; gap: 22px; }
-.collection-card > img { width: 100%; height: clamp(180px, 20vw, 280px); object-fit: contain; }
-.collection-card h3 { font-size: 1.75rem; }
+#library { background: linear-gradient(180deg, #ded5c5, var(--paper) 85%); }
 .button-outline { min-width: 170px; background: transparent; border: 1px solid #9e8a6f; justify-content: center; }
 .button-outline:hover { background: #e2d8c8; }
-.collection-card .button { margin-top: auto; }
 
 /* The art follows the section height and gently approaches when a book opens. */
 .workshop-grid { isolation: isolate; }
@@ -152,18 +148,23 @@ h3 { font-family: var(--serif); font-weight: 500; font-variation-settings: "opsz
 .circle-heading { max-width: 860px; margin-inline: auto; text-align: center; }
 .prose-description { font-size: 1.0625rem; line-height: 1.9; color: var(--muted); margin-top: 24px; }
 .subscription-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 42px; }
-.subscription-card { display: flex; flex-direction: column; border: 1px solid #b8ab94; padding: 30px 24px; scroll-margin-top: 110px; }
+.subscription-card { display: flex; flex-direction: column; border: 1px solid #b8ab94; background: rgb(103 88 64 / 9%); padding: 30px 24px; scroll-margin-top: 110px; }
 .subscription-card:target { outline: 2px solid #a78661; outline-offset: 5px; }
 .subscription-card h3 { font-size: 1.75rem; line-height: 1.3; margin-bottom: 26px; text-align: center; }
 .subscription-card ul { list-style: none; padding: 0; margin: 0 0 30px; display: grid; gap: 16px; }
 .subscription-card li { display: flex; align-items: flex-start; gap: 12px; font-size: .9375rem; line-height: 1.65; }
 .subscription-card li img { flex: 0 0 19px; width: 19px; height: 19px; object-fit: contain; margin-top: 3px; }
-.subscription-card .button { margin-top: auto; width: 100%; min-width: 0; }
-.paper-editions { border-top: 1px solid var(--line); margin-top: 68px; padding-top: 56px; text-align: center; }
+.subscription-card .button { margin-top: auto; width: 100%; min-width: 0; background: rgb(88 70 46 / 9%); }
+.subscription-card .button:hover { background: rgb(88 70 46 / 17%); }
+.paper-editions { position: relative; border-top: 1px solid var(--line); margin-top: 68px; padding-top: 56px; text-align: center; }
+.paper-editions::before { content: ""; position: absolute; left: 50%; top: -6px; width: 12px; height: 12px; border: 1px solid #a78b6b; background: var(--paper); box-shadow: 0 0 0 6px var(--paper); transform: translateX(-50%) rotate(45deg); }
+.paper-editions .button { background: rgb(88 70 46 / 14%); border-color: #998064; }
+.paper-editions .button:hover { background: rgb(88 70 46 / 23%); }
 .paper-editions p { max-width: 720px; margin: 24px auto 28px; line-height: 1.9; color: var(--muted); }
 .site-footer { color: #c3c5b6; background: #202822; padding: 65px 0 30px; }
 .footer-top { padding-bottom: 50px; margin-bottom: 28px; border-bottom: 1px solid #a49f8530; text-align: center; }
-.footer-title { font: 500 clamp(1rem, 1.7vw, 1.375rem)/1.6 var(--serif); color: #e2dac9; text-wrap: balance; }
+.footer-title { font: 500 clamp(.9375rem, 1.45vw, 1.125rem)/1.6 var(--serif); color: #e2dac9; text-wrap: balance; }
+.footer-title em { color: #ddba98; font-style: normal; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 22px; font-size: var(--small-size); }
 .footer-brand { font: 500 20px var(--display); color: #ded7c4; }
 .footer-brand > span { display: block; margin-top: 7px; font: var(--small-size) var(--sans); letter-spacing: .07em; color: #a3ae99; }
@@ -198,7 +199,7 @@ html { scrollbar-color: #9c8164 #202522; scrollbar-width: thin; }
   .menu-toggle[aria-expanded='true'] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
   .workshop-grid { gap: 32px; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); }
   .workshop-art { left: -100px; }
-  .collection-card, .subscription-card { padding: 24px 20px; }
+  .subscription-card { padding: 24px 20px; }
 }
 @media (max-width: 850px) {
   .shell { width: calc(100% - 48px); }
@@ -208,10 +209,9 @@ html { scrollbar-color: #9c8164 #202522; scrollbar-width: thin; }
   .update-card:nth-of-type(even) { grid-template-columns: 60% 40%; }
   .update-visual { padding: 20px; }
   .update-copy { padding: 20px; }
-  .collection-grid, .subscription-grid { gap: 14px; }
-  .collection-card, .subscription-card { padding: 22px 14px; }
-  .collection-card h3, .subscription-card h3 { font-size: 1.4rem; }
-  .collection-card .button { min-width: 0; width: 100%; }
+  .subscription-grid { gap: 14px; }
+  .subscription-card { padding: 22px 14px; }
+  .subscription-card h3 { font-size: 1.4rem; }
   .subscription-card li { gap: 8px; font-size: .875rem; }
   .workshop-grid { grid-template-columns: minmax(0, .5fr) minmax(0, 1.5fr); gap: 20px; }
   .workshop-art { left: -170px; mask-image: linear-gradient(90deg, #000 55%, transparent 90%); }
@@ -248,11 +248,9 @@ html { scrollbar-color: #9c8164 #202522; scrollbar-width: thin; }
   .update-copy h3 { font-style: italic; font-size: 1.4rem; }
   .update-copy p { font-size: 1rem; }
   .story-threads { opacity: .7; }
-  .collection-grid, .subscription-grid { grid-template-columns: 1fr; gap: 22px; margin-top: 30px; }
-  .collection-card, .subscription-card { padding: 28px; }
-  .collection-card > img { height: 240px; }
-  .collection-card h3, .subscription-card h3 { font-size: 1.75rem; }
-  .collection-card .button { width: auto; min-width: 180px; }
+  .subscription-grid { grid-template-columns: 1fr; gap: 22px; margin-top: 30px; }
+  .subscription-card { padding: 28px; }
+  .subscription-card h3 { font-size: 1.75rem; }
   .subscription-card li { font-size: 1rem; gap: 12px; }
   .prose-description { font-size: 1rem; }
   .paper-editions { margin-top: 44px; padding-top: 40px; }
@@ -280,3 +278,15 @@ html { scrollbar-color: #9c8164 #202522; scrollbar-width: thin; }
 }
 @media (max-width: 380px) { .brand-name { font-size: 15px; } .brand-name small { letter-spacing: 0; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+
+.library-door { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 72px; align-items: center; }
+.library-door-art { position: relative; padding: 20px 20px 26px; border-bottom: 5px solid #a48c6f; box-shadow: 0 8px 0 -4px #c0b097; }
+.library-door-art img { width: 100%; max-height: 300px; object-fit: contain; }
+.library-door-copy > p { color: #55594e; margin-top: 24px; line-height: 1.9; max-width: 540px; }
+.library-genres { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-block: 24px 30px; color: #705439; font-size: .9375rem; }
+.library-genres a { border-bottom: 1px solid #a58b6970; padding-bottom: 4px; }
+.library-genres a:hover { border-color: currentColor; }
+.library-door-copy > .button { background: rgb(88 70 46 / 9%); }
+.library-door-copy > .button:hover { background: rgb(88 70 46 / 17%); }
+@media (max-width: 850px) { .library-door { gap: 36px; } }
+@media (max-width: 650px) { .library-door { grid-template-columns: 1fr; gap: 42px; } .library-door-art { width: min(100%, 320px); margin-inline: auto; } .library-door-copy { text-align: center; } .library-genres { justify-content: center; } }

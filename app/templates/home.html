@@ -10,8 +10,8 @@
   <link rel="preload" href="/fonts/literata-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/golos-text-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/fonts.css">
-  <link rel="stylesheet" href="/css/home.css?v=14">
-  <script src="/static/home.js?v=14" defer></script>
+  <link rel="stylesheet" href="/css/home.css?v=15">
+  <script src="/static/home.js?v=15" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержанию</a>
@@ -52,7 +52,12 @@
         </article>
       </div></div>
     </section>
-    <section class="paper section-space" id="library" aria-labelledby="library-title"><div class="shell"><h2 class="center-title" id="library-title">Книги</h2><div class="collection-grid"><article class="collection-card"><img src="/images/book_1.png" alt="" loading="lazy"><h3>Бесплатно</h3><a class="button button-outline" href="#drafts" aria-label="Перейти — Бесплатно">Перейти</a></article><article class="collection-card"><img src="/images/book_2.png" alt="" loading="lazy"><h3>Свидетель</h3><a class="button button-outline" href="#subscription-witness" aria-label="Перейти — Свидетель">Перейти</a></article><article class="collection-card"><img src="/images/book_3.png" alt="" loading="lazy"><h3>Ценитель</h3><a class="button button-outline" href="#subscription-appreciator" aria-label="Перейти — Ценитель">Перейти</a></article></div></div></section>
+    <section class="paper section-space" id="library" aria-labelledby="library-title">
+      <div class="shell library-door">
+        <div class="library-door-art"><img src="/images/book_1.png" alt="" loading="lazy"></div>
+        <div class="library-door-copy"><h2 id="library-title">Книги</h2><p>У каждой истории своя полка. Романы, новеллы, стихотворения — найдите то, что хочется открыть сегодня.</p><nav class="library-genres" aria-label="Разделы библиотеки"><a href="/library#novels">Романы</a><a href="/library#novellas">Новеллы</a><a href="/library#poetry">Стихотворения</a><a href="/library#stories">Рассказы</a></nav><a class="button button-outline" href="/library">Открыть библиотеку</a></div>
+      </div>
+    </section>
     <section class="workshop" id="workshop" aria-labelledby="workshop-title">
       <div class="shell workshop-grid">
         <div class="workshop-illustration"><img class="workshop-art" src="/images/progress.png" alt="" aria-hidden="true" width="1194" height="1175" loading="lazy"></div>
@@ -134,8 +139,8 @@
 
   </main>
   <footer class="site-footer">
-    <div class="footer-top"><div class="shell"><p class="footer-title">КОНЕЦ СТРАНИЦЫ — НЕ КОНЕЦ ИСТОРИИ</p></div></div>
-    <div class="shell footer-inner"><a class="footer-brand" href="#main">Daniel A. Arnett<span>АВТОРСКИЙ АРХИВ</span></a><p>© <span id="year">2026</span> Daniel A. Arnett</p></div>
+    <div class="footer-top"><div class="shell"><p class="footer-title">Конец страницы — не <em>конец истории</em></p></div></div>
+    <div class="shell footer-inner"><a class="footer-brand" href="#main">Daniel A. Arnett<span>АВТОРСКИЙ АРХИВ</span></a><p>© 2026-2027 All Rights Reserved.</p></div>
   </footer>
   <a class="back-to-top" href="#" aria-label="Подняться к началу страницы" hidden><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="m5 15 7-7 7 7"/></svg></a>
   <dialog class="notice-dialog" id="notice-dialog" aria-labelledby="notice-title"><button class="dialog-close" data-close-dialog aria-label="Закрыть окно">×</button><h2 id="notice-title"></h2><p id="notice-text"></p></dialog>

@@ -1,0 +1,29 @@
+<header class="bookshelf-heading">
+  <p class="eyebrow copper">АВТОРСКАЯ БИБЛИОТЕКА</p>
+  <h1>Каждой истории —<br><em>своя полка.</em></h1>
+  <p>Романы, новеллы и стихотворения. Выберите книгу, чтобы открыть её и начать читать.</p>
+  <span class="reader-level">Ваш доступ: {{ tier_label }}</span>
+</header>
+<nav class="shelf-nav" aria-label="Полки библиотеки">
+  {% for shelf in library_shelves %}<a href="#{{ shelf.key }}">{{ shelf.title }}</a>{% endfor %}
+</nav>
+<div class="bookshelves">
+{% for shelf in library_shelves %}
+  <section class="bookshelf" id="{{ shelf.key }}" aria-labelledby="shelf-{{ shelf.key }}">
+    <header class="shelf-heading"><h2 id="shelf-{{ shelf.key }}">{{ shelf.title }}</h2><span>{{ '%02d'|format(loop.index) }}</span></header>
+    <div class="shelf-books{% if not shelf.books %} shelf-empty{% endif %}">
+      {% for book in shelf.books %}
+      <a class="shelf-book" href="{{ book.href }}">
+        <div class="shelf-cover">{% if book.cover %}<img src="{{ book.cover }}" alt="" loading="lazy">{% else %}<span class="shelf-cover-title">{{ book.title }}</span>{% endif %}</div>
+        <h3>{{ book.title }}</h3>
+        {% if book.subtitle %}<p>{{ book.subtitle }}</p>{% endif %}
+      </a>
+      {% else %}
+      <div class="empty-spines" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p>На этой полке пока нет доступных вам текстов.<br>Новые истории займут своё место со временем.</p>
+      {% endfor %}
+    </div>
+  </section>
+{% endfor %}
+</div>
+<aside class="library-invitation"><p>Больше историй, ранних публикаций и авторских материалов — в читательском круге.</p><a class="button button-outline" href="/#prose">Читательский круг</a></aside>

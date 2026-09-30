@@ -13,6 +13,7 @@ from wtforms.validators import InputRequired, Length, NumberRange, Optional, Val
 from ..extensions import db, limiter
 from ..models import Chapter, User, Work, utcnow
 from ..services.content import count_words, render_content, valid_cover, valid_slug
+from ..services.access import SHELVES, TIER_LABELS
 
 bp = Blueprint('admin', __name__, url_prefix='/admin')
 ACCESS_CHOICES = [('free', 'Бесплатно'), ('fragment', 'Фрагмент + закрытое продолжение'), ('subscriber', 'Только читательский круг')]
@@ -41,6 +42,8 @@ class WorkForm(FlaskForm):
     title = StringField('Название', validators=[InputRequired(), Length(max=240)])
     slug = StringField('Адрес произведения', validators=[InputRequired(), slug_validator])
     subtitle = StringField('Подзаголовок / вид произведения', validators=[Length(max=240)])
+    shelf = SelectField('Полка в библиотеке', choices=list(SHELVES.items()), default='stories')
+    minimum_tier = SelectField('Минимальный уровень для книги', choices=list(TIER_LABELS.items()), default='free')
     description = TextAreaField('Описание', validators=[Length(max=10000)])
     cover_path = StringField('Обложка', validators=[Length(max=240), cover_validator])
     cover_hover_path = StringField('Арт при наведении (необязательно)', validators=[Length(max=240), cover_validator])
@@ -78,7 +81,7 @@ def edit_work(work_id=None):
     work = db.get_or_404(Work, work_id) if work_id is not None else Work()
     form = WorkForm(obj=work if work.id is not None else None)
     if form.validate_on_submit():
-        for name in ('title', 'slug', 'subtitle', 'description', 'cover_path', 'cover_hover_path', 'status', 'access_type', 'sort_order', 'completion_percent', 'is_visible'):
+        for name in ('title', 'slug', 'subtitle', 'shelf', 'minimum_tier', 'description', 'cover_path', 'cover_hover_path', 'status', 'access_type', 'sort_order', 'completion_percent', 'is_visible'):
             setattr(work, name, getattr(form, name).data)
         work.published_at = work.published_at or utcnow() if work.is_visible else None
         db.session.add(work)

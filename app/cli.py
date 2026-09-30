@@ -12,11 +12,49 @@ from .extensions import db
 from .models import Chapter, LocalLoginTicket, ReadAudit, User, Work, utcnow
 from .services.docx_import import import_prologue
 from .services.content import count_words, render_content, valid_slug
-from .services.access import can_read
+from .services.access import can_read, SHELVES
 from .services import fingerprint
 
 
 def register_commands(app):
+    @app.cli.command('export-free-library')
+    def export_free_library():
+        """Export only public books with an already exported free reading page."""
+        public_root = Path(app.root_path).parent
+        shelves = {key: [] for key in SHELVES}
+        for work in db.session.scalars(select(Work).where(Work.is_visible.is_(True),
+                Work.published_at <= utcnow()).order_by(Work.sort_order, Work.title)):
+            chapters = db.session.scalars(select(Chapter).where(Chapter.work_id == work.id,
+                Chapter.is_published.is_(True), Chapter.published_at <= utcnow())
+                .order_by(Chapter.sort_order, Chapter.number))
+            for chapter in chapters:
+                access = can_read(AnonymousUserMixin(), work, chapter)
+                page = public_root / 'read' / work.slug / chapter.slug / 'index.html'
+                if access.mode == 'full' and access.reason == 'free' and page.is_file():
+                    shelves[work.shelf].append(dict(title=work.title, cover=work.cover_path,
+                        subtitle=work.subtitle, href=f'/read/{work.slug}/{chapter.slug}/'))
+                    break
+        destination = public_root / 'library' / 'index.html'
+        destination.parent.mkdir(exist_ok=True)
+        destination.write_text(render_template('library/public_catalog.html',
+            library_shelves=[dict(key=key, title=title, books=shelves[key]) for key, title in SHELVES.items()],
+            tier_label='Бесплатно'), encoding='utf-8')
+        click.echo('Бесплатная библиотека опубликована в library/index.html.')
+
+    @app.cli.command('set-reader-tier')
+    @click.argument('user_id', type=int)
+    @click.argument('tier', type=click.Choice(['free', 'witness', 'appreciator']))
+    @click.option('--days', type=click.IntRange(1, 366), default=30, show_default=True)
+    def set_reader_tier(user_id, tier, days):
+        """Set a trusted, expiring access grant; does not enable subscriptions."""
+        user = db.session.get(User, user_id)
+        if not user:
+            raise click.ClickException('Читатель не найден.')
+        user.subscription_tier = tier
+        user.subscription_expires_at = utcnow() + timedelta(days=days) if tier != 'free' else None
+        db.session.commit()
+        click.echo('Уровень читателя сохранён. Доступ действует только при включённых подписках.')
+
     @app.cli.command('export-free-chapter')
     @click.argument('work_slug')
     @click.argument('chapter_slug')
@@ -57,6 +95,7 @@ def register_commands(app):
                 db.session.add(Work(slug=slug, title=title, subtitle=subtitle, cover_path=cover,
                                     status='draft', access_type='free', is_visible=True, published_at=utcnow(), sort_order=order,
                                     completion_percent=50 if order < 3 else None,
+                                    shelf='novels' if subtitle == 'Роман' else ('novellas' if slug == 'iam-sero-est' else 'stories'),
                                     cover_hover_path=''))
         db.session.commit()
         click.echo('Каталог подготовлен. Существующие записи не изменены.')
