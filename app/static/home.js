@@ -36,6 +36,41 @@
     if (event.matches) setMenu(false);
   });
 
+  // Anchor each thread to the actual rotated frame edges at every screen size.
+  const updates = document.querySelector('.updates-list');
+  const threads = updates.querySelector('.story-threads');
+  const frames = [...updates.querySelectorAll('.update-art-frame')];
+  const drawThreads = () => {
+    const bounds = updates.getBoundingClientRect();
+    if (!bounds.width || !bounds.height) return;
+    threads.setAttribute('viewBox', `0 0 ${bounds.width} ${bounds.height}`);
+    const edge = (frame, bottom) => {
+      const rect = frame.getBoundingClientRect();
+      const matrix = new DOMMatrixReadOnly(getComputedStyle(frame).transform);
+      const offset = frame.offsetHeight / 2 * (bottom ? 1 : -1);
+      return { x: rect.left + rect.width / 2 - bounds.left + matrix.c * offset,
+        y: rect.top + rect.height / 2 - bounds.top + matrix.d * offset };
+    };
+    threads.querySelectorAll('path').forEach((path, i) => {
+      const from = edge(frames[i], true);
+      const to = edge(frames[i + 1], false);
+      const bend = Math.max(40, (to.y - from.y) * .65);
+      if (window.matchMedia('(max-width: 650px)').matches) {
+        // Pass beside the copy on a phone, instead of drawing through its centre.
+        const side = i % 2 ? -bounds.width * .2 : bounds.width * 1.2;
+        path.setAttribute('d', `M${from.x} ${from.y} C${side} ${from.y + 40} ${side} ${to.y - 40} ${to.x} ${to.y}`);
+      } else {
+        path.setAttribute('d', `M${from.x} ${from.y} C${from.x} ${from.y + bend} ${to.x} ${to.y - bend} ${to.x} ${to.y}`);
+      }
+    });
+  };
+  const threadObserver = new ResizeObserver(drawThreads);
+  threadObserver.observe(updates);
+  frames.forEach(frame => threadObserver.observe(frame));
+  window.addEventListener('resize', drawThreads, { passive: true });
+  document.fonts.ready.then(drawThreads);
+  drawThreads();
+
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const workshop = document.querySelector('.workshop');
   const manuscripts = [...document.querySelectorAll('.manuscript')];
