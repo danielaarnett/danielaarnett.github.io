@@ -1,7 +1,7 @@
 .bookshelf-main { padding-block: 64px 80px; }
-.bookshelf-heading { max-width: 900px; margin-inline: auto; text-align: center; }
-.bookshelf-heading h1 { font-size: clamp(1.65rem, 3vw, 2.5rem); line-height: 1.25; }
-.reader-level { display: inline-block; margin-top: 22px; font-size: .875rem; padding: 8px 14px; border: 1px solid #b8ab94; background: #74644912; }
+.bookshelf-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; text-align: left; }
+.bookshelf-heading h1 { max-width: 660px; font-size: clamp(1.0625rem, 1.6vw, 1.25rem); line-height: 1.6; }
+.reader-level { display: inline-block; flex-shrink: 0; margin: 0; white-space: nowrap; font-size: .875rem; padding: 8px 14px; border: 1px solid #b8ab94; background: #74644912; }
 .bookshelf { margin-top: 50px; scroll-margin-top: 115px; }
 .shelf-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
 .shelf-heading h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
@@ -31,3 +31,5 @@
   .empty-spines i:nth-child(2) { width: 18px; }
   .shelf-empty > p { font-size: .875rem; }
 }
+
+@media (max-width: 650px) { .bookshelf-heading { flex-wrap: wrap; gap: 16px; } }
