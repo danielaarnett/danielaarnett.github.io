@@ -9,18 +9,18 @@
   <link rel="icon" href="/images/arnett-mark.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/literata-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/fonts.css">
-  <link rel="stylesheet" href="/css/home.css?v=15">
+  <link rel="stylesheet" href="/css/home.css?v=16">
   <link rel="stylesheet" href="/reading.css">
   <link rel="stylesheet" href="/css/site.css?v=3">
-  <script src="/js/site.js" defer></script>
+  <script src="/js/site.js?v=2" defer></script>
   <script src="/js/reader.js?v=3" defer></script>
 </head>
 <body class="reading-page">
   <a class="skip-link" href="#reader">Перейти к тексту</a>
   <header class="site-header"><div class="shell header-inner">
-    <a class="brand" href="/" aria-label="Daniel A. Arnett — главная"><img class="brand-logo" src="/images/logo.png" alt="" width="1047" height="984"><span class="brand-name">Daniel A. Arnett<small>АВТОРСКАЯ СТРАНИЦА</small></span></a>
+    <a class="brand" href="/" aria-label="Daniel A. Arnett — главная"><img class="brand-logo" src="/images/logo.png?v=eb5760f22b2a" alt="" width="1000" height="942"><span class="brand-name">Daniel A. Arnett<small>АВТОРСКАЯ СТРАНИЦА</small></span></a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Открыть меню"><span></span><span></span></button>
-    <nav class="main-nav" id="main-nav" aria-label="Основная навигация"><a href="/#drafts">Отрывки</a><a href="/#library">Законченная проза</a></nav>
+    <nav class="main-nav" id="main-nav" aria-label="Основная навигация"><a href="/library/">Книги</a><a href="/#workshop">В работе</a><a href="#audio-dialog" data-open-audio>Аудиокниги</a><a class="nav-support" href="/#prose">Читательский круг</a></nav>
   </div></header>
   <main id="main" class="reading-main">
     <header class="reading-hero"><div class="reading-meta-wrap">
@@ -32,9 +32,9 @@
     <section class="reading-section"><div class="reading-container">
       
       <article class="reading-article" id="reader" aria-label="{{ chapter.title }}" data-chapter="{{ chapter.id }}" data-work="{{ work.slug }}" data-index="0" data-total="1" data-protected="false" data-save-url="">{{ content|safe }}</article>
-      <nav class="reading-bottom-nav" aria-label="Навигация после главы"><a class="reading-nav-btn" href="/#drafts"> К черновикам</a><a class="reading-nav-btn" href="#main">К началу главы </a></nav>
+      <nav class="reading-bottom-nav" aria-label="Навигация после главы"><a class="reading-nav-btn" href="/">Главная страница</a><a class="reading-nav-btn" href="#main">К началу главы </a></nav>
     </div></section>
   </main>
-  <footer class="core-footer shell"><a href="/">Daniel A. Arnett</a></footer>
+  <footer class="site-footer"><div class="shell footer-content"><p class="footer-title">Конец страницы — не <em>конец истории</em></p><div class="footer-inner"><a class="footer-brand" href="/">Daniel A. Arnett<span>АВТОРСКИЙ АРХИВ</span></a><p>© 2026-2027 All Rights Reserved.</p></div></div></footer>
 </body>
 </html>

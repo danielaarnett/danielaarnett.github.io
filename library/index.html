@@ -2,76 +2,87 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Библиотека Daniel A. Arnett: романы, новеллы, стихотворения и рассказы. Открывайте книги на полках и читайте доступные главы.">
+  <meta name="description" content="Библиотека Daniel A. Arnett: новеллы, повести, романы, сценарии, незаконченное и стихотворения. Открывайте книги на полках и читайте доступные главы.">
   <meta name="theme-color" content="#202522">
   <title>Библиотека — Daniel A. Arnett</title>
   <link rel="icon" href="/images/arnett-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/fonts.css"><link rel="stylesheet" href="/css/home.css?v=15"><link rel="stylesheet" href="/css/library.css?v=1">
-  <script src="/js/site.js" defer></script>
+  <link rel="stylesheet" href="/css/fonts.css"><link rel="stylesheet" href="/css/home.css?v=16"><link rel="stylesheet" href="/css/library.css?v=2">
+  <script src="/js/site.js?v=2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержанию</a>
   <header class="site-header"><div class="shell header-inner">
-    <a class="brand" href="/" aria-label="Daniel A. Arnett — главная"><img class="brand-logo" src="/images/logo.png" alt="" width="1047" height="984"><span class="brand-name">Daniel A. Arnett<small>АВТОРСКАЯ СТРАНИЦА</small></span></a>
+    <a class="brand" href="/" aria-label="Daniel A. Arnett — главная"><img class="brand-logo" src="/images/logo.png?v=eb5760f22b2a" alt="" width="1000" height="942"><span class="brand-name">Daniel A. Arnett<small>АВТОРСКАЯ СТРАНИЦА</small></span></a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Открыть меню"><span></span><span></span></button>
-    <nav class="main-nav" id="main-nav" aria-label="Основная навигация"><a href="/#drafts">Читать</a><a href="/library/" aria-current="page">Книги</a><a href="/#workshop">В работе</a><a class="nav-support" href="/#prose">Читательский круг</a></nav>
+    <nav class="main-nav" id="main-nav" aria-label="Основная навигация"><a href="/#drafts">Читать</a><a href="/#workshop">В работе</a><a href="#audio-dialog" data-open-audio>Аудиокниги</a><a class="nav-support" href="/#prose">Читательский круг</a></nav>
   </div></header>
-  <main id="main" class="shell bookshelf-main"><header class="bookshelf-heading">
-  <p class="eyebrow copper">АВТОРСКАЯ БИБЛИОТЕКА</p>
-  <h1>Каждой истории —<br><em>своя полка.</em></h1>
-  <p>Романы, новеллы и стихотворения. Выберите книгу, чтобы открыть её и начать читать.</p>
-  <span class="reader-level">Ваш доступ: Бесплатно</span>
-</header>
-<nav class="shelf-nav" aria-label="Полки библиотеки">
-  <a href="#novels">Романы</a><a href="#novellas">Новеллы</a><a href="#poetry">Стихотворения</a><a href="#stories">Рассказы</a>
-</nav>
+  <main id="main" class="shell bookshelf-main"><header class="bookshelf-heading"><h1>Выберите книгу, чтобы открыть её и начать читать</h1><span class="reader-level">Ваш доступ: Бесплатно</span></header>
 <div class="bookshelves">
 
+  <section class="bookshelf" id="novellas" aria-labelledby="shelf-novellas">
+    <header class="shelf-heading"><h2 id="shelf-novellas">Новеллы</h2></header>
+    <div class="shelf-books shelf-empty">
+
+      <div class="empty-spines" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p>На этой полке пока нет доступных вам текстов.<br>Новые истории займут своё место со временем.</p>
+
+    </div>
+  </section>
+
+  <section class="bookshelf" id="short_novels" aria-labelledby="shelf-short_novels">
+    <header class="shelf-heading"><h2 id="shelf-short_novels">Повести</h2></header>
+    <div class="shelf-books shelf-empty">
+
+      <div class="empty-spines" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p>На этой полке пока нет доступных вам текстов.<br>Новые истории займут своё место со временем.</p>
+
+    </div>
+  </section>
+
   <section class="bookshelf" id="novels" aria-labelledby="shelf-novels">
-    <header class="shelf-heading"><h2 id="shelf-novels">Романы</h2><span>01</span></header>
+    <header class="shelf-heading"><h2 id="shelf-novels">Романы</h2></header>
     <div class="shelf-books">
-      
+
       <a class="shelf-book" href="/read/moya-slabost-moya-bol/prolog/">
         <div class="shelf-cover"><img src="/images/art1.png" alt="" loading="lazy"></div>
         <h3>Моя слабость, моя боль</h3>
         <p>Роман</p>
       </a>
-      
+
     </div>
   </section>
 
-  <section class="bookshelf" id="novellas" aria-labelledby="shelf-novellas">
-    <header class="shelf-heading"><h2 id="shelf-novellas">Новеллы</h2><span>02</span></header>
+  <section class="bookshelf" id="scripts" aria-labelledby="shelf-scripts">
+    <header class="shelf-heading"><h2 id="shelf-scripts">Сценарии</h2></header>
     <div class="shelf-books shelf-empty">
-      
+
       <div class="empty-spines" aria-hidden="true"><i></i><i></i><i></i></div>
       <p>На этой полке пока нет доступных вам текстов.<br>Новые истории займут своё место со временем.</p>
-      
+
+    </div>
+  </section>
+
+  <section class="bookshelf" id="unfinished" aria-labelledby="shelf-unfinished">
+    <header class="shelf-heading"><h2 id="shelf-unfinished">Незаконченное</h2></header>
+    <div class="shelf-books shelf-empty">
+
+      <div class="empty-spines" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p>На этой полке пока нет доступных вам текстов.<br>Новые истории займут своё место со временем.</p>
+
     </div>
   </section>
 
   <section class="bookshelf" id="poetry" aria-labelledby="shelf-poetry">
-    <header class="shelf-heading"><h2 id="shelf-poetry">Стихотворения</h2><span>03</span></header>
+    <header class="shelf-heading"><h2 id="shelf-poetry">Стихотворения</h2></header>
     <div class="shelf-books shelf-empty">
-      
+
       <div class="empty-spines" aria-hidden="true"><i></i><i></i><i></i></div>
       <p>На этой полке пока нет доступных вам текстов.<br>Новые истории займут своё место со временем.</p>
-      
+
     </div>
   </section>
 
-  <section class="bookshelf" id="stories" aria-labelledby="shelf-stories">
-    <header class="shelf-heading"><h2 id="shelf-stories">Рассказы</h2><span>04</span></header>
-    <div class="shelf-books shelf-empty">
-      
-      <div class="empty-spines" aria-hidden="true"><i></i><i></i><i></i></div>
-      <p>На этой полке пока нет доступных вам текстов.<br>Новые истории займут своё место со временем.</p>
-      
-    </div>
-  </section>
-
-</div>
-<aside class="library-invitation"><p>Больше историй, ранних публикаций и авторских материалов — в читательском круге.</p><a class="button button-outline" href="/#prose">Читательский круг</a></aside></main>
-  <footer class="site-footer"><div class="footer-top"><div class="shell"><p class="footer-title">Конец страницы — не <em>конец истории</em></p></div></div><div class="shell footer-inner"><a class="footer-brand" href="/">Daniel A. Arnett<span>АВТОРСКИЙ АРХИВ</span></a><p>© 2026-2027 All Rights Reserved.</p></div></footer>
+</div></main>
+  <footer class="site-footer"><div class="shell footer-content"><p class="footer-title">Конец страницы — не <em>конец истории</em></p><div class="footer-inner"><a class="footer-brand" href="/">Daniel A. Arnett<span>АВТОРСКИЙ АРХИВ</span></a><p>© 2026-2027 All Rights Reserved.</p></div></div></footer>
 </body>
 </html>

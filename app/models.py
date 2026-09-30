@@ -44,10 +44,10 @@ class Work(db.Model):
     is_visible = db.Column(db.Boolean, default=False, nullable=False)
     sort_order = db.Column(db.Integer, default=0, nullable=False)
     completion_percent = db.Column(db.Integer, nullable=True)
-    shelf = db.Column(db.String(16), default='stories', server_default='stories', nullable=False)
+    shelf = db.Column(db.String(16), default='unfinished', server_default='unfinished', nullable=False)
     minimum_tier = db.Column(db.String(16), default='free', server_default='free', nullable=False)
     __table_args__ = (
-        db.CheckConstraint("shelf IN ('novels','novellas','poetry','stories')", name='work_shelf'),
+        db.CheckConstraint("shelf IN ('novellas','short_novels','novels','scripts','unfinished','poetry')", name='work_shelf'),
         db.CheckConstraint("minimum_tier IN ('free','witness','appreciator')", name='work_minimum_tier'),
         db.CheckConstraint('completion_percent IS NULL OR (completion_percent >= 0 AND completion_percent <= 100)', name='work_completion'),
         db.CheckConstraint("status IN ('draft','ongoing','completed')", name='work_status'),

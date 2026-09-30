@@ -10,14 +10,14 @@
   <link rel="preload" href="./fonts/literata-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./fonts/golos-text-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./css/fonts.css">
-  <link rel="stylesheet" href="./css/home.css?v=15">
+  <link rel="stylesheet" href="./css/home.css?v=16">
   <script src="./js/home.js?v=15" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержанию</a>
   <header class="site-header">
     <div class="shell header-inner">
-      <a class="brand" href="./index.html" aria-label="Daniel A. Arnett — главная"><img class="brand-logo" src="./images/logo.png" alt="" width="1047" height="984"><span class="brand-name">Daniel A. Arnett<small>АВТОРСКАЯ СТРАНИЦА</small></span></a>
+      <a class="brand" href="./index.html" aria-label="Daniel A. Arnett — главная"><img class="brand-logo" src="./images/logo.png?v=eb5760f22b2a" alt="" width="1000" height="942"><span class="brand-name">Daniel A. Arnett<small>АВТОРСКАЯ СТРАНИЦА</small></span></a>
       <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Открыть меню"><span></span><span></span></button>
       <nav class="main-nav" id="main-nav" aria-label="Основная навигация"><a href="#drafts">Читать</a><a href="#library">Книги</a><a href="#workshop">В работе</a><a href="#notice-dialog" data-notice="audio">Аудиокниги</a><a class="nav-support" href="#prose">Читательский круг</a></nav>
     </div>
@@ -47,16 +47,16 @@
           <div class="update-copy"><h3 id="update-2-title"><span>Обновление:</span> «Горячее солнце»</h3><p>Полный черновой набросок уже на сайте. История целиком — в её первой, ещё не отшлифованной авторской версии. Доступ открыт для подписчиков уровня «Свидетель».</p><div class="update-action"><button class="button button-reading" data-notice="sun">Читать</button></div></div>
         </article>
         <article class="update-card" aria-labelledby="update-3-title">
-          <div class="update-visual" aria-hidden="true"><div class="update-art-frame"></div></div>
+          <div class="update-visual" aria-hidden="true"><div class="update-art-frame"><img src="./images/art0.png" alt="" loading="lazy"></div></div>
           <div class="update-copy"><h3 id="update-3-title"><span>Обновление:</span> «Дети Крампуса: Тени Йоля»</h3><p>Пролог новой истории уже опубликован. Начало мрачной зимней истории и первое знакомство с миром, в котором приближение праздника не сулит ничего хорошего. Доступ открыт для подписчиков уровня «Ценитель».</p><div class="update-action"><button class="button button-reading" data-notice="krampus">Читать</button></div></div>
         </article>
       </div></div>
     </section>
     <section class="paper section-space" id="library" aria-labelledby="library-title">
-      <div class="shell library-door">
+      <div class="shell"><header class="library-section-heading"><h2 id="library-title">Книги</h2></header><div class="library-door">
         <div class="library-door-art"><img src="./images/book_1.png" alt="" loading="lazy"></div>
-        <div class="library-door-copy"><h2 id="library-title">Книги</h2><p>У каждой истории своя полка. Романы, новеллы, стихотворения — найдите то, что хочется открыть сегодня.</p><nav class="library-genres" aria-label="Разделы библиотеки"><a href="./library/#novels">Романы</a><a href="./library/#novellas">Новеллы</a><a href="./library/#poetry">Стихотворения</a><a href="./library/#stories">Рассказы</a></nav><a class="button button-outline" href="./library/">Открыть библиотеку</a></div>
-      </div>
+        <div class="library-door-copy"><p>Здесь собраны книги и крупная проза — законченные, опубликованные и ещё ожидающие своего выхода. Одни уже готовы встретиться с читателем, другие пока только обретают окончательную форму, но у каждой есть собственный мир, герои и история, ради которой она появилась.</p><a class="button button-outline" href="./library/">Перейти в библиотеку</a></div>
+      </div></div>
     </section>
     <section class="workshop" id="workshop" aria-labelledby="workshop-title">
       <div class="shell workshop-grid">
@@ -138,10 +138,7 @@
     </section>
 
   </main>
-  <footer class="site-footer">
-    <div class="footer-top"><div class="shell"><p class="footer-title">Конец страницы — не <em>конец истории</em></p></div></div>
-    <div class="shell footer-inner"><a class="footer-brand" href="#main">Daniel A. Arnett<span>АВТОРСКИЙ АРХИВ</span></a><p>© 2026-2027 All Rights Reserved.</p></div>
-  </footer>
+  <footer class="site-footer"><div class="shell footer-content"><p class="footer-title">Конец страницы — не <em>конец истории</em></p><div class="footer-inner"><a class="footer-brand" href="/">Daniel A. Arnett<span>АВТОРСКИЙ АРХИВ</span></a><p>© 2026-2027 All Rights Reserved.</p></div></div></footer>
   <a class="back-to-top" href="#" aria-label="Подняться к началу страницы" hidden><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="m5 15 7-7 7 7"/></svg></a>
   <dialog class="notice-dialog" id="notice-dialog" aria-labelledby="notice-title"><button class="dialog-close" data-close-dialog aria-label="Закрыть окно">×</button><h2 id="notice-title"></h2><p id="notice-text"></p></dialog>
 </body>

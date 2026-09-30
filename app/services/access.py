@@ -11,7 +11,7 @@ from ..models import utcnow
 MEMBER_STATES = {'creator', 'administrator', 'member'}
 TIERS = {'free': 0, 'witness': 1, 'appreciator': 2}
 TIER_LABELS = {'free': 'Бесплатно', 'witness': 'Свидетель', 'appreciator': 'Ценитель'}
-SHELVES = {'novels': 'Романы', 'novellas': 'Новеллы', 'poetry': 'Стихотворения', 'stories': 'Рассказы'}
+SHELVES = {'novellas': 'Новеллы', 'short_novels': 'Повести', 'novels': 'Романы', 'scripts': 'Сценарии', 'unfinished': 'Незаконченное', 'poetry': 'Стихотворения'}
 
 
 def assigned_tier(user):

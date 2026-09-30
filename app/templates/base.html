@@ -6,19 +6,19 @@
   <meta name="theme-color" content="#202522">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="icon" href="/images/arnett-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/fonts.css"><link rel="stylesheet" href="/css/home.css?v=15">
+  <link rel="stylesheet" href="/css/fonts.css"><link rel="stylesheet" href="/css/home.css?v=16">
   {% block styles %}{% endblock %}
   <link rel="stylesheet" href="/css/site.css?v=3">
-  <script src="/js/site.js" defer></script>
+  <script src="/js/site.js?v=2" defer></script>
   {% block scripts %}{% endblock %}
 </head>
 <body class="{% block body_class %}{% endblock %}">
   <a class="skip-link" href="#main">Перейти к содержанию</a>
   <header class="site-header"><div class="shell header-inner">
-    <a class="brand" href="/" aria-label="Daniel A. Arnett — главная"><img class="brand-logo" src="/images/logo.png" alt="" width="1047" height="984"><span class="brand-name">Daniel A. Arnett<small>АВТОРСКАЯ СТРАНИЦА</small></span></a>
+    <a class="brand" href="/" aria-label="Daniel A. Arnett — главная"><img class="brand-logo" src="/images/logo.png?v=eb5760f22b2a" alt="" width="1000" height="942"><span class="brand-name">Daniel A. Arnett<small>АВТОРСКАЯ СТРАНИЦА</small></span></a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Открыть меню"><span></span><span></span></button>
     <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
-      <a href="/library">Библиотека</a><a href="/#drafts">Отрывки</a>
+      {% block primary_navigation %}<a href="/library">Библиотека</a><a href="/#drafts">Читать</a>{% endblock %}
       {% if current_user.is_authenticated %}
         {% if current_user.is_admin %}<a href="/admin">Авторская панель</a>{% endif %}
         <form action="{{ url_for('auth.logout') }}" method="post"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="nav-action" type="submit">Выйти</button></form>
@@ -27,5 +27,5 @@
   </div></header>
   {% with messages = get_flashed_messages() %}{% if messages %}<div class="shell flash-list" role="status">{% for message in messages %}<p>{{ message }}</p>{% endfor %}</div>{% endif %}{% endwith %}
   <main id="main" class="{% block main_class %}shell core-main{% endblock %}">{% block content %}{% endblock %}</main>
-  <footer class="core-footer shell"><a href="/">Daniel A. Arnett</a><a href="/library">К библиотеке </a></footer>
+  {% include 'footer.html' %}
 </body></html>

@@ -95,7 +95,7 @@ def register_commands(app):
                 db.session.add(Work(slug=slug, title=title, subtitle=subtitle, cover_path=cover,
                                     status='draft', access_type='free', is_visible=True, published_at=utcnow(), sort_order=order,
                                     completion_percent=50 if order < 3 else None,
-                                    shelf='novels' if subtitle == 'Роман' else ('novellas' if slug == 'iam-sero-est' else 'stories'),
+                                    shelf='novels' if subtitle == 'Роман' else ('novellas' if slug == 'iam-sero-est' else 'unfinished'),
                                     cover_hover_path=''))
         db.session.commit()
         click.echo('Каталог подготовлен. Существующие записи не изменены.')

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block primary_navigation %}<a href="/library/">Книги</a><a href="/#workshop">В работе</a><a href="#audio-dialog" data-open-audio>Аудиокниги</a><a class="nav-support" href="/#prose">Читательский круг</a>{% endblock %}
 {% block title %}{{ chapter.title }} — {{ work.title }}{% endblock %}
 {% block styles %}<link rel="stylesheet" href="/reading.css">{% endblock %}
 {% block scripts %}<script src="/js/reader.js?v=3" defer></script>{% endblock %}
@@ -11,6 +12,7 @@
   <article class="reading-article" id="reader" aria-label="{{ chapter.title }}" data-chapter="{{ chapter.id }}" data-work="{{ work.slug }}" data-index="{{ chapter_index }}" data-total="{{ chapter_count }}" data-protected="{{ 'true' if protected else 'false' }}" data-save-url="{{ url_for('library.save_progress') if current_user.is_authenticated else '' }}" data-saved-paragraph="{{ progress.paragraph_id if progress else '' }}" data-saved-at="{{ progress.updated_at.isoformat() ~ 'Z' if progress else '' }}">{{ content|safe }}</article>
   {% if access.mode == 'fragment' %}<div class="reading-article">{% include 'library/access_notice.html' %}</div>{% endif %}
   <nav class="reading-bottom-nav" aria-label="Переход между главами">
+  <a class="reading-nav-btn" href="/">Главная страница</a>
   {% if previous %}<a class="reading-nav-btn reading-nav-prev" href="{{ url_for('library.read', work_slug=work.slug, chapter_slug=previous.slug) }}"> {{ previous.title }}</a>{% endif %}
   <a class="reading-nav-btn" href="{{ url_for('library.work', slug=work.slug) }}">Оглавление</a>
   {% if following %}<a class="reading-nav-btn reading-nav-next" href="{{ url_for('library.read', work_slug=work.slug, chapter_slug=following.slug) }}">{{ following.title }} </a>{% endif %}

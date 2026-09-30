@@ -42,7 +42,7 @@ class WorkForm(FlaskForm):
     title = StringField('Название', validators=[InputRequired(), Length(max=240)])
     slug = StringField('Адрес произведения', validators=[InputRequired(), slug_validator])
     subtitle = StringField('Подзаголовок / вид произведения', validators=[Length(max=240)])
-    shelf = SelectField('Полка в библиотеке', choices=list(SHELVES.items()), default='stories')
+    shelf = SelectField('Полка в библиотеке', choices=list(SHELVES.items()), default='unfinished')
     minimum_tier = SelectField('Минимальный уровень для книги', choices=list(TIER_LABELS.items()), default='free')
     description = TextAreaField('Описание', validators=[Length(max=10000)])
     cover_path = StringField('Обложка', validators=[Length(max=240), cover_validator])
