@@ -1,31 +1,5 @@
 (() => {
   'use strict';
-
-  // Existing synopses and manuscript states; no unpublished prose is embedded here.
-  const books = {
-    krampus: {
-      title: 'Дети Крампуса: Тени Йоля',
-      genre: 'РОМАН · ТЁМНОЕ ФЭНТЕЗИ · ФОЛК-ХОРРОР',
-      cover: './images/Book01.png',
-      status: 'В работе · Первый черновик',
-      synopsis: 'В городе посреди болот, где бойни и выделочные цеха кормят всех, дети рано узнают, что страх — часть порядка вещей. Йоль здесь не про подарки: в это время дети стараются не попадаться на глаза и не задавать лишних вопросов. Когда накануне праздника на товарном поезде появляется мальчик без имени, в городе начинают пропадать дети, а старые истории перестают казаться выдумкой. Никто не говорит об этом вслух, но все помнят: Йоль — это договор, и если его нарушить, за долгом приходит тот, кого здесь не называют по имени.'
-    },
-    order: {
-      title: 'Орден на сдачу',
-      genre: 'РОМАН · САТИРА · АНТИУТОПИЯ',
-      cover: './images/Book02.png',
-      status: 'В работе · Первый черновик',
-      synopsis: 'Орден Света сокращён, выселен и оставлен существовать формально — без средств, без статуса и без ясной причины, по которой он вообще ещё должен существовать. Сэр Элмер пытается сохранить служение, а его правая рука — Тант всё чаще говорит о необходимости подчиниться системе. Но чем сильнее порядок заменяет смысл, тем яснее: опасность не снаружи. И когда над королевством нависает настоящая угроза, выясняется — защищать его больше некому.'
-    },
-    sero: {
-      title: 'Iam sero est',
-      genre: 'ЦИКЛ НОВЕЛЛ · ПСИХОЛОГИЧЕСКАЯ ПРОЗА',
-      cover: './images/Book06.png',
-      status: 'На очереди · Работа приостановлена',
-      synopsis: 'Эти новеллы сосредоточены на состояниях, в которых человек перестаёт быть надёжным свидетелем собственной жизни. Насилие, вина, зависимость и искажённая память медленно размывают границы между реальным и воображаемым, оставляя героев наедине с тем, что невозможно ни оправдать, ни забыть. Сюжеты разворачиваются в пространстве психологического надлома, где близость оборачивается угрозой, а попытка спастись — новой формой самообмана.'
-    }
-  };
-
   // Word targets stay in the markup as data, never in the reader-facing labels.
   const wordCount = new Intl.NumberFormat('ru-RU');
   document.querySelectorAll('[data-progress-part]').forEach(part => {
@@ -39,14 +13,6 @@
     part.querySelector('.progress-value').setAttribute('stroke-dasharray', `${percent} 100`);
     part.querySelector('.progress-ring').setAttribute('aria-label', `Написано ${words} слов — ${percent}%`);
   });
-
-  // Keep the accordion exclusive in browsers without native details grouping.
-  if (!('name' in document.createElement('details'))) {
-    const manuscripts = [...document.querySelectorAll('.manuscript')];
-    manuscripts.forEach(current => current.addEventListener('toggle', () => {
-      if (current.open) manuscripts.forEach(other => { if (other !== current) other.open = false; });
-    }));
-  }
 
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('#main-nav');
@@ -70,147 +36,78 @@
     if (event.matches) setMenu(false);
   });
 
-  const bookDialog = document.querySelector('#book-dialog');
-  document.querySelectorAll('[data-book]').forEach(button => button.addEventListener('click', () => {
-    const book = books[button.dataset.book];
-    if (!book) return;
-    document.querySelector('#dialog-title').textContent = book.title;
-    document.querySelector('#dialog-genre').textContent = book.genre;
-    document.querySelector('#dialog-status').textContent = book.status;
-    document.querySelector('#dialog-synopsis').textContent = book.synopsis;
-    const cover = document.querySelector('#dialog-cover');
-    cover.src = book.cover;
-    cover.alt = `Обложка ${book.title}`;
-    bookDialog.showModal();
-  }));
-
-  const drafts = { weakness: 'Моя слабость, моя боль', sun: 'Горячее солнце', chalk: 'Мелки', near: 'Рядом', ticket: 'Золотой билет', inside: 'Там, внутри', redemption: 'Искупление', canvases: 'Смятые холсты' };
-  const draftDialog = document.querySelector('#draft-dialog');
-  document.addEventListener('click', event => {
-    const button = event.target.closest('[data-draft]');
-    if (!button || event.defaultPrevented) return;
-    const title = drafts[button.dataset.draft];
-    if (!title) return;
-    event.preventDefault();
-    document.querySelector('#draft-dialog-title').textContent = title;
-    draftDialog.showModal();
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const workshop = document.querySelector('.workshop');
+  const manuscripts = [...document.querySelectorAll('.manuscript')];
+  const states = new WeakMap();
+  const animations = new WeakMap();
+  const setExpanded = (item, expanded) => {
+    const startHeight = item.getBoundingClientRect().height;
+    animations.get(item)?.cancel();
+    states.set(item, expanded);
+    item.querySelector('summary').setAttribute('aria-expanded', String(expanded));
+    item.classList.toggle('is-expanded', expanded);
+    workshop.classList.toggle('has-open-book', manuscripts.some(book => states.get(book)));
+    item.style.height = '';
+    item.open = true;
+    const endHeight = expanded ? item.getBoundingClientRect().height : item.querySelector('summary').getBoundingClientRect().height + 2;
+    const finish = () => { item.open = expanded; item.style.height = ''; animations.delete(item); };
+    if (motion.matches) { finish(); return; }
+    const animation = item.animate([{ height: `${startHeight}px` }, { height: `${endHeight}px` }], { duration: 420, easing: 'cubic-bezier(.22,.7,.25,1)' });
+    animations.set(item, animation);
+    animation.onfinish = finish;
+  };
+  manuscripts.forEach(item => {
+    item.removeAttribute('name');
+    states.set(item, item.open);
+    const summary = item.querySelector('summary');
+    summary.setAttribute('aria-expanded', String(item.open));
+    summary.addEventListener('click', event => {
+      event.preventDefault();
+      const expanded = !states.get(item);
+      if (expanded) manuscripts.forEach(other => { if (other !== item && states.get(other)) setExpanded(other, false); });
+      setExpanded(item, expanded);
+    });
   });
 
-  const viewport = document.querySelector('.excerpt-viewport');
-  if (viewport) {
-    const track = viewport.querySelector('.excerpt-track');
-    const group = track.querySelector('.excerpt-group');
-    const originals = [...group.children];
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let loopWidth = 0, observedWidth = 0, previousFrame = 0, scrollRemainder = 0;
-    let paused = reducedMotion.matches, touching = false, visible = false;
-    let drag = null, holdUntil = 0, ignoreClickUntil = 0;
-
-    const copyForLoop = element => {
-      const copy = element.cloneNode(true);
-      copy.dataset.carouselCopy = '';
-      copy.setAttribute('aria-hidden', 'true');
-      copy.querySelectorAll('a, button, [tabindex]').forEach(link => link.tabIndex = -1);
-      return copy;
-    };
-    const wrap = () => {
-      if (!loopWidth) return;
-      const position = viewport.scrollLeft;
-      if (position < loopWidth || position >= loopWidth * 2) {
-        viewport.scrollLeft = loopWidth + ((position - loopWidth) % loopWidth + loopWidth) % loopWidth;
-      }
-    };
-    const rebuild = () => {
-      const width = viewport.clientWidth;
-      if (!width || width === observedWidth || !originals.length) return;
-      observedWidth = width;
-      const relativePosition = loopWidth ? (viewport.scrollLeft % loopWidth) / loopWidth : 0;
-      track.querySelectorAll('[data-carousel-copy]').forEach(copy => copy.remove());
-      const originalWidth = group.getBoundingClientRect().width;
-      if (!originalWidth) return;
-      const repeats = Math.ceil((width + originals[0].getBoundingClientRect().width) / originalWidth);
-      for (let i = 1; i < repeats; i++) originals.forEach(card => group.append(copyForLoop(card)));
-      loopWidth = group.getBoundingClientRect().width;
-      track.prepend(copyForLoop(group));
-      track.append(copyForLoop(group));
-      viewport.scrollLeft = loopWidth * (1 + relativePosition);
-    };
-    reducedMotion.addEventListener('change', event => { paused = event.matches; });
-    viewport.addEventListener('scroll', () => wrap(), { passive: true });
-    viewport.addEventListener('dragstart', event => event.preventDefault());
-    viewport.addEventListener('pointerdown', event => {
-      if (event.pointerType === 'mouse' && event.button !== 0) return;
-      touching = true;
-      if (event.pointerType === 'mouse') drag = { id: event.pointerId, startX: event.clientX, lastX: event.clientX, moved: false };
-    });
-    viewport.addEventListener('pointermove', event => {
-      if (!drag || event.pointerId !== drag.id) return;
-      if (!drag.moved && Math.abs(event.clientX - drag.startX) > 6) {
-        drag.moved = true;
-        viewport.setPointerCapture(event.pointerId);
-        viewport.classList.add('is-dragging');
-      }
-      if (drag.moved) {
-        event.preventDefault();
-        viewport.scrollLeft -= event.clientX - drag.lastX;
-        wrap();
-        drag.lastX = event.clientX;
-      }
-    });
-    const release = event => {
-      if (!touching) return;
-      if (drag && event.pointerId !== drag.id) return;
-      if (drag?.moved) ignoreClickUntil = performance.now() + 350;
-      if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
-      drag = null;
-      touching = false;
-      holdUntil = event.pointerType === 'touch' ? performance.now() + 1000 : 0;
-      viewport.classList.remove('is-dragging');
-    };
-    window.addEventListener('pointerup', release);
-    window.addEventListener('pointercancel', release);
-    window.addEventListener('blur', () => { drag = null; touching = false; viewport.classList.remove('is-dragging'); });
-    viewport.addEventListener('click', event => {
-      if (performance.now() < ignoreClickUntil) { event.preventDefault(); event.stopPropagation(); }
-    }, true);
-    viewport.addEventListener('wheel', event => {
-      // Page scrolling over the ribbon must not suspend its animation.
-      if (!event.deltaX && !event.shiftKey) return;
-      holdUntil = performance.now() + 500;
-      if (event.shiftKey && !event.deltaX) { event.preventDefault(); viewport.scrollLeft += event.deltaY; }
-      requestAnimationFrame(wrap);
-    }, { passive: false });
-    viewport.addEventListener('keydown', event => {
-      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
-      event.preventDefault();
-      viewport.scrollLeft += (event.key === 'ArrowRight' ? 1 : -1) * originals[0].getBoundingClientRect().width;
-      wrap();
-    });
-    new ResizeObserver(rebuild).observe(viewport);
-    new IntersectionObserver(entries => { visible = entries[0].isIntersecting; }).observe(viewport);
-    rebuild();
-    const animate = timestamp => {
-      const elapsed = previousFrame ? Math.min(timestamp - previousFrame, 64) : 0;
-      previousFrame = timestamp;
-      if (visible && !document.hidden && !paused && !touching && timestamp > holdUntil && !document.querySelector('dialog[open]')) {
-        // Retain fractional movement on browsers that round scrollLeft to pixels.
-        scrollRemainder += elapsed * .038;
-        const pixels = Math.floor(scrollRemainder);
-        if (pixels) { viewport.scrollLeft += pixels; scrollRemainder -= pixels; wrap(); }
-      }
-      requestAnimationFrame(animate);
-    };
-    requestAnimationFrame(animate);
-  }
-
-  document.querySelector('[data-open-paper]').addEventListener('click', () => document.querySelector('#paper-dialog').showModal());
-  document.querySelectorAll('dialog').forEach(dialog => {
-    dialog.querySelector('[data-close-dialog]').addEventListener('click', () => dialog.close());
-    dialog.addEventListener('click', event => {
-      const rect = dialog.getBoundingClientRect();
-      if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
-    });
-    dialog.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', () => dialog.close()));
+  const notices = {
+    sun: ['Горячее солнце', 'Публикация готовится. Кнопка чтения станет доступна, когда текст появится на сайте.'],
+    krampus: ['Дети Крампуса: Тени Йоля', 'Публикация готовится. Кнопка чтения станет доступна, когда текст появится на сайте.'],
+    witness: ['Свидетель', 'Подписка за 150 руб./мес. готовится к открытию. Здесь появится переход на Boosty.'],
+    appreciator: ['Ценитель', 'Подписка за 350 руб./мес. готовится к открытию. Здесь появится переход на Boosty.'],
+    paper: ['Бумажные издания', 'Предзаказ пока не открыт. Информация о доступных изданиях, сроках и способах заказа появится здесь.'],
+    audio: ['Аудиокниги', 'Раздел готовится. Здесь появятся аудиоверсии произведений.']
+  };
+  const dialog = document.querySelector('#notice-dialog');
+  document.querySelectorAll('[data-notice]').forEach(button => button.addEventListener('click', event => {
+    const notice = notices[button.dataset.notice];
+    if (!notice) return;
+    event.preventDefault();
+    document.querySelector('#notice-title').textContent = notice[0];
+    document.querySelector('#notice-text').textContent = notice[1];
+    dialog.showModal();
+  }));
+  dialog.querySelector('[data-close-dialog]').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    const rect = dialog.getBoundingClientRect();
+    if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
+  });
+  const backToTop = document.querySelector('.back-to-top');
+  let scrollFrame = 0;
+  const updateBackToTop = () => {
+    const visible = window.scrollY > 280;
+    backToTop.hidden = !visible;
+    scrollFrame = 0;
+  };
+  window.addEventListener('scroll', () => {
+    if (!scrollFrame) scrollFrame = requestAnimationFrame(updateBackToTop);
+  }, { passive: true });
+  updateBackToTop();
+  backToTop.addEventListener('click', event => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: motion.matches ? 'instant' : 'smooth' });
+    document.querySelector('.brand').focus({ preventScroll: true });
   });
   document.querySelector('#year').textContent = new Date().getFullYear();
+
 })();
