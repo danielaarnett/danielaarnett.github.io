@@ -2,11 +2,11 @@
 <div class="bookshelves">
 {% for shelf in library_shelves %}
   <section class="bookshelf" id="{{ shelf.key }}" aria-labelledby="shelf-{{ shelf.key }}">
-    <header class="shelf-heading"><h2 id="shelf-{{ shelf.key }}">{{ shelf.title }}</h2></header>
-    <div class="shelf-books{% if not shelf.books %} shelf-empty{% endif %}">
+    <header class="shelf-heading"><h2 id="shelf-{{ shelf.key }}">{{ shelf.title }}</h2><div class="shelf-controls"><button type="button" data-shelf-step="-1" aria-label="Прокрутить полку влево" aria-controls="books-{{ shelf.key }}">‹</button><button type="button" data-shelf-step="1" aria-label="Прокрутить полку вправо" aria-controls="books-{{ shelf.key }}">›</button></div></header>
+    <div id="books-{{ shelf.key }}" tabindex="0" role="region" aria-label="{{ shelf.title }}: горизонтальная прокрутка" class="shelf-books{% if not shelf.books %} shelf-empty{% endif %}">
       {% for book in shelf.books %}
-      <a class="shelf-book" href="{{ book.href }}">
-        <div class="shelf-cover">{% if book.cover %}<img src="{{ book.cover }}" alt="" loading="lazy">{% else %}<span class="shelf-cover-title">{{ book.title }}</span>{% endif %}</div>
+      <a class="shelf-book" href="{{ book.href }}"{% if book.placeholder %} data-forthcoming="{{ book.title }}"{% endif %}>
+        <div class="shelf-cover">{% if book.cover %}<img src="{{ book.cover }}" alt="" loading="lazy" draggable="false">{% else %}<span class="shelf-cover-title">{{ book.title }}</span>{% endif %}</div>
         <h3>{{ book.title }}</h3>
         {% if book.subtitle %}<p>{{ book.subtitle }}</p>{% endif %}
       </a>
@@ -18,3 +18,5 @@
   </section>
 {% endfor %}
 </div>
+
+<dialog class="notice-dialog" id="forthcoming-dialog" aria-labelledby="forthcoming-title"><button class="dialog-close" type="button" aria-label="Закрыть окно">×</button><h2 id="forthcoming-title">Текст готовится к публикации</h2><p>Эта история пока недоступна для чтения. Здесь появится текст, когда он будет опубликован.</p></dialog>

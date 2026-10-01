@@ -14,6 +14,7 @@ from .services.docx_import import import_prologue
 from .services.content import count_words, render_content, valid_slug
 from .services.access import can_read, SHELVES
 from .services import fingerprint
+from .services.catalog import build_shelves
 
 
 def register_commands(app):
@@ -37,7 +38,7 @@ def register_commands(app):
         destination = public_root / 'library' / 'index.html'
         destination.parent.mkdir(exist_ok=True)
         destination.write_text(render_template('library/public_catalog.html',
-            library_shelves=[dict(key=key, title=title, books=shelves[key]) for key, title in SHELVES.items()],
+            library_shelves=build_shelves(shelves),
             tier_label='Бесплатно'), encoding='utf-8')
         click.echo('Бесплатная библиотека опубликована в library/index.html.')
 

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block primary_navigation %}<a href="/#drafts">Читать</a><a href="/#workshop">В работе</a><a href="#audio-dialog" data-open-audio>Аудиокниги</a><a class="nav-support" href="/#prose">Читательский круг</a>{% endblock %}
 {% block title %}Библиотека — Daniel A. Arnett{% endblock %}
-{% block styles %}<link rel="stylesheet" href="/css/library.css?v=3">{% endblock %}
+{% block styles %}<link rel="stylesheet" href="/css/library.css?v=4">{% endblock %}
 {% block main_class %}shell bookshelf-main{% endblock %}
 {% block content %}{% include 'library/shelves.html' %}{% endblock %}
+{% block scripts %}<script src="/js/library.js?v=1" defer></script>{% endblock %}

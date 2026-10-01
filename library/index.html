@@ -6,8 +6,9 @@
   <meta name="theme-color" content="#202522">
   <title>Библиотека — Daniel A. Arnett</title>
   <link rel="icon" href="/images/arnett-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/fonts.css"><link rel="stylesheet" href="/css/home.css?v=17"><link rel="stylesheet" href="/css/library.css?v=3">
+  <link rel="stylesheet" href="/css/fonts.css"><link rel="stylesheet" href="/css/home.css?v=17"><link rel="stylesheet" href="/css/library.css?v=4">
   <script src="/js/site.js?v=2" defer></script>
+  <script src="/js/library.js?v=1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержанию</a>
@@ -20,69 +21,513 @@
 <div class="bookshelves">
 
   <section class="bookshelf" id="novellas" aria-labelledby="shelf-novellas">
-    <header class="shelf-heading"><h2 id="shelf-novellas">Новеллы</h2></header>
-    <div class="shelf-books shelf-empty">
+    <header class="shelf-heading"><h2 id="shelf-novellas">Новеллы</h2><div class="shelf-controls"><button type="button" data-shelf-step="-1" aria-label="Прокрутить полку влево" aria-controls="books-novellas">‹</button><button type="button" data-shelf-step="1" aria-label="Прокрутить полку вправо" aria-controls="books-novellas">›</button></div></header>
+    <div id="books-novellas" tabindex="0" role="region" aria-label="Новеллы: горизонтальная прокрутка" class="shelf-books">
 
-      <div class="empty-spines" aria-hidden="true"><i></i><i></i><i></i></div>
-      <p>На этой полке пока нет доступных вам текстов.<br>Новые истории займут своё место со временем.</p>
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Купол смерти">
+        <div class="shelf-cover"><span class="shelf-cover-title">Купол смерти</span></div>
+        <h3>Купол смерти</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Мелки">
+        <div class="shelf-cover"><span class="shelf-cover-title">Мелки</span></div>
+        <h3>Мелки</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Мать">
+        <div class="shelf-cover"><span class="shelf-cover-title">Мать</span></div>
+        <h3>Мать</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Рядом">
+        <div class="shelf-cover"><span class="shelf-cover-title">Рядом</span></div>
+        <h3>Рядом</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="731">
+        <div class="shelf-cover"><span class="shelf-cover-title">731</span></div>
+        <h3>731</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Бетонная коробка">
+        <div class="shelf-cover"><span class="shelf-cover-title">Бетонная коробка</span></div>
+        <h3>Бетонная коробка</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Могильщики">
+        <div class="shelf-cover"><span class="shelf-cover-title">Могильщики</span></div>
+        <h3>Могильщики</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Заяц">
+        <div class="shelf-cover"><span class="shelf-cover-title">Заяц</span></div>
+        <h3>Заяц</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Искупление">
+        <div class="shelf-cover"><span class="shelf-cover-title">Искупление</span></div>
+        <h3>Искупление</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Кипящая вода">
+        <div class="shelf-cover"><span class="shelf-cover-title">Кипящая вода</span></div>
+        <h3>Кипящая вода</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Кто мы?">
+        <div class="shelf-cover"><span class="shelf-cover-title">Кто мы?</span></div>
+        <h3>Кто мы?</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Оно">
+        <div class="shelf-cover"><span class="shelf-cover-title">Оно</span></div>
+        <h3>Оно</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Он и Она">
+        <div class="shelf-cover"><span class="shelf-cover-title">Он и Она</span></div>
+        <h3>Он и Она</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Отец">
+        <div class="shelf-cover"><span class="shelf-cover-title">Отец</span></div>
+        <h3>Отец</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Как умирают мотыльки?">
+        <div class="shelf-cover"><span class="shelf-cover-title">Как умирают мотыльки?</span></div>
+        <h3>Как умирают мотыльки?</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="По нотам">
+        <div class="shelf-cover"><span class="shelf-cover-title">По нотам</span></div>
+        <h3>По нотам</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Ночь ремней">
+        <div class="shelf-cover"><span class="shelf-cover-title">Ночь ремней</span></div>
+        <h3>Ночь ремней</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Поговорить не хочешь?">
+        <div class="shelf-cover"><span class="shelf-cover-title">Поговорить не хочешь?</span></div>
+        <h3>Поговорить не хочешь?</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Шепчущий">
+        <div class="shelf-cover"><span class="shelf-cover-title">Шепчущий</span></div>
+        <h3>Шепчущий</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Тук-тук">
+        <div class="shelf-cover"><span class="shelf-cover-title">Тук-тук</span></div>
+        <h3>Тук-тук</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Там, внутри">
+        <div class="shelf-cover"><span class="shelf-cover-title">Там, внутри</span></div>
+        <h3>Там, внутри</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Шесть футов вниз">
+        <div class="shelf-cover"><span class="shelf-cover-title">Шесть футов вниз</span></div>
+        <h3>Шесть футов вниз</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Стою у двери и стучу">
+        <div class="shelf-cover"><span class="shelf-cover-title">Стою у двери и стучу</span></div>
+        <h3>Стою у двери и стучу</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Горячее солнце">
+        <div class="shelf-cover"><span class="shelf-cover-title">Горячее солнце</span></div>
+        <h3>Горячее солнце</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Неправильно">
+        <div class="shelf-cover"><span class="shelf-cover-title">Неправильно</span></div>
+        <h3>Неправильно</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Стекло">
+        <div class="shelf-cover"><span class="shelf-cover-title">Стекло</span></div>
+        <h3>Стекло</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Восемь писем">
+        <div class="shelf-cover"><span class="shelf-cover-title">Восемь писем</span></div>
+        <h3>Восемь писем</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Золотой билет">
+        <div class="shelf-cover"><span class="shelf-cover-title">Золотой билет</span></div>
+        <h3>Золотой билет</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Маскарад">
+        <div class="shelf-cover"><span class="shelf-cover-title">Маскарад</span></div>
+        <h3>Маскарад</h3>
+
+      </a>
 
     </div>
   </section>
 
   <section class="bookshelf" id="short_novels" aria-labelledby="shelf-short_novels">
-    <header class="shelf-heading"><h2 id="shelf-short_novels">Повести</h2></header>
-    <div class="shelf-books shelf-empty">
+    <header class="shelf-heading"><h2 id="shelf-short_novels">Повести</h2><div class="shelf-controls"><button type="button" data-shelf-step="-1" aria-label="Прокрутить полку влево" aria-controls="books-short_novels">‹</button><button type="button" data-shelf-step="1" aria-label="Прокрутить полку вправо" aria-controls="books-short_novels">›</button></div></header>
+    <div id="books-short_novels" tabindex="0" role="region" aria-label="Повести: горизонтальная прокрутка" class="shelf-books">
 
-      <div class="empty-spines" aria-hidden="true"><i></i><i></i><i></i></div>
-      <p>На этой полке пока нет доступных вам текстов.<br>Новые истории займут своё место со временем.</p>
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Раскармливание">
+        <div class="shelf-cover"><span class="shelf-cover-title">Раскармливание</span></div>
+        <h3>Раскармливание</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Орден на сдачу">
+        <div class="shelf-cover"><span class="shelf-cover-title">Орден на сдачу</span></div>
+        <h3>Орден на сдачу</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Потухшее солнце">
+        <div class="shelf-cover"><span class="shelf-cover-title">Потухшее солнце</span></div>
+        <h3>Потухшее солнце</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Дождливый вторник">
+        <div class="shelf-cover"><span class="shelf-cover-title">Дождливый вторник</span></div>
+        <h3>Дождливый вторник</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Смятые холсты">
+        <div class="shelf-cover"><span class="shelf-cover-title">Смятые холсты</span></div>
+        <h3>Смятые холсты</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Тлеющий">
+        <div class="shelf-cover"><span class="shelf-cover-title">Тлеющий</span></div>
+        <h3>Тлеющий</h3>
+
+      </a>
 
     </div>
   </section>
 
   <section class="bookshelf" id="novels" aria-labelledby="shelf-novels">
-    <header class="shelf-heading"><h2 id="shelf-novels">Романы</h2></header>
-    <div class="shelf-books">
+    <header class="shelf-heading"><h2 id="shelf-novels">Романы</h2><div class="shelf-controls"><button type="button" data-shelf-step="-1" aria-label="Прокрутить полку влево" aria-controls="books-novels">‹</button><button type="button" data-shelf-step="1" aria-label="Прокрутить полку вправо" aria-controls="books-novels">›</button></div></header>
+    <div id="books-novels" tabindex="0" role="region" aria-label="Романы: горизонтальная прокрутка" class="shelf-books">
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Дети Крампуса - тени Йоля">
+        <div class="shelf-cover"><span class="shelf-cover-title">Дети Крампуса - тени Йоля</span></div>
+        <h3>Дети Крампуса - тени Йоля</h3>
+
+      </a>
 
       <a class="shelf-book" href="/read/moya-slabost-moya-bol/prolog/">
-        <div class="shelf-cover"><img src="/images/art1.png" alt="" loading="lazy"></div>
+        <div class="shelf-cover"><img src="/images/art1.png" alt="" loading="lazy" draggable="false"></div>
         <h3>Моя слабость, моя боль</h3>
         <p>Роман</p>
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Люциан">
+        <div class="shelf-cover"><span class="shelf-cover-title">Люциан</span></div>
+        <h3>Люциан</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Нил и Харден: доставка до востребования">
+        <div class="shelf-cover"><span class="shelf-cover-title">Нил и Харден: доставка до востребования</span></div>
+        <h3>Нил и Харден: доставка до востребования</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Вчера здесь был завтрак">
+        <div class="shelf-cover"><span class="shelf-cover-title">Вчера здесь был завтрак</span></div>
+        <h3>Вчера здесь был завтрак</h3>
+
       </a>
 
     </div>
   </section>
 
   <section class="bookshelf" id="scripts" aria-labelledby="shelf-scripts">
-    <header class="shelf-heading"><h2 id="shelf-scripts">Сценарии</h2></header>
-    <div class="shelf-books shelf-empty">
+    <header class="shelf-heading"><h2 id="shelf-scripts">Сценарии</h2><div class="shelf-controls"><button type="button" data-shelf-step="-1" aria-label="Прокрутить полку влево" aria-controls="books-scripts">‹</button><button type="button" data-shelf-step="1" aria-label="Прокрутить полку вправо" aria-controls="books-scripts">›</button></div></header>
+    <div id="books-scripts" tabindex="0" role="region" aria-label="Сценарии: горизонтальная прокрутка" class="shelf-books">
 
-      <div class="empty-spines" aria-hidden="true"><i></i><i></i><i></i></div>
-      <p>На этой полке пока нет доступных вам текстов.<br>Новые истории займут своё место со временем.</p>
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Опенинг Sanitarium">
+        <div class="shelf-cover"><span class="shelf-cover-title">Опенинг Sanitarium</span></div>
+        <h3>Опенинг Sanitarium</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Опенинг Knights and Merchants">
+        <div class="shelf-cover"><span class="shelf-cover-title">Опенинг Knights and Merchants</span></div>
+        <h3>Опенинг Knights and Merchants</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Опенинг The Final Station">
+        <div class="shelf-cover"><span class="shelf-cover-title">Опенинг The Final Station</span></div>
+        <h3>Опенинг The Final Station</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Новеллизация Gremlins Inc.: Проект Автоматон">
+        <div class="shelf-cover"><span class="shelf-cover-title">Новеллизация Gremlins Inc.: Проект Автоматон</span></div>
+        <h3>Новеллизация Gremlins Inc.: Проект Автоматон</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Новеллизация Ardmage Cradle of the Ard">
+        <div class="shelf-cover"><span class="shelf-cover-title">Новеллизация Ardmage Cradle of the Ard</span></div>
+        <h3>Новеллизация Ardmage Cradle of the Ard</h3>
+
+      </a>
 
     </div>
   </section>
 
   <section class="bookshelf" id="unfinished" aria-labelledby="shelf-unfinished">
-    <header class="shelf-heading"><h2 id="shelf-unfinished">Незаконченное</h2></header>
-    <div class="shelf-books shelf-empty">
+    <header class="shelf-heading"><h2 id="shelf-unfinished">Незаконченные</h2><div class="shelf-controls"><button type="button" data-shelf-step="-1" aria-label="Прокрутить полку влево" aria-controls="books-unfinished">‹</button><button type="button" data-shelf-step="1" aria-label="Прокрутить полку вправо" aria-controls="books-unfinished">›</button></div></header>
+    <div id="books-unfinished" tabindex="0" role="region" aria-label="Незаконченные: горизонтальная прокрутка" class="shelf-books">
 
-      <div class="empty-spines" aria-hidden="true"><i></i><i></i><i></i></div>
-      <p>На этой полке пока нет доступных вам текстов.<br>Новые истории займут своё место со временем.</p>
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="История одного города">
+        <div class="shelf-cover"><span class="shelf-cover-title">История одного города</span></div>
+        <h3>История одного города</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Метро 2033: Римские свечи">
+        <div class="shelf-cover"><span class="shelf-cover-title">Метро 2033: Римские свечи</span></div>
+        <h3>Метро 2033: Римские свечи</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Степень свободы">
+        <div class="shelf-cover"><span class="shelf-cover-title">Степень свободы</span></div>
+        <h3>Степень свободы</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="В архиве">
+        <div class="shelf-cover"><span class="shelf-cover-title">В архиве</span></div>
+        <h3>В архиве</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Outlands">
+        <div class="shelf-cover"><span class="shelf-cover-title">Outlands</span></div>
+        <h3>Outlands</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Сиблинги">
+        <div class="shelf-cover"><span class="shelf-cover-title">Сиблинги</span></div>
+        <h3>Сиблинги</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Фан-проза по мультсериалу Аватар - Легенда об Аанге">
+        <div class="shelf-cover"><span class="shelf-cover-title">Фан-проза по мультсериалу Аватар - Легенда об Аанге</span></div>
+        <h3>Фан-проза по мультсериалу Аватар - Легенда об Аанге</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Санктум">
+        <div class="shelf-cover"><span class="shelf-cover-title">Санктум</span></div>
+        <h3>Санктум</h3>
+
+      </a>
 
     </div>
   </section>
 
   <section class="bookshelf" id="poetry" aria-labelledby="shelf-poetry">
-    <header class="shelf-heading"><h2 id="shelf-poetry">Стихотворения</h2></header>
-    <div class="shelf-books shelf-empty">
+    <header class="shelf-heading"><h2 id="shelf-poetry">Стихотворения</h2><div class="shelf-controls"><button type="button" data-shelf-step="-1" aria-label="Прокрутить полку влево" aria-controls="books-poetry">‹</button><button type="button" data-shelf-step="1" aria-label="Прокрутить полку вправо" aria-controls="books-poetry">›</button></div></header>
+    <div id="books-poetry" tabindex="0" role="region" aria-label="Стихотворения: горизонтальная прокрутка" class="shelf-books">
 
-      <div class="empty-spines" aria-hidden="true"><i></i><i></i><i></i></div>
-      <p>На этой полке пока нет доступных вам текстов.<br>Новые истории займут своё место со временем.</p>
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Петля">
+        <div class="shelf-cover"><span class="shelf-cover-title">Петля</span></div>
+        <h3>Петля</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Где ты, там я">
+        <div class="shelf-cover"><span class="shelf-cover-title">Где ты, там я</span></div>
+        <h3>Где ты, там я</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Стой!">
+        <div class="shelf-cover"><span class="shelf-cover-title">Стой!</span></div>
+        <h3>Стой!</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Чувствуешь">
+        <div class="shelf-cover"><span class="shelf-cover-title">Чувствуешь</span></div>
+        <h3>Чувствуешь</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Девственница">
+        <div class="shelf-cover"><span class="shelf-cover-title">Девственница</span></div>
+        <h3>Девственница</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Рейкьявик">
+        <div class="shelf-cover"><span class="shelf-cover-title">Рейкьявик</span></div>
+        <h3>Рейкьявик</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Считаешь до трёх">
+        <div class="shelf-cover"><span class="shelf-cover-title">Считаешь до трёх</span></div>
+        <h3>Считаешь до трёх</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Ты никогда не видела слёз">
+        <div class="shelf-cover"><span class="shelf-cover-title">Ты никогда не видела слёз</span></div>
+        <h3>Ты никогда не видела слёз</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Когда-нибудь">
+        <div class="shelf-cover"><span class="shelf-cover-title">Когда-нибудь</span></div>
+        <h3>Когда-нибудь</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Моя краска">
+        <div class="shelf-cover"><span class="shelf-cover-title">Моя краска</span></div>
+        <h3>Моя краска</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Давай мы не будем друзьями">
+        <div class="shelf-cover"><span class="shelf-cover-title">Давай мы не будем друзьями</span></div>
+        <h3>Давай мы не будем друзьями</h3>
+
+      </a>
 
     </div>
   </section>
 
-</div></main>
+  <section class="bookshelf" id="songs" aria-labelledby="shelf-songs">
+    <header class="shelf-heading"><h2 id="shelf-songs">Песни</h2><div class="shelf-controls"><button type="button" data-shelf-step="-1" aria-label="Прокрутить полку влево" aria-controls="books-songs">‹</button><button type="button" data-shelf-step="1" aria-label="Прокрутить полку вправо" aria-controls="books-songs">›</button></div></header>
+    <div id="books-songs" tabindex="0" role="region" aria-label="Песни: горизонтальная прокрутка" class="shelf-books">
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Дождь, дождь">
+        <div class="shelf-cover"><span class="shelf-cover-title">Дождь, дождь</span></div>
+        <h3>Дождь, дождь</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Стань моим солнцем">
+        <div class="shelf-cover"><span class="shelf-cover-title">Стань моим солнцем</span></div>
+        <h3>Стань моим солнцем</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Изувечь меня">
+        <div class="shelf-cover"><span class="shelf-cover-title">Изувечь меня</span></div>
+        <h3>Изувечь меня</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Я скучаю по тебе">
+        <div class="shelf-cover"><span class="shelf-cover-title">Я скучаю по тебе</span></div>
+        <h3>Я скучаю по тебе</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="У меня есть мечта">
+        <div class="shelf-cover"><span class="shelf-cover-title">У меня есть мечта</span></div>
+        <h3>У меня есть мечта</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Это моя зима">
+        <div class="shelf-cover"><span class="shelf-cover-title">Это моя зима</span></div>
+        <h3>Это моя зима</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Под кронами деревьев">
+        <div class="shelf-cover"><span class="shelf-cover-title">Под кронами деревьев</span></div>
+        <h3>Под кронами деревьев</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Тяжело">
+        <div class="shelf-cover"><span class="shelf-cover-title">Тяжело</span></div>
+        <h3>Тяжело</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Лгунья">
+        <div class="shelf-cover"><span class="shelf-cover-title">Лгунья</span></div>
+        <h3>Лгунья</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Война">
+        <div class="shelf-cover"><span class="shelf-cover-title">Война</span></div>
+        <h3>Война</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Белое платье">
+        <div class="shelf-cover"><span class="shelf-cover-title">Белое платье</span></div>
+        <h3>Белое платье</h3>
+
+      </a>
+
+      <a class="shelf-book" href="#forthcoming-dialog" data-forthcoming="Ты можешь спасти меня">
+        <div class="shelf-cover"><span class="shelf-cover-title">Ты можешь спасти меня</span></div>
+        <h3>Ты можешь спасти меня</h3>
+
+      </a>
+
+    </div>
+  </section>
+
+</div>
+
+<dialog class="notice-dialog" id="forthcoming-dialog" aria-labelledby="forthcoming-title"><button class="dialog-close" type="button" aria-label="Закрыть окно">×</button><h2 id="forthcoming-title">Текст готовится к публикации</h2><p>Эта история пока недоступна для чтения. Здесь появится текст, когда он будет опубликован.</p></dialog></main>
   <footer class="site-footer"><div class="shell footer-content"><a class="footer-brand" href="/">Daniel A. Arnett<span>АВТОРСКИЙ АРХИВ</span></a><p class="footer-title">Конец страницы — не <em>конец истории</em></p><p class="footer-copyright">© 2026-2027 All Rights Reserved.</p></div></footer>
 </body>
 </html>

@@ -8,6 +8,7 @@ from sqlalchemy import select
 from ..extensions import db, limiter
 from ..models import Chapter, ReadingProgress, Work, utcnow
 from ..services import fingerprint
+from ..services.catalog import build_shelves
 from ..services.access import can_read, reader_tier, required_tier, TIERS, TIER_LABELS, SHELVES
 from ..services.content import render_content, valid_slug
 
@@ -57,8 +58,7 @@ def catalog():
             continue
         shelves[item.shelf].append(dict(title=item.title, cover=item.cover_path,
             href=url_for('library.work', slug=item.slug), subtitle=item.subtitle))
-    return render_template('library/catalog.html', library_shelves=[
-        dict(key=key, title=title, books=shelves[key]) for key, title in SHELVES.items()],
+    return render_template('library/catalog.html', library_shelves=build_shelves(shelves),
         tier_label=TIER_LABELS[tier])
 
 
