@@ -58,10 +58,12 @@ def create_app(test_config=None):
     from .auth import bp as auth_bp
     from .library import bp as library_bp
     from .admin import bp as admin_bp
+    from .publication import bp as publication_bp
     from .cli import register_commands
     app.register_blueprint(auth_bp)
     app.register_blueprint(library_bp)
     app.register_blueprint(admin_bp)
+    app.register_blueprint(publication_bp)
     register_commands(app)
 
     @login_manager.user_loader

@@ -85,7 +85,7 @@
     workshop.classList.toggle('has-open-book', manuscripts.some(book => states.get(book)));
     item.style.height = '';
     item.open = true;
-    const endHeight = expanded ? item.getBoundingClientRect().height : item.querySelector('summary').getBoundingClientRect().height + 2;
+    const endHeight = expanded ? item.getBoundingClientRect().height : item.querySelector('summary').getBoundingClientRect().height + 4;
     const finish = () => { item.open = expanded; item.style.height = ''; animations.delete(item); };
     if (motion.matches) { finish(); return; }
     const animation = item.animate([{ height: `${startHeight}px` }, { height: `${endHeight}px` }], { duration: 420, easing: 'cubic-bezier(.22,.7,.25,1)' });
@@ -106,8 +106,8 @@
   });
 
   const notices = {
-    sun: ['Горячее солнце', 'Публикация готовится. Кнопка чтения станет доступна, когда текст появится на сайте.'],
-    krampus: ['Дети Крампуса: Тени Йоля', 'Публикация готовится. Кнопка чтения станет доступна, когда текст появится на сайте.'],
+    sun: ['Горячее солнце', 'Публикация готовится. Чтение станет доступно, когда текст появится на сайте.'],
+    krampus: ['Дети Крампуса: Тени Йоля', 'Публикация готовится. Чтение станет доступно, когда текст появится на сайте.'],
     witness: ['Свидетель', 'Подписка за 150 руб./мес. готовится к открытию. Здесь появится переход на Boosty.'],
     appreciator: ['Ценитель', 'Подписка за 350 руб./мес. готовится к открытию. Здесь появится переход на Boosty.'],
     paper: ['Бумажные издания', 'Предзаказ пока не открыт. Информация о доступных изданиях, сроках и способах заказа появится здесь.'],

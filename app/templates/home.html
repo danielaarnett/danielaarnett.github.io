@@ -10,8 +10,9 @@
   <link rel="preload" href="/fonts/literata-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/golos-text-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/fonts.css">
-  <link rel="stylesheet" href="/css/home.css?v=17">
-  <script src="/static/home.js?v=15" defer></script>
+  <link rel="stylesheet" href="/css/home.css?v=18">
+  <script src="/static/home.js?v=16" defer></script>
+  <script src="/js/publication.js?v=1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержанию</a>
@@ -19,7 +20,7 @@
     <div class="shell header-inner">
       <a class="brand" href="/index.html" aria-label="Daniel A. Arnett — главная"><img class="brand-logo" src="/images/logo.png?v=eb5760f22b2a" alt="" width="1000" height="942"><span class="brand-name">Daniel A. Arnett<small>АВТОРСКАЯ СТРАНИЦА</small></span></a>
       <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Открыть меню"><span></span><span></span></button>
-      <nav class="main-nav" id="main-nav" aria-label="Основная навигация"><a href="#drafts">Читать</a><a href="#library">Книги</a><a href="#workshop">В работе</a><a href="#notice-dialog" data-notice="audio">Аудиокниги</a><a class="nav-support" href="#prose">Читательский круг</a></nav>
+      <nav class="main-nav" id="main-nav" aria-label="Основная навигация"><a href="#drafts">Читать</a><a href="#library">Книги</a><a href="#workshop">В работе</a><a href="#audiobooks">Аудиокниги</a><a class="nav-support" href="#prose">Читательский круг</a></nav>
     </div>
   </header>
   <main id="main">
@@ -39,16 +40,16 @@
       <div class="shell"><div class="updates-list">
         <svg class="story-threads" viewBox="0 0 1000 1200" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M245 360 C245 435 755 375 755 455"/><path d="M755 760 C755 835 195 775 195 855"/></svg>
         <article class="update-card" aria-labelledby="update-1-title">
-          <div class="update-visual" aria-hidden="true"><div class="update-art-frame"><img src="/images/art1.png?v=3bec2c1084e2" alt="" loading="lazy"></div></div>
-          <div class="update-copy"><h3 id="update-1-title"><span>Обновление:</span> «Моя слабость, моя боль»</h3><p>Пролог новой истории уже опубликован. Первое знакомство с героями, атмосферой и событиями, с которых всё начинается.<br>Доступ открыт для подписчиков любого уровня.</p><div class="update-action"><a class="button button-reading" href="/read/moya-slabost-moya-bol/prolog/">Читать</a></div></div>
+          <div class="update-visual"><a class="update-art-frame" href="/read/moya-slabost-moya-bol/prolog/" aria-label="Читать «Моя слабость, моя боль»"><img src="/images/art1.png?v=3bec2c1084e2" alt="" loading="lazy"></a></div>
+          <div class="update-copy"><p class="update-instruction">Нажмите на арт<span class="art-side"> слева</span>, чтобы открыть текст.</p><h3 id="update-1-title"><span>Обновление:</span> «Моя слабость, моя боль»</h3><p class="update-date">Дата: 02.10.26г.</p><p>Пролог новой истории уже опубликован. Первое знакомство с героями, атмосферой и событиями, с которых всё начинается.<br>Доступ открыт для подписчиков любого уровня.</p></div>
         </article>
         <article class="update-card" aria-labelledby="update-2-title">
-          <div class="update-visual" aria-hidden="true"><div class="update-art-frame"><img src="/images/art2.png?v=2337d0e2567b" alt="" loading="lazy"></div></div>
-          <div class="update-copy"><h3 id="update-2-title"><span>Обновление:</span> «Горячее солнце»</h3><p>Полный черновой набросок уже на сайте. История целиком — в её первой, ещё не отшлифованной авторской версии.<br>Доступ открыт для подписчиков уровня «Свидетель».</p><div class="update-action"><button class="button button-reading" data-notice="sun">Читать</button></div></div>
+          <div class="update-visual"><button class="update-art-frame" type="button" data-notice="sun" aria-label="Читать «Горячее солнце»"><img src="/images/art2.png?v=2337d0e2567b" alt="" loading="lazy"></button></div>
+          <div class="update-copy"><p class="update-instruction">Нажмите на арт<span class="art-side"> справа</span>, чтобы открыть текст.</p><h3 id="update-2-title"><span>Обновление:</span> «Горячее солнце»</h3><p class="update-date">Дата: 02.10.26г.</p><p>Полный черновой набросок уже на сайте. История целиком — в её первой, ещё не отшлифованной авторской версии.<br>Доступ открыт для подписчиков уровня «Свидетель».</p></div>
         </article>
         <article class="update-card" aria-labelledby="update-3-title">
-          <div class="update-visual" aria-hidden="true"><div class="update-art-frame"><img src="/images/art0.png" alt="" loading="lazy"></div></div>
-          <div class="update-copy"><h3 id="update-3-title"><span>Обновление:</span> «Дети Крампуса: Тени Йоля»</h3><p>Пролог новой истории уже опубликован. Начало мрачной зимней истории и первое знакомство с миром, в котором приближение праздника не сулит ничего хорошего.<br>Доступ открыт для подписчиков уровня «Ценитель».</p><div class="update-action"><button class="button button-reading" data-notice="krampus">Читать</button></div></div>
+          <div class="update-visual"><button class="update-art-frame" type="button" data-notice="krampus" aria-label="Читать «Дети Крампуса: Тени Йоля»"><img src="/images/art0.png" alt="" loading="lazy"></button></div>
+          <div class="update-copy"><p class="update-instruction">Нажмите на арт<span class="art-side"> слева</span>, чтобы открыть текст.</p><h3 id="update-3-title"><span>Обновление:</span> «Дети Крампуса: Тени Йоля»</h3><p class="update-date">Дата: 02.10.26г.</p><p>Пролог новой истории уже опубликован. Начало мрачной зимней истории и первое знакомство с миром, в котором приближение праздника не сулит ничего хорошего.<br>Доступ открыт для подписчиков уровня «Ценитель».</p></div>
         </article>
       </div></div>
     </section>
@@ -129,11 +130,12 @@
         </div>
       </div>
     </section>
+    <section class="paper section-space audio-section" id="audiobooks" aria-labelledby="audio-title"><div class="shell"><h2 id="audio-title">Аудиокниги</h2><p>Здесь пока пусто. Аудиоверсии историй появятся позже.</p></div></section>
     <section class="paper prose-section section-space" id="prose" aria-labelledby="prose-title">
       <div class="shell">
         <header class="circle-heading"><h2 id="prose-title">Читательский круг</h2><p class="prose-description">Если хочется читать больше и раньше — можно присоединиться к читательскому кругу и поддержать мою работу через Boosty. Подписка открывает доступ к полным версиям текстов, ранним публикациям и материалам, которые не появляются в открытом доступе.</p></header>
         <div class="subscription-grid"><section class="subscription-card" id="subscription-free" aria-labelledby="tier-free"><h3 id="tier-free">Бесплатно</h3><ul><li><img src="/images/red_marker.png" alt="" aria-hidden="true" width="20" height="20"><span>Ознакомительные фрагменты</span></li><li><img src="/images/red_marker.png" alt="" aria-hidden="true" width="20" height="20"><span>Публикации с маркировкой ниже 18+</span></li><li><img src="/images/red_marker.png" alt="" aria-hidden="true" width="20" height="20"><span>Публикации в порядке очереди</span></li></ul></section><section class="subscription-card" id="subscription-witness" aria-labelledby="tier-witness"><h3 id="tier-witness">Свидетель</h3><ul><li><img src="/images/blue_marker.png" alt="" aria-hidden="true" width="20" height="20"><span>Полные тексты</span></li><li><img src="/images/blue_marker.png" alt="" aria-hidden="true" width="20" height="20"><span>Доступ к материалам с маркировкой 18+</span></li><li><img src="/images/blue_marker.png" alt="" aria-hidden="true" width="20" height="20"><span>Ранний доступ к публикациям</span></li><li><img src="/images/blue_marker.png" alt="" aria-hidden="true" width="20" height="20"><span>Контркультурная проза</span></li></ul><button class="button button-outline" data-notice="witness" aria-label="Подписка Свидетель — 150 руб./мес.">150 руб./мес.</button></section><section class="subscription-card" id="subscription-appreciator" aria-labelledby="tier-appreciator"><h3 id="tier-appreciator">Ценитель</h3><ul><li><img src="/images/yellow_marker.png" alt="" aria-hidden="true" width="20" height="20"><span>Полные тексты</span></li><li><img src="/images/yellow_marker.png" alt="" aria-hidden="true" width="20" height="20"><span>Доступ к материалам с маркировкой 18+</span></li><li><img src="/images/yellow_marker.png" alt="" aria-hidden="true" width="20" height="20"><span>Доступ ко всем ранним публикациям</span></li><li><img src="/images/yellow_marker.png" alt="" aria-hidden="true" width="20" height="20"><span>Контркультурная проза</span></li><li><img src="/images/yellow_marker.png" alt="" aria-hidden="true" width="20" height="20"><span>Незаконченная проза</span></li><li><img src="/images/yellow_marker.png" alt="" aria-hidden="true" width="20" height="20"><span>Стихотворения и Песни</span></li></ul><button class="button button-outline" data-notice="appreciator" aria-label="Подписка Ценитель — 350 руб./мес.">350 руб./мес.</button></section></div>
-        <section class="paper-editions" aria-labelledby="paper-editions-title"><h2 id="paper-editions-title">Бумажные издания</h2><p>Бумажные версии книг пока готовятся к публикации. Когда откроется предзаказ, здесь появится информация о доступных изданиях, сроках и способах заказа.</p><button class="button button-outline" data-notice="paper">Оформить предзаказ</button></section>
+        <section class="paper-editions" aria-labelledby="paper-editions-title"><h2 id="paper-editions-title">Бумажные издания</h2><p>Бумажные версии книг пока готовятся к публикации. Когда откроется предзаказ, здесь появится информация о доступных изданиях, сроках и способах заказа.</p><button class="button button-outline" data-open-publication>Оформить предзаказ</button></section>
       </div>
     </section>
 
@@ -141,5 +143,6 @@
   <footer class="site-footer"><div class="shell footer-content"><a class="footer-brand" href="/">Daniel A. Arnett<span>АВТОРСКИЙ АРХИВ</span></a><p class="footer-title">Конец страницы — не <em>конец истории</em></p><p class="footer-copyright">© 2026-2027 All Rights Reserved.</p></div></footer>
   <a class="back-to-top" href="#" aria-label="Подняться к началу страницы" hidden><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="m5 15 7-7 7 7"/></svg></a>
   <dialog class="notice-dialog" id="notice-dialog" aria-labelledby="notice-title"><button class="dialog-close" data-close-dialog aria-label="Закрыть окно">×</button><h2 id="notice-title"></h2><p id="notice-text"></p></dialog>
+<dialog class="publication-dialog" id="publication-dialog" aria-labelledby="publication-title" data-vote-api="/api/publication/krampus"><button class="dialog-close" type="button" data-close-publication aria-label="Закрыть окно">×</button><div class="publication-layout"><div class="publication-cover"><img src="/images/Book01.png" alt="Обложка книги Дети Крампуса: Тени Йоля" loading="lazy"></div><div class="publication-copy"><h2 id="publication-title">Дети Крампуса: Тени Йоля</h2><p class="publication-synopsis">В городе посреди болот, где бойни и выделочные цеха кормят всех, дети рано узнают, что страх — часть порядка вещей. Йоль здесь не про подарки: в это время дети стараются не попадаться на глаза и не задавать лишних вопросов. Когда накануне праздника на товарном поезде появляется мальчик без имени, в городе начинают пропадать дети, а старые истории перестают казаться выдумкой. Но все помнят: Йоль — это договор, и если его нарушить, за долгом приходит тот, кого здесь не называют по имени.</p><ul class="publication-specs"><li><img src="/images/green_marker.svg" alt="" width="18" height="18">Страниц: 400</li><li><img src="/images/green_marker.svg" alt="" width="18" height="18">Тип: роман</li><li><img src="/images/green_marker.svg" alt="" width="18" height="18">Жанр: фолк-хоррор</li><li><img src="/images/green_marker.svg" alt="" width="18" height="18">Голосов за публикацию: <strong data-votes>—</strong></li></ul><button class="button button-outline" type="button" data-submit-vote disabled>Голосую за публикацию</button><p class="vote-note">Один голос в час с одного IP.</p><p class="vote-message" role="status" aria-live="polite" data-vote-message></p></div></div></dialog>
 </body>
 </html>

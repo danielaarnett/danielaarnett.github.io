@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block primary_navigation %}<a href="/library/">Книги</a><a href="/#workshop">В работе</a><a href="#audio-dialog" data-open-audio>Аудиокниги</a><a class="nav-support" href="/#prose">Читательский круг</a>{% endblock %}
+{% block primary_navigation %}<a href="/library/">Книги</a><a href="/#workshop">В работе</a><a href="/#audiobooks">Аудиокниги</a><a class="nav-support" href="/#prose">Читательский круг</a>{% endblock %}
 {% block title %}{{ chapter.title }} — {{ work.title }}{% endblock %}
 {% block styles %}<link rel="stylesheet" href="/reading.css">{% endblock %}
 {% block scripts %}<script src="/js/reader.js?v=3" defer></script>{% endblock %}

@@ -113,3 +113,14 @@ class LocalLoginTicket(db.Model):
     id = db.Column(db.String(64), primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     expires_at = db.Column(db.DateTime, nullable=False)
+
+
+class PublicationInterest(db.Model):
+    slug = db.Column(db.String(120), primary_key=True)
+    votes = db.Column(db.Integer, default=0, nullable=False)
+
+
+class PublicationVote(db.Model):
+    book_slug = db.Column(db.String(120), db.ForeignKey('publication_interest.slug'), primary_key=True)
+    ip_hash = db.Column(db.String(64), primary_key=True)
+    voted_at = db.Column(db.DateTime, nullable=False)
