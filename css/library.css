@@ -5,13 +5,12 @@
 .bookshelf { margin-top: 50px; scroll-margin-top: 115px; }
 .shelf-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; }
 .shelf-heading h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
-.shelf-books { display: flex; align-items: flex-start; flex-wrap: nowrap; gap: 32px; overflow-x: auto; overscroll-behavior-x: contain; touch-action: pan-x pan-y; cursor: grab; scrollbar-color: #9a7c5c #ded5c5; scrollbar-width: thin; padding: 8px 24px 25px; border-bottom: 8px solid #9a7c5c; box-shadow: 0 9px 0 -4px #cfbfa8, 0 18px 22px -18px #493b29; background: linear-gradient(0deg, #9a7c5c15, transparent 65%); }
+.shelf-books { display: flex; align-items: flex-start; flex-wrap: nowrap; gap: 32px; overflow-x: auto; overscroll-behavior-x: contain; touch-action: pan-x pan-y; cursor: grab; scrollbar-width: none; -ms-overflow-style: none; padding: 8px 24px 25px; border-bottom: 8px solid #9a7c5c; box-shadow: 0 9px 0 -4px #cfbfa8, 0 18px 22px -18px #493b29; background: linear-gradient(0deg, #9a7c5c15, transparent 65%); }
 .shelf-book { width: 175px; flex: 0 0 175px; user-select: none; -webkit-user-drag: none; display: flex; flex-direction: column; gap: 12px; }
-.shelf-cover { width: 100%; height: 220px; position: relative; border: 1px solid #a58c6c; background: #d7c9b3; box-shadow: 5px 5px 8px #44382525; transition: transform .25s, box-shadow .25s; }
-.shelf-cover::after { content: ''; position: absolute; inset: 0 auto 0 5px; width: 3px; border-left: 1px solid #fff4; border-right: 1px solid #30241525; pointer-events: none; }
-.shelf-cover img { width: 100%; height: 100%; object-fit: cover; }
+.shelf-cover { width: 100%; height: 220px; display: grid; place-items: center; transition: transform .25s; }
+.shelf-cover img { width: 100%; height: 100%; object-fit: contain; }
 .shelf-cover-title { display: grid; place-items: center; height: 100%; padding: 16px; font: 500 1rem/1.5 var(--serif); text-align: center; overflow-wrap: anywhere; }
-.shelf-book:hover .shelf-cover, .shelf-book:focus-visible .shelf-cover { transform: translateY(-7px); box-shadow: 6px 12px 16px #44382535; }
+.shelf-book:hover .shelf-cover, .shelf-book:focus-visible .shelf-cover { transform: translateY(-7px); }
 .shelf-book h3 { font-size: 1rem; line-height: 1.5; min-height: 3em; }
 .shelf-book > p { color: var(--muted); font-size: .8125rem; }
 .shelf-empty { min-height: 175px; gap: 34px; }
@@ -41,3 +40,5 @@
 .shelf-controls button { display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 1px solid #ac977b; background: #74644912; color: #705439; font-size: 26px; line-height: 1; }
 .shelf-controls button:hover:not(:disabled) { background: #74644928; }
 .shelf-controls button:disabled { opacity: .3; cursor: default; }
+
+.shelf-books::-webkit-scrollbar { display: none; width: 0; height: 0; }

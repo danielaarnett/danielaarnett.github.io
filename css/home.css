@@ -312,8 +312,9 @@ html { scrollbar-color: #9c8164 #202522; scrollbar-width: thin; }
 .circle-heading .prose-description { max-width: 860px; margin-inline: auto; }
 .publication-dialog { width: min(1000px, calc(100% - 40px)); padding: 0; }
 .publication-layout { display: grid; grid-template-columns: 1fr 1.1fr; }
-.publication-cover { display: grid; place-items: center; padding: 10px; background: #d8cebb; }
-.publication-cover img { width: 100%; height: auto; }
+.publication-cover { display: grid; place-items: center; padding: 28px 40px; background: #d8cebb; }
+.publication-cover-viewport { position: relative; width: 100%; aspect-ratio: .68; overflow: hidden; }
+.publication-cover img { position: absolute; width: 200%; max-width: none; height: auto; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 .publication-copy { padding: 50px 36px 34px; }
 .publication-copy h2 { font-size: clamp(1.6rem, 2.6vw, 2rem); }
 .publication-synopsis { margin-top: 20px; font: 400 1rem/1.85 var(--serif); }
@@ -329,8 +330,8 @@ html { scrollbar-color: #9c8164 #202522; scrollbar-width: thin; }
   .art-side { display: none; }
   .circle-heading { padding-top: 42px; }
   .publication-layout { grid-template-columns: 1fr; }
-  .publication-cover { padding: 12px; }
-  .publication-cover img { width: min(100%, 360px); }
+  .publication-cover { padding: 28px; }
+  .publication-cover-viewport { max-width: 320px; }
   .publication-copy { padding: 30px 24px; }
 }
 
@@ -339,3 +340,11 @@ html { scrollbar-color: #9c8164 #202522; scrollbar-width: thin; }
 .publication-specs .spec-label { color: #76573d; font-weight: 600; margin-right: 7px; }
 .publication-specs .spec-value { color: #292d29; }
 @media (max-width: 650px) { .update-copy { transform: none; } }
+
+.publication-layout[hidden] { display: none; }
+.publication-pagination { display: flex; align-items: center; justify-content: space-between; width: calc(100% / 2.1); padding: 0 40px 24px; background: #d8cebb; }
+.publication-pagination button { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #a58c6c; background: #74644918; color: #705439; }
+.publication-pagination button:hover { background: #74644930; }
+.publication-pagination svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 2; }
+.publication-pagination span { color: #705439; font-size: .875rem; }
+@media (max-width: 650px) { .publication-pagination { width: 100%; padding-inline: 28px; } }

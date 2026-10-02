@@ -1,6 +1,8 @@
 """Author-approved public titles; placeholders never contain unpublished prose."""
 from .access import SHELVES
 
+SHELF_COVERS = dict(zip(SHELVES, ['Новеллы', 'Повести', 'Романы', 'Сценарии', 'Незаконченное', 'Стихотворения', 'Песни']))
+
 TITLES = {
     'novellas': ['Купол смерти', 'Мелки', 'Мать', 'Рядом', '731', 'Бетонная коробка', 'Могильщики', 'Заяц', 'Искупление', 'Кипящая вода', 'Кто мы?', 'Оно', 'Он и Она', 'Отец', 'Как умирают мотыльки?', 'По нотам', 'Ночь ремней', 'Поговорить не хочешь?', 'Шепчущий', 'Тук-тук', 'Там, внутри', 'Шесть футов вниз', 'Стою у двери и стучу', 'Горячее солнце', 'Неправильно', 'Стекло', 'Восемь писем', 'Золотой билет', 'Маскарад'],
     'short_novels': ['Раскармливание', 'Орден на сдачу', 'Потухшее солнце', 'Дождливый вторник', 'Смятые холсты', 'Тлеющий'],
@@ -25,5 +27,5 @@ def build_shelves(available):
             else:
                 books.append(dict(title=title, cover='', href='#forthcoming-dialog', subtitle='', placeholder=True))
         books.extend(book for book in available.get(key, []) if book['title'] not in listed)
-        shelves.append(dict(key=key, title=label, books=books))
+        shelves.append(dict(key=key, title=label, cover='/images/' + SHELF_COVERS[key] + '.png', books=books))
     return shelves

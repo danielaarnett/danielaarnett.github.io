@@ -48,3 +48,15 @@ def test_vote_requires_csrf(app, client, voting):
     assert client.post('/api/publication/krampus').status_code == 400
     token = client.get('/api/publication/krampus').json['csrf_token']
     assert client.post('/api/publication/krampus', headers={'X-CSRFToken': token}).status_code == 200
+
+
+def test_books_have_separate_totals_and_cooldowns(app, client, voting):
+    with app.app_context():
+        db.session.add(PublicationInterest(slug='orden-na-sdachu', votes=0))
+        db.session.commit()
+    assert client.get('/api/publication/orden-na-sdachu').json['votes'] == 0
+    assert client.post('/api/publication/krampus').json['votes'] == 1
+    assert client.post('/api/publication/orden-na-sdachu').json['votes'] == 1
+    assert client.post('/api/publication/orden-na-sdachu').status_code == 429
+    assert client.get('/api/publication/krampus').json['votes'] == 1
+    assert client.post('/api/publication/unknown').status_code == 404

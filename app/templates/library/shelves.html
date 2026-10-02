@@ -6,7 +6,7 @@
     <div id="books-{{ shelf.key }}" tabindex="0" role="region" aria-label="{{ shelf.title }}: горизонтальная прокрутка" class="shelf-books{% if not shelf.books %} shelf-empty{% endif %}">
       {% for book in shelf.books %}
       <a class="shelf-book" href="{{ book.href }}"{% if book.placeholder %} data-forthcoming="{{ book.title }}"{% endif %}>
-        <div class="shelf-cover">{% if book.cover %}<img src="{{ book.cover }}" alt="" loading="lazy" draggable="false">{% else %}<span class="shelf-cover-title">{{ book.title }}</span>{% endif %}</div>
+        <div class="shelf-cover"><img src="{{ shelf.cover }}" alt="" loading="lazy" draggable="false"></div>
         <h3>{{ book.title }}</h3>
         {% if book.subtitle %}<p>{{ book.subtitle }}</p>{% endif %}
       </a>
