@@ -300,7 +300,6 @@ html { scrollbar-color: #9c8164 #202522; scrollbar-width: thin; }
 .update-art-frame { display: block; color: inherit; cursor: pointer; transition: transform .3s ease, box-shadow .3s ease; }
 .update-art-frame:hover, .update-art-frame:focus-visible { transform: rotate(-9deg) scale(1.045); box-shadow: 14px 22px 34px #10171155; }
 .update-card:nth-of-type(even) .update-art-frame:hover, .update-card:nth-of-type(even) .update-art-frame:focus-visible { transform: rotate(9deg) scale(1.045); }
-.update-copy .update-instruction { margin: 12px 0 0; font-size: .875rem; color: #5b5b4e; }
 .update-copy .update-date { font: italic 500 .9375rem/1.6 var(--serif); color: #76573d; margin: 8px 0 0; }
 .manuscript > summary:hover { background: #c4a18317; }
 .manuscript.is-expanded { border-color: #d1b48e; background: #435145f5; }
@@ -312,8 +311,8 @@ html { scrollbar-color: #9c8164 #202522; scrollbar-width: thin; }
 .circle-heading::before { content: ""; position: absolute; left: 50%; top: -6px; width: 12px; height: 12px; border: 1px solid #a78b6b; background: var(--paper); box-shadow: 0 0 0 6px var(--paper); transform: translateX(-50%) rotate(45deg); }
 .circle-heading .prose-description { max-width: 860px; margin-inline: auto; }
 .publication-dialog { width: min(1000px, calc(100% - 40px)); padding: 0; }
-.publication-layout { display: grid; grid-template-columns: .7fr 1.3fr; }
-.publication-cover { display: grid; place-items: center; padding: 24px; background: #d8cebb; }
+.publication-layout { display: grid; grid-template-columns: 1fr 1.1fr; }
+.publication-cover { display: grid; place-items: center; padding: 10px; background: #d8cebb; }
 .publication-cover img { width: 100%; height: auto; }
 .publication-copy { padding: 50px 36px 34px; }
 .publication-copy h2 { font-size: clamp(1.6rem, 2.6vw, 2rem); }
@@ -330,8 +329,8 @@ html { scrollbar-color: #9c8164 #202522; scrollbar-width: thin; }
   .art-side { display: none; }
   .circle-heading { padding-top: 42px; }
   .publication-layout { grid-template-columns: 1fr; }
-  .publication-cover { padding: 24px; }
-  .publication-cover img { width: min(100%, 200px); }
+  .publication-cover { padding: 12px; }
+  .publication-cover img { width: min(100%, 360px); }
   .publication-copy { padding: 30px 24px; }
 }
 
