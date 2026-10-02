@@ -17,7 +17,7 @@
     dialog.showModal();
     if (pending) return;
     button.disabled = true;
-    if (!api) { show('Голосование пока не открыто.'); return; }
+    if (!api) { show(''); return; }
     show('Загружаем число голосов…');
     try {
       const response = await fetch(api, { credentials: 'same-origin', cache: 'no-store' });
