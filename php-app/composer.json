@@ -1,0 +1,16 @@
+{
+  "name": "danielarnett/author-library",
+  "description": "Author library for PHP shared hosting",
+  "type": "project",
+  "require": {
+    "php": "^8.2",
+    "ext-pdo": "*",
+    "ext-pdo_sqlite": "*",
+    "ext-mbstring": "*",
+    "ext-dom": "*",
+    "league/commonmark": "^2.10.2",
+    "ezyang/htmlpurifier": "^4.19"
+  },
+  "config": { "sort-packages": true, "allow-plugins": false },
+  "license": "proprietary"
+}

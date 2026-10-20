@@ -1,0 +1,3 @@
+<?php namespace Arnett; ?>
+<div class="narrow-panel"><h1>Вход</h1><p class="page-intro">Войдите в свой читательский или авторский аккаунт.</p><?php if($error):?><p class="form-error" role="alert"><?=e($error)?></p><?php endif;?>
+<form method="post" class="editor-form"><?=csrf_field()?><input type="hidden" name="next" value="<?=e($next)?>"><div class="form-field"><label for="username">Имя пользователя</label><input id="username" name="username" autocomplete="username" required maxlength="120"></div><div class="form-field"><label for="password">Пароль</label><input id="password" type="password" name="password" autocomplete="current-password" required maxlength="1024"></div><button class="button button-dark" type="submit">Войти</button></form></div>

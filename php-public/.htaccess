@@ -1,0 +1,12 @@
+Options -Indexes
+DirectoryIndex index.php index.html
+RewriteEngine On
+# Existing public HTML readers must never bypass server permissions.
+RewriteRule ^(?:read|works|library|admin|auth|api)(?:/|$) index.php [END,QSA]
+RewriteRule ^(?:index\.html)?$ index.php [END,QSA]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [END,QSA]
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>

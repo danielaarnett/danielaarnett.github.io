@@ -1,0 +1,5 @@
+<?php namespace Arnett; ?>
+<a class="text-link" href="/library/">Библиотека</a><div class="work-overview">
+<?php if($work['cover_path']):?><div class="work-cover"><img src="<?=e($work['cover_path'])?>" alt="<?=e($work['title'])?>"></div><?php endif;?>
+<div><p class="eyebrow copper"><?=e($work['subtitle'])?> · <?=e(STATUS_LABELS[$work['status']])?></p><h1><?=e($work['title'])?></h1><p class="page-intro"><?=nl2br(e($work['description']))?></p><p class="access-label"><?=e(ACCESS_LABELS[$work['access_type']])?></p><?php if($chapters):?><a class="button button-dark" href="/read/<?=e($work['slug'])?>/<?=e($chapters[0]['slug'])?>/">Начать читать</a><?php endif;?></div></div>
+<section class="contents"><h2>Оглавление</h2><?php foreach($chapters as $chapter):?><a class="chapter-link" href="/read/<?=e($work['slug'])?>/<?=e($chapter['slug'])?>/"><span><?=e($chapter['title'])?></span><small><?=e(ACCESS_LABELS[$work['access_type']==='subscriber'?'subscriber':$chapter['access_type']])?></small></a><?php endforeach;if(!$chapters):?><p>Текст готовится к публикации.</p><?php endif;?></section>

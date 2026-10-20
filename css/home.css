@@ -49,8 +49,8 @@ h3 { font-family: var(--serif); font-weight: 500; font-variation-settings: "opsz
 .menu-toggle { display: none; flex: 0 0 44px; background: none; width: 44px; height: 44px; padding: 10px; }
 .menu-toggle span { display: block; height: 1px; background: #e4d6c6; margin: 6px 0; transition: transform .2s; }
 .hero { background: #202320; color: #eee6d8; position: relative; overflow: hidden; }
-.hero-art { position: absolute; inset: 0; background-image: linear-gradient(90deg, #1d221fd9 0%, #1c211ea8 24%, #1d221f26 58%, #1d221f05 100%), linear-gradient(0deg, #202522 0%, transparent 27%), url('../images/archive-raven-poly.png'); background-size: cover; background-position: center, center, center 48%; }
-.hero-art::after { content: ''; position: absolute; inset: 0; background: rgb(0 0 0 / 28%); pointer-events: none; }
+.hero-art { position: absolute; inset: 0; background-image: linear-gradient(90deg, #1d221fd9 0%, #1c211ea8 24%, #1d221f26 58%, #1d221f05 100%), linear-gradient(0deg, #202522 0%, transparent 27%), url('../images/author-imagination-hero.png'); background-size: cover; background-position: center, center, center 48%; }
+.hero-art::after { content: ''; position: absolute; inset: 0; background: rgb(0 0 0 / 16%); pointer-events: none; }
 .hero-inner { position: relative; min-height: 615px; display: flex; flex-direction: column; justify-content: space-between; }
 .hero-copy { padding-top: 84px; padding-bottom: 72px; max-width: 650px; }
 .hero .eyebrow { display: flex; align-items: center; gap: 14px; color: #cdb79b; font-size: var(--small-size); }
@@ -230,7 +230,7 @@ html { scrollbar-color: #9c8164 #202522; scrollbar-width: thin; }
   .hero .eyebrow { gap: 9px; }
   .little-line { width: 20px; flex: 0 0 20px; }
   .hero-description { font-size: 1.0625rem; line-height: 1.85; margin-top: 22px; }
-  .hero-art { background-image: linear-gradient(90deg, #1d221fe0, #1d221f65), linear-gradient(0deg, #202522 0%, transparent 24%, #1d221f80 76%), url('../images/archive-raven-poly.png'); background-position: center, center, 88% center; }
+  .hero-art { background-image: linear-gradient(90deg, #1d221fe0, #1d221f65), linear-gradient(0deg, #202522 0%, transparent 24%, #1d221f80 76%), url('../images/author-imagination-hero.png'); background-position: center, center, 88% center; }
   .hero-actions { margin-top: 28px; }
   .hero-baseline { padding-block: 18px; font-size: .8125rem; }
   .hero-baseline p span { margin-inline: 6px; }
@@ -348,3 +348,6 @@ html { scrollbar-color: #9c8164 #202522; scrollbar-width: thin; }
 .publication-pagination svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 2; }
 .publication-pagination span { color: #705439; font-size: .875rem; }
 @media (max-width: 650px) { .publication-pagination { width: 100%; padding-inline: 28px; } }
+
+#library .library-door-copy { text-align: center; display: flex; flex-direction: column; align-items: center; }
+#vote-thanks-dialog .button { margin-top: 24px; background: #74644924; }

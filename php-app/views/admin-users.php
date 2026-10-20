@@ -1,0 +1,5 @@
+<?php namespace Arnett; ?>
+<a class="text-link" href="/admin">Авторская панель</a><h1 class="space-above">Читатели</h1><?php if($error):?><p class="form-error" role="alert"><?=e($error)?></p><?php endif;?>
+<?php foreach($users as $reader):?><article class="user-row"><div><h2><?=e($reader['display_name']?:$reader['username'])?></h2><p><?=e($reader['username'])?> · <?=e(TIER_LABELS[$reader['tier']])?></p><p><?=$reader['tier_expires_at']?'До '.e(gmdate('d.m.Y',(int)$reader['tier_expires_at'])):'Без действующей подписки'?></p></div>
+<?php if(!$reader['is_admin']):?><form method="post"><?=csrf_field()?><input type="hidden" name="id" value="<?=(int)$reader['id']?>"><?php field('tier','Уровень',$reader,'select',TIER_LABELS);field('days','Дней',['days'=>30],'number');?><button class="button button-outline" type="submit">Обновить доступ</button></form><?php endif;?></article><?php endforeach;?>
+<nav class="pager" aria-label="Страницы читателей"><?php if($page>1):?><a href="?page=<?=$page-1?>">Назад</a><?php endif;if($next):?><a href="?page=<?=$page+1?>">Далее</a><?php endif;?></nav>

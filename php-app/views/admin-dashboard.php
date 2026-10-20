@@ -1,0 +1,2 @@
+<?php namespace Arnett; ?>
+<p class="eyebrow copper">Авторская панель</p><h1>Истории и главы</h1><div class="admin-actions"><a class="button button-dark" href="/admin/works/new">Добавить произведение</a><a class="text-link" href="/admin/users">Читатели</a></div><div class="contents"><?php foreach($works as $work):?><a class="chapter-link" href="/admin/works/<?=(int)$work['id']?>/edit"><span><?=e($work['title'])?></span><small><?=$work['is_visible']?'Опубликовано':'Скрыто'?> · <?=e(STATUS_LABELS[$work['status']])?></small></a><?php endforeach;?></div>

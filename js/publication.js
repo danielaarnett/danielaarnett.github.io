@@ -38,7 +38,6 @@
     index = (index + Number(control.dataset.publicationStep) + pages.length) % pages.length;
     pages.forEach((page, i) => { page.hidden = i !== index; });
     dialog.setAttribute('aria-labelledby', pages[index].querySelector('h2').id);
-    dialog.querySelector('[data-publication-position]').textContent = `${index + 1} / ${pages.length}`;
     load();
   }));
   pages.forEach(page => page.querySelector('[data-submit-vote]').addEventListener('click', async () => {
@@ -54,12 +53,16 @@
       if (!response.ok && response.status !== 429) throw new Error();
       apply(page, data);
       show(page, data.message);
+      if (response.ok) document.querySelector('#vote-thanks-dialog')?.showModal();
     } catch {
       show(page, 'Не удалось отправить голос. Попробуйте ещё раз.');
       button.disabled = false;
     } finally { pending = false; }
   }));
   dialog.querySelector('[data-close-publication]').addEventListener('click', () => dialog.close());
+  const thanks = document.querySelector('#vote-thanks-dialog');
+  thanks?.querySelector('[data-close-thanks]')?.addEventListener('click', () => thanks.close());
+  thanks?.querySelector('[data-return-to-book]')?.addEventListener('click', () => thanks.close());
   dialog.addEventListener('click', event => {
     const rect = dialog.getBoundingClientRect();
     if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();

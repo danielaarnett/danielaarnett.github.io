@@ -1,0 +1,5 @@
+Options -Indexes
+DirectoryIndex index.html
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://games.danielarnett.com%{REQUEST_URI} [R=308,L]
