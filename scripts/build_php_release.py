@@ -36,9 +36,11 @@ def build(output, initial_private=None):
         if name.startswith('vendor/composer/tmp-') or name.endswith('probe.txt'):
             continue
         files['arnett-app/' + name] = path.read_bytes()
-    for path in (ROOT / 'games-placeholder').rglob('*'):
-        if path.is_file():
-            files['games.danielarnett.com/' + path.relative_to(ROOT / 'games-placeholder').as_posix()] = path.read_bytes()
+    # Reuse the actual games site; future author-site releases must not restore
+    # the original holding page over an already published games website.
+    from build_games_release import PUBLIC, PUBLIC_FILES
+    for name in PUBLIC_FILES:
+        files['games.danielarnett.com/' + name] = (PUBLIC / name).read_bytes()
     if initial_private:
         private = Path(initial_private)
         files['arnett-private/config.php'] = (private / 'config.php').read_bytes()

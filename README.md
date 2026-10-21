@@ -2,6 +2,11 @@
 
 > Текущая серверная версия для AlexHost — PHP 8.2+ / SQLite. См. [установку и устройство PHP](php-app/README.md). Прежняя реализация Python ниже сохранена как справка и не нужна для запуска на хостинге. Boosty пока не подключён.
 
+Игровой поддомен `games.danielarnett.com` — отдельный статический сайт в
+[`games-site/public`](games-site/README.md). Архив только для него собирается
+через `python scripts/build_games_release.py`; старые черновики из `.games/`
+в публикацию не входят.
+
 Главная страница, библиотека и серверное ядро для публикации прозы. Python 3.12+, Flask, SQLAlchemy, Jinja, SQLite / PostgreSQL. Основные шрифты — локальные Literata и Golos Text; читательская страница использует существующий `reading.css`.
 
 ## Текущее состояние

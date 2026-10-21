@@ -17,3 +17,4 @@ local-qa/
 php-app/vendor/
 arnett-private/
 php-app/config.local.php
+.games/
